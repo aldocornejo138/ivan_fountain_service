@@ -1,14 +1,14 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./ServiceStyles.css";
-import { Installation } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { beforeRepair } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { afterRepair } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { maintenance } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { maintenance2 } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { business } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { emergency } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
-import { delivary } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
+import { Installation } from "../../assets/index.js";
+import { beforeRepair } from "../../assets/index.js";
+import { afterRepair } from "../../assets/index.js";
+import { maintenance } from "../../assets/index.js";
+import { maintenance2 } from "../../assets/index.js";
+import { business } from "../../assets/index.js";
+import { emergency } from "../../assets/index.js";
+import { delivary } from "../../assets/index.js";
 
 const ServiceSection = ({ title, description, image1, image2 }) => {
   const { ref, inView } = useInView({

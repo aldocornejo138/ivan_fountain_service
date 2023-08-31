@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactStyles.css";
-import { contact } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
+import { contact } from "../../assets/index.js";
 import { useInView } from "react-intersection-observer";
 
 const Contact = () => {

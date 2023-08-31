@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import { aboutIvan } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets/index.js";
+import { aboutIvan } from "../../assets/index.js";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
