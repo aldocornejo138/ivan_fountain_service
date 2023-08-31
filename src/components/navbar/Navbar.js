@@ -3,7 +3,7 @@ import React from "react";
 import { Component } from "react";
 import { Link } from "react-scroll";
 import { navLinksdata } from "../constants/index.js";
-import { IvanLogo } from "../assets/index";
+import { IvanLogo } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets";
 
 class Navbar extends Component {
   state = {
@@ -11,8 +11,9 @@ class Navbar extends Component {
     selectedSection: "",
   };
 
-  handleSectionClick = (title) => {
-    this.setState({ clicked: false, selectedSection: title });
+  // Add the handleClick function
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
   };
 
   render() {
@@ -39,9 +40,8 @@ class Navbar extends Component {
                   activeClass="active"
                   spy={true}
                   smooth={true}
-                  offset={380}
+                  offset={-10}
                   duration={500}
-                  onClick={() => this.handleSectionClick(title)}
                 >
                   {item.title}
                 </Link>

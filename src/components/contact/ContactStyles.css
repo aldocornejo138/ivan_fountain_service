@@ -1,0 +1,114 @@
+/* ContactStyles.css */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-form {
+  flex: 1;
+  padding: 10px;
+}
+
+.image-container {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contact-form {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .contact-form {
+    padding: 20px;
+    margin-left: 20px;
+  }
+  .image-container {
+    padding: 20px;
+    margin-left: 0px;
+  }
+
+  .contact-form textarea {
+    height: 100px;
+    width: 300px; /* Adjust height for smaller screens */
+  }
+  .image-container img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+/* Style for the entire form container */
+.contact-form {
+  color: white;
+  border-radius: 25px;
+  border-color: greenyellow;
+}
+
+/* Style for input fields */
+.contactInput {
+  color: black; /* Change text color for input */
+  border-radius: 45px; /* Add any additional styling you want for input fields */
+}
+
+/* Style for text area */
+.contactTextArea {
+  color: black;
+  /* Change text color for text area */
+  /* Add any additional styling you want for the text area */
+}
+
+/* Style for error messages */
+.errorMsg {
+  color: red;
+}
+
+/* Style for success messages */
+.successMsg {
+  color: green;
+}
+
+.outline-designColor {
+  color: red;
+}
