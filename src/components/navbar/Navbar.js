@@ -3,7 +3,7 @@ import React from "react";
 import { Component } from "react";
 import { Link } from "react-scroll";
 import { navLinksdata } from "../constants/index.js";
-import { IvanLogo } from "/Users/aldocornejo/Documents/React Projects/ivan_fountain_service/src/assets";
+import { IvanLogo } from "../../assets/index.js";
 
 class Navbar extends Component {
   state = {
