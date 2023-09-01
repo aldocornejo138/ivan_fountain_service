@@ -49,9 +49,9 @@ body {
   border-color: #0095ff;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 926px) {
   .galleryContainer {
-    zoom: 35%;
+    zoom: 55%;
   }
 }
 
