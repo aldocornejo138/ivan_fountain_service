@@ -51,7 +51,7 @@ body {
 
 @media screen and (max-width: 850px) {
   .galleryContainer {
-    zoom: 55%;
+    zoom: 35%;
   }
 }
 
