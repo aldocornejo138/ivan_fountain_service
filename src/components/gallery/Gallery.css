@@ -45,6 +45,9 @@ body {
   height: 42rem;
   position: relative;
 }
+.swiper-slide img {
+  border-color: #0095ff;
+}
 
 @media screen and (max-width: 850px) {
   .galleryContainer {
@@ -131,7 +134,7 @@ body {
 
 .slider-controler .slider-arrow ion-icon {
   font-size: 2rem;
-  color: #21c208;
+  color: #0095ff;
 }
 
 .slider-controler .slider-arrow::after {

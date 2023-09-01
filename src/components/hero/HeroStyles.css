@@ -41,6 +41,8 @@ img {
 
 .description h1 {
   font-size: 40px;
+  color: #0095ff;
+  padding-left: 20px;
 }
 
 .description h2 {

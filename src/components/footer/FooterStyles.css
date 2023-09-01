@@ -1,5 +1,5 @@
 .footer {
-  padding: 1rem 4rem;
+  padding: 1rem 1rem;
   background: #282727;
   display: flex;
   justify-content: space-between;
@@ -22,15 +22,15 @@
 .white-icon {
   font-size: 1.5rem;
   color: #ffffff;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .white-icon:hover {
-  color: #077120;
+  color: #0095ff;
 }
 .footer h1 {
-  color: #297e1a;
+  color: #0095ff;
   font-size: 1rem;
 }
 
@@ -43,26 +43,28 @@
 @media screen and (max-width: 850px) {
   .footer {
     padding: 1rem 1.5rem;
+    align-items: auto;
   }
 
-  .footer i {
-    font-size: 1.2rem;
-    padding: 0rem 0rem 0.5rem 0rem;
-  }
   .footer h1 {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     align-items: flex-start;
   }
   .footer h2 {
-    font-size: 0.5rem;
-    padding: 0rem 0.5rem 0rem 0.5rem;
+    font-size: 1rem;
   }
 
   .left-side {
-    width: 100%;
+    width: 70%;
+  }
+
+  .left-side a {
+    padding-bottom: 10px;
   }
   .right-side {
     align-items: flex-start;
-    width: 10%;
+    text-align: center;
+    display: flex;
+    width: 25%;
   }
 }

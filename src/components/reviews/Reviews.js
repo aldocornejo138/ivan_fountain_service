@@ -159,8 +159,10 @@ const Reviews = () => {
           href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
           className="link-style"
         >
-          All Reviews straight out of Yelp. Click here to see all of our 55+ 5
-          Star Reviews!
+          <h2>
+            All Reviews straight out of Yelp. Click here to see all of our 55+ 5
+            Star Reviews!
+          </h2>
         </a>
       </div>
 

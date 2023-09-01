@@ -51,7 +51,7 @@
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #4b92c5;
 }
 
 @media (max-width: 768px) {
@@ -83,7 +83,7 @@
 .contact-form {
   color: white;
   border-radius: 25px;
-  border-color: greenyellow;
+  border-color: #4b92c5;
 }
 
 /* Style for input fields */
