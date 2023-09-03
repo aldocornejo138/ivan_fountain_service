@@ -6,6 +6,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+@media (max-width: 850px) {
+  .galleryContainer {
+    zoom: 50%;
+  }
+}
+
 .App {
   height: auto;
   text-align: center;

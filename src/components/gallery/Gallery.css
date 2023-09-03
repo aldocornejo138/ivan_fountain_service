@@ -29,12 +29,6 @@ body {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 990px) {
-  .galleryContainer {
-    zoom: 50%;
-  }
-}
-
 .heading {
   padding: 1rem 0;
   font-size: 3.5rem;
