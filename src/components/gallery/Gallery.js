@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import { useInView } from "react-intersection-observer";
-import styles from "./Gallery.module.css"; // Import the CSS module
 
 let sliderImg1 =
   "https://s3-media0.fl.yelpcdn.com/bphoto/r5qohIuvuipAPasSoL1Yjg/348s.jpg";
@@ -40,9 +39,7 @@ const Gallery = () => {
         </div>
         <div
           ref={ref}
-          className={`${styles.galleryContainer} ${
-            inView ? styles["zoom-in"] : styles["zoom-out"]
-          }`}
+          className={`galleryContainer ${inView ? "zoom-in" : "zoom-out"}`}
         >
           <div>
             <br />
