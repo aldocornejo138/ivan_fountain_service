@@ -29,6 +29,12 @@ body {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 990px) {
+  .galleryContainer {
+    zoom: 50%;
+  }
+}
+
 .heading {
   padding: 1rem 0;
   font-size: 3.5rem;
@@ -48,24 +54,6 @@ body {
 }
 .swiper-slide img {
   border-color: #0095ff;
-}
-
-@media (min-width: 1440px) {
-  .galleryContainer {
-    zoom: 1.5;
-  }
-}
-
-@media (min-width: 2560px) {
-  .galleryContainer {
-    zoom: 1.7;
-  }
-}
-
-@media (min-width: 3860px) {
-  .galleryContainer {
-    zoom: 2.5;
-  }
 }
 
 @media (max-width: 3000px) {
