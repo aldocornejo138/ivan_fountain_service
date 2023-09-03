@@ -25,6 +25,8 @@ body {
   max-width: 124rem;
   padding: 2rem 1rem;
   margin: 0 auto;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .heading {
@@ -48,9 +50,21 @@ body {
   border-color: #0095ff;
 }
 
-@media screen and (max-width: 850px) {
+@media (min-width: 1440px) {
   .galleryContainer {
-    zoom: normal;
+    zoom: 1.5;
+  }
+}
+
+@media (min-width: 2560px) {
+  .galleryContainer {
+    zoom: 1.7;
+  }
+}
+
+@media (min-width: 3860px) {
+  .galleryContainer {
+    zoom: 2.5;
   }
 }
 
