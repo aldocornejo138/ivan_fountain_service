@@ -25,7 +25,6 @@ body {
   max-width: 124rem;
   padding: 2rem 1rem;
   margin: 0 auto;
-  zoom: 80.5%;
 }
 
 .heading {
@@ -51,8 +50,7 @@ body {
 
 @media screen and (max-width: 850px) {
   .galleryContainer {
-    zoom: 50%;
-    font-size: 62.5%;
+    zoom: normal;
   }
 }
 
