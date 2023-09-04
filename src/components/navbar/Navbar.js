@@ -41,8 +41,9 @@ class Navbar extends Component {
                   spy={true}
                   smooth={true}
                   offset={-10}
-                  duration={500}
+                  duration={2000}
                 >
+                  <i className={item.icon}></i>
                   {item.title}
                 </Link>
               </li>

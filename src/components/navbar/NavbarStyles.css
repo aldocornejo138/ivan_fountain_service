@@ -52,7 +52,7 @@
 .nav-links {
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding: 0.7rem 1rem;
   white-space: nowrap;
@@ -219,7 +219,7 @@ button {
     width: 100%;
     height: auto;
     position: absolute;
-    top: 0;
+    top: 20%;
     left: -100%;
     opacity: 0;
     align-items: stretch;
@@ -239,7 +239,7 @@ button {
   .nav-links {
     display: block;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     padding: 2rem 0;
   }
   .nav-links:hover {
