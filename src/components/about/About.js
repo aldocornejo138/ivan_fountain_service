@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="title">
+      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
         <h1>Meet Ivan</h1>
         <p>Founder and CEO</p>
       </div>

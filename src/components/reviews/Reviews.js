@@ -150,7 +150,7 @@ const Reviews = () => {
 
   return (
     <section id="reviews" className="reviews-container">
-      <div className="title">
+      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
         <h1>Reviews</h1>
         <p>Look at What Clients Say About Us</p>
       </div>

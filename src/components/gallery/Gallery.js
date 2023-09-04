@@ -33,7 +33,7 @@ const Gallery = () => {
   return (
     <section id="gallery">
       <div className="gallery-wrapper">
-        <div className="title">
+        <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
           <h1>Gallery</h1>
           <p>Explore Our Wide Range of Projects throughout Socal</p>
         </div>

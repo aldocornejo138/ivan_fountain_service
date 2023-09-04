@@ -58,9 +58,13 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
 };
 
 const Service = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+  });
+
   return (
     <section id="services" title="Services">
-      <div className="title">
+      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
         <h1>Services</h1>
         <p>Southern California’s Premier Fountain Service </p>
       </div>
