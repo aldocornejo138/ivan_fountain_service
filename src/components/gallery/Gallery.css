@@ -32,7 +32,9 @@ body {
 
 @media (max-width: 850px) {
   .galleryContainer {
-    zoom: 50%;
+    html {
+      zoom: 50%;
+    }
   }
 }
 
