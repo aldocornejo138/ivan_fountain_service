@@ -26,16 +26,9 @@ body {
   padding: 2rem 1rem;
   margin: 15px;
   scroll-behavior: smooth;
-  zoom: 50%;
+  zoom: 80%;
   font-size: 62.5%;
   align-items: center;
-}
-
-@media (max-width: 850px) {
-  .galleryContainer {
-    font-size: 62.5%;
-    zoom: 50%;
-  }
 }
 
 .heading {
@@ -48,7 +41,6 @@ body {
   height: 50rem;
   padding: 2rem 0;
   position: relative;
-  font-size: 62.5%;
 }
 
 .swiper-slide {
