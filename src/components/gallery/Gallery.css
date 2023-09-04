@@ -27,12 +27,11 @@ body {
   margin: 0 auto;
   font-size: 62.5%;
   scroll-behavior: smooth;
-  zoom: 80%;
 }
 
-@media (max-width: 850px) {
-  .galleryContainer {
-    html {
+html {
+  @media (max-width: 850px) {
+    .galleryContainer {
       zoom: 50%;
     }
   }
