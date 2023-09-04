@@ -25,19 +25,18 @@ body {
   max-width: 124rem;
   padding: 2rem 1rem;
   margin: 15px;
-  font-size: 62.5%;
+  font-size: 42.5%;
   scroll-behavior: smooth;
+  zoom: 80%;
 }
 
-/*@media (max-width: 850px) {
-    .galleryContainer {
-      zoom: 50%;
-    }
+@media (max-width: 850px) {
+  .galleryContainer {
+    zoom: 50%;
   }
-*/
+}
 
 html {
-  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
