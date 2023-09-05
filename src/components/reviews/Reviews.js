@@ -149,15 +149,12 @@ const Reviews = () => {
   const totalPages = Math.ceil(reviews.length / reviewsPerPage);
 
   return (
-    <section id="reviews" className="reviews-container">
-      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
+    <section ref={ref} id="reviews" className="reviews-container">
+      <div className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
         <h1>Reviews</h1>
         <p>Look at What Clients Say About Us</p>
       </div>
-      <div
-        ref={ref}
-        className={`reviews-container ${inView ? "zoomIn" : "zoomOut"}`}
-      >
+      <div className={`reviews-container ${inView ? "zoomIn" : "zoomOut"}`}>
         <a
           href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
           className="link-style"
@@ -169,15 +166,11 @@ const Reviews = () => {
         </a>
       </div>
 
-      <div
-        ref={ref}
-        className={`reviews-list ${inView ? "zoomIn" : "zoomOut"}`}
-      >
+      <div className="reviews-list">
         {reviews.slice(startIndex, endIndex).map((review) => (
           <div key={review.id} className="review">
             <div className="review-content">
               <div
-                ref={ref}
                 className={`review-profile ${
                   inView ? "zoomInLeft" : "zoomOutLeft"
                 }`}
@@ -185,7 +178,6 @@ const Reviews = () => {
                 <img src={`${review.image}`} alt={`${review.name}'s profile`} />
               </div>
               <div
-                ref={ref}
                 className={`review-header ${
                   inView ? "zoomInRight" : "zoomOutRight"
                 }`}
@@ -203,12 +195,14 @@ const Reviews = () => {
               </div>
             </div>
             <div className="review-details">
-              <p className="review-comment">" {review.comment} "</p>
+              <p className={`review-comment ${inView ? "zoomIn" : "zoomOut"} `}>
+                " {review.comment} "
+              </p>
             </div>
           </div>
         ))}
       </div>
-      <div ref={ref} className={`pagination ${inView ? "zoomIn" : "zoomOut"}`}>
+      <div className={`pagination ${inView ? "zoomIn" : "zoomOut"}`}>
         <button onClick={handlePreviousClick} disabled={currentPage === 1}>
           Previous
         </button>
