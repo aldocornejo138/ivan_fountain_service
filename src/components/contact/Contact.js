@@ -66,20 +66,22 @@ const Contact = () => {
     triggerOnce: false,
   });
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className={` ${inView ? "zoomIn" : "zoomOut"}`}
-    >
-      <div className="title">
+    <section id="contact">
+      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
         <h1>Have a Project in Mind?</h1>
         <p>Send a Message, Were here for you!</p>
       </div>
       <div className="contact-container">
-        <div className="image-container">
+        <div
+          ref={ref}
+          className={`image-container ${inView ? "zoomInLeft" : "zoomOutLeft"}`}
+        >
           <img src={contact} alt="Contact" />
         </div>
-        <div className="contact-form">
+        <div
+          ref={ref}
+          className={`contact-form ${inView ? "zoomInRight" : "zoomOutRight"}`}
+        >
           <form ref={form} className="">
             {errMsg && <p className="outline-designColor">{errMsg}</p>}
             {successMsg && <p className="successMsg">{successMsg}</p>}

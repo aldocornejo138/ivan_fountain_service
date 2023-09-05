@@ -6,6 +6,7 @@
   padding-bottom: 20px;
   border-color: rgb(0, 0, 0);
   margin-top: 30px;
+  border: 1px solid #39baff;
 }
 
 .title p {
@@ -18,6 +19,7 @@
   padding: 10px 20px 5px 20px;
   border-radius: 13px;
   z-index: 9999999;
+  border: 0.1px lightblue solid;
 }
 
 .revealLeft {
@@ -105,6 +107,76 @@
   position: absolute;
   top: -10%;
   right: 0;
+}
+
+.zoomInLeft {
+  transform: translateX(0) scale(1);
+  animation: zoomInLeft 2.5s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes zoomInLeft {
+  0% {
+    transform: translateX(-20%) scale(0.95);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+.zoomOutLeft {
+  transform: translateX(-20%) scale(0.95);
+  animation: zoomOutLeft 3s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes zoomOutLeft {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-20%) scale(0.95);
+    opacity: 0;
+  }
+}
+
+.zoomInRight {
+  transform: translateX(0) scale(1);
+  animation: zoomInRight 2.5s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes zoomInRight {
+  0% {
+    transform: translateX(20%) scale(0.95);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+.zoomOutRight {
+  transform: translateX(20%) scale(0.95);
+  animation: zoomOutRight 3s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes zoomOutRight {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(20%) scale(0.95);
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 850px) {

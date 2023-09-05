@@ -17,7 +17,7 @@ const About = () => {
       <div ref={ref}>
         {inView ? (
           <div className="about">
-            <div className="about-content revealLeft">
+            <div className="about-content zoomInRight">
               <div className="about-text">
                 <h1>Ivan Cornejo</h1>
                 <p>
@@ -60,13 +60,13 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="about-photo revealRight">
+            <div className="about-photo zoomInLeft">
               <img src={aboutIvan} alt="Ivan" />
             </div>
           </div>
         ) : (
           <div className="about">
-            <div className="about-content hideLeft">
+            <div className="about-content zoomOutRight">
               <div className="about-text">
                 <h1>Ivan Cornejo</h1>
                 <p>
@@ -109,7 +109,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="about-photo hideRight">
+            <div className="about-photo zoomOutLeft">
               <img src={aboutIvan} alt="Ivan" />
             </div>
           </div>

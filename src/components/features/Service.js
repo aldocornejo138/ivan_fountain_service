@@ -16,7 +16,10 @@ const ServiceSection = ({ title, description, image1, image2 }) => {
   });
 
   return (
-    <div ref={ref} className={`services ${inView ? "revealLeft" : "hideLeft"}`}>
+    <div
+      ref={ref}
+      className={`services ${inView ? "zoomInLeft" : "zoomOutLeft"}`}
+    >
       <div className="first-serv">
         <div className="serv-text">
           <h2>{title}</h2>
@@ -39,7 +42,7 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
   return (
     <div
       ref={ref}
-      className={`services ${inView ? "revealRight" : "hideRight"}`}
+      className={`services ${inView ? "zoomInRight" : "zoomOutRight"}`}
     >
       <div className="first-serv">
         <div className="image">

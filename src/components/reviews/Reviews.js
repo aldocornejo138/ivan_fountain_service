@@ -154,7 +154,10 @@ const Reviews = () => {
         <h1>Reviews</h1>
         <p>Look at What Clients Say About Us</p>
       </div>
-      <div className="reviews-container">
+      <div
+        ref={ref}
+        className={`reviews-container ${inView ? "zoomIn" : "zoomOut"}`}
+      >
         <a
           href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
           className="link-style"
@@ -173,10 +176,20 @@ const Reviews = () => {
         {reviews.slice(startIndex, endIndex).map((review) => (
           <div key={review.id} className="review">
             <div className="review-content">
-              <div className="review-profile">
+              <div
+                ref={ref}
+                className={`review-profile ${
+                  inView ? "zoomInLeft" : "zoomOutLeft"
+                }`}
+              >
                 <img src={`${review.image}`} alt={`${review.name}'s profile`} />
               </div>
-              <div className="review-header">
+              <div
+                ref={ref}
+                className={`review-header ${
+                  inView ? "zoomInRight" : "zoomOutRight"
+                }`}
+              >
                 <h2>{review.name}</h2>
                 <p className="review-city">{review.city}</p>
                 <div className="review-rating">
@@ -195,7 +208,7 @@ const Reviews = () => {
           </div>
         ))}
       </div>
-      <div className="pagination">
+      <div ref={ref} className={`pagination ${inView ? "zoomIn" : "zoomOut"}`}>
         <button onClick={handlePreviousClick} disabled={currentPage === 1}>
           Previous
         </button>

@@ -61,6 +61,7 @@
 
 .nav-links i {
   padding-right: 10px;
+  color: #39baff;
 }
 
 .nav-links:hover {
@@ -267,8 +268,8 @@ button {
     cursor: pointer;
   }
   .menu-icons i {
-    font-size: 2rem;
-    color: #fbfbfb;
+    font-size: 4rem;
+    color: #39baff;
     padding-left: 70px;
     padding-top: 100px;
   }

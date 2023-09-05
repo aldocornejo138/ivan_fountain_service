@@ -39,7 +39,7 @@ const Gallery = () => {
         </div>
         <div
           ref={ref}
-          className={`galleryContainer ${inView ? "zoom-in" : "zoom-out"}`}
+          className={`galleryContainer ${inView ? "zoomIn" : "zoomOut"}`}
         >
           <div>
             <br />
