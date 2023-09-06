@@ -31,7 +31,9 @@ html {
 
 .App {
   height: auto;
+  width: auto;
   text-align: center;
   background-color: #000000;
   z-index: -999;
+  padding: 0;
 }

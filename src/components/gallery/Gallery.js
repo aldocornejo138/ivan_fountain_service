@@ -100,6 +100,7 @@ const Gallery = () => {
               </div>
             </div>
           </Swiper>
+          <button class="button">Full Gallery</button>
         </div>
       </div>
     </section>

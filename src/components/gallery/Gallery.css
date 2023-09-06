@@ -16,19 +16,12 @@
   background: #f9f9f9;
 }
 
-body {
-  font-size: 1.4rem;
-  background: var(--bg);
-}
-
 .galleryContainer {
-  max-width: 124rem;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   margin: 15px;
   scroll-behavior: smooth;
   zoom: 80%;
   font-size: 62.5%;
-  align-items: center;
 }
 
 .heading {
@@ -39,8 +32,9 @@ body {
 
 .swiper_container {
   height: 50rem;
-  padding: 2rem 0;
+  padding: 2rem 0rem;
   position: relative;
+  margin-left: 50px;
 }
 
 .swiper-slide {
@@ -50,6 +44,24 @@ body {
 }
 .swiper-slide img {
   border-color: #0095ff;
+}
+
+.button {
+  color: #0095ff;
+  background-color: #ffff;
+  align-self: center;
+  margin-left: 0px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .button {
+    align-self: center;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 3000px) {
@@ -81,9 +93,8 @@ body {
 .slider-controler {
   position: relative;
   bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
+  right: -12.5px;
 }
 
 .slider-controler .swiper-button-next {
@@ -123,14 +134,14 @@ body {
   background: #676767;
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 60%;
-  left: 52%;
+  border-radius: 52%;
+  left: 40%;
   transform: translateX(-52%);
-  filter: drop-shadow(0px 8px 24px rgba(255, 252, 252, 0.1));
+  filter: drop-shadow(0px 8px 24px rgba(0, 140, 255, 0.268));
 }
 
 .slider-controler .slider-arrow ion-icon {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #0095ff;
 }
 
