@@ -48,11 +48,16 @@
 
 .button {
   color: #0095ff;
-  background-color: #ffff;
+  background-color: #777b7c;
   align-self: center;
   margin-left: 0px;
   margin-top: 50px;
   font-size: 20px;
+  border-radius: 20px;
+}
+
+.button:hover {
+  background-color: #d6e8fc;
 }
 
 @media screen and (max-width: 850px) {

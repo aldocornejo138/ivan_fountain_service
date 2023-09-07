@@ -100,7 +100,14 @@ const Gallery = () => {
               </div>
             </div>
           </Swiper>
-          <button class="button">Full Gallery</button>
+          <button className="button">
+            <a
+              href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
+              className="link-style"
+            >
+              <h2>Full Gallery</h2>
+            </a>
+          </button>
         </div>
       </div>
     </section>

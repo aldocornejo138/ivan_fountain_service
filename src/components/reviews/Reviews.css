@@ -159,9 +159,15 @@
 
 .link-style {
   text-decoration: none; /* Remove underline */
-  color: rgb(13, 255, 0);
+  color: #0095ff;
   align-items: center;
   margin-left: auto;
+  font-size: 25px;
+}
+
+.link-style:hover {
+  color: rgb(203, 237, 247);
+  font-size: 26px;
 }
 
 .revealLeft {
@@ -194,7 +200,7 @@
   background-color: rgb(255, 0, 0);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .title h1 {
     color: #0095ff;
     font-size: 27px;
@@ -251,10 +257,5 @@
   .review-details p {
     color: white;
     margin-top: 10px;
-  }
-  .link-style {
-    text-decoration: none; /* Remove underline */
-    color: rgb(13, 255, 0);
-    margin-left: auto;
   }
 }
