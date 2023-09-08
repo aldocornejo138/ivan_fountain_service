@@ -46,9 +46,9 @@
   border-color: #0095ff;
 }
 
-.button {
+.galleryButton {
   color: #0095ff;
-  background-color: #777b7c;
+  background-color: #324044;
   align-self: center;
   margin-left: 0px;
   margin-top: 50px;
@@ -56,8 +56,8 @@
   border-radius: 20px;
 }
 
-.button:hover {
-  background-color: #d6e8fc;
+.galleryButton:hover {
+  background-color: #768f9f7f;
 }
 
 @media screen and (max-width: 850px) {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Reviews.css";
 import { useInView } from "react-intersection-observer";
+import { Ken } from "../../assets/index.js";
+import { Cinder } from "../../assets/index.js";
 
 const Reviews = () => {
   const { ref, inView } = useInView({
@@ -34,8 +36,7 @@ const Reviews = () => {
     {
       id: 1,
       name: "Ken W.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/Si3XijDEDNT-Q6nXH-m7MA/60s.jpg",
+      image: { Ken },
       city: "San Diego",
       rating: 5,
       date: "August 13, 2023",
@@ -45,8 +46,7 @@ const Reviews = () => {
     {
       id: 2,
       name: "Cinder P.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/ZKBD8b7k6E87U5gwROPGNw/60s.jpg",
+      image: { Cinder },
       city: "FallBrook, CA",
       rating: 5,
       date: "July 26, 2023",
@@ -174,7 +174,7 @@ const Reviews = () => {
                   inView ? "zoomInLeft" : "zoomOutLeft"
                 }`}
               >
-                <img src={`${review.image}`} alt={`${review.name}'s profile`} />
+                <img src={Ken} alt={`${review.name}'s profile`} />
               </div>
               <div
                 className={`review-header ${

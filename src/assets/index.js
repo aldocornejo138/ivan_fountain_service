@@ -9,6 +9,8 @@ import aboutIvan from "./aboutIvan.png";
 import Installation from "./installation.jpg";
 import delivary from "./delivary.jpg";
 import contact from "./contact.jpg";
+import Ken from "./Ken.jpg";
+import Cinder from "./Cinder.jpg";
 
 export { IvanLogo };
 export { afterRepair };
@@ -21,3 +23,5 @@ export { aboutIvan };
 export { Installation };
 export { delivary };
 export { contact };
+export { Ken };
+export { Cinder };
