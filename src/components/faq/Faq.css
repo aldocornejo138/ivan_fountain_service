@@ -1,0 +1,38 @@
+/* FAQ.css */
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #252a2d;
+}
+
+.faq-item.active {
+  background-color: #3b3f43;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0095ff;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+  color: white;
+}
+
+.faq-item.active .answer {
+  display: block;
+}

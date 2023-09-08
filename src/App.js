@@ -7,6 +7,7 @@ import About from "./components/about/About.js";
 import Reviews from "./components/reviews/Reviews.js";
 import Contact from "./components/contact/Contact.js";
 import Footer from "./components/footer/Footer.js";
+import Faq from "./components/faq/Faq.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <Service />
       <Gallery />
+      <Faq />
       <About />
       <Reviews />
       <Contact />
