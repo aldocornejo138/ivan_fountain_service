@@ -88,7 +88,7 @@ const Contact = () => {
 
             <div className="">
               <div className="">
-                <p className="">YOUR NAME</p>
+                <h1 className="">YOUR NAME</h1>
                 <input
                   onChange={(e) => setUsername(e.target.value)}
                   value={user_name}
@@ -100,7 +100,7 @@ const Contact = () => {
                 />
               </div>
               <div className="">
-                <p className="">Phone Number</p>
+                <h1 className="">Phone Number</h1>
                 <input
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   value={phoneNumber}
@@ -114,7 +114,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="">
-              <p className="">Email</p>
+              <h1 className="">Email</h1>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 value={user_email}
@@ -126,7 +126,7 @@ const Contact = () => {
               />
             </div>
             <div className="">
-              <p className="">Subject</p>
+              <h1 className="">Subject</h1>
               <input
                 onChange={(e) => setSubject(e.target.value)}
                 name="subject"
@@ -138,7 +138,7 @@ const Contact = () => {
               />
             </div>
             <div className="">
-              <p className="">Message</p>
+              <h1 className="">Message</h1>
               <textarea
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}

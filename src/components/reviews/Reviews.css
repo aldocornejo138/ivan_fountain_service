@@ -113,9 +113,13 @@
   color: #4b92c5;
   align-items: center;
 }
+
 .review-details p {
   color: white;
   margin-top: 50px;
+}
+.review-details h1 {
+  font-size: 15px;
 }
 
 .review h2 {

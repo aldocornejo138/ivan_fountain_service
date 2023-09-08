@@ -3,6 +3,12 @@ import "./Reviews.css";
 import { useInView } from "react-intersection-observer";
 import { Ken } from "../../assets/index.js";
 import { Cinder } from "../../assets/index.js";
+import { Celine } from "../../assets/index.js";
+import { DH } from "../../assets/index.js";
+import { Tina } from "../../assets/index.js";
+import { Tushy } from "../../assets/index.js";
+import { William } from "../../assets/index.js";
+import { Elsa } from "../../assets/index.js";
 
 const Reviews = () => {
   const { ref, inView } = useInView({
@@ -36,7 +42,7 @@ const Reviews = () => {
     {
       id: 1,
       name: "Ken W.",
-      image: { Ken },
+      image: Ken,
       city: "San Diego",
       rating: 5,
       date: "August 13, 2023",
@@ -46,7 +52,7 @@ const Reviews = () => {
     {
       id: 2,
       name: "Cinder P.",
-      image: { Cinder },
+      image: Cinder,
       city: "FallBrook, CA",
       rating: 5,
       date: "July 26, 2023",
@@ -67,8 +73,7 @@ const Reviews = () => {
     {
       id: 4,
       name: "Celine V.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/hbn8yzU8fbfSn9I9YFFOiQ/60s.jpg",
+      image: Celine,
       city: "Irvine, CA",
       rating: 5,
       date: "Jun 20, 2023",
@@ -78,8 +83,7 @@ const Reviews = () => {
     {
       id: 5,
       name: "Tina M.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/xN5xJlN6GNn8KJMqJh8B6g/60s.jpg",
+      image: Tina,
       city: "San Diego",
       rating: 5,
       date: "November 7, 2022",
@@ -88,9 +92,8 @@ const Reviews = () => {
     },
     {
       id: 6,
-      name: "D. H.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/Zuy0iDyrGa9mYj66QUP1Lg/60s.jpg",
+      name: "D.H.",
+      image: DH,
       city: "Murrieta, CA",
       rating: 5,
       date: "October 31, 2022",
@@ -100,8 +103,7 @@ const Reviews = () => {
     {
       id: 7,
       name: "Tushy J.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png",
+      image: Tushy,
       city: "Murrieta, CA",
       rating: 5,
       date: "August 4, 2022",
@@ -112,8 +114,7 @@ const Reviews = () => {
     {
       id: 8,
       name: "Elsa L.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/rPSuJV5zhDHsIv73FfZSEw/60s.jpg",
+      image: Elsa,
       city: "San Diego",
       rating: 5,
       date: "August 4, 2022",
@@ -123,8 +124,7 @@ const Reviews = () => {
     {
       id: 9,
       name: "William F.",
-      image:
-        "https://s3-media0.fl.yelpcdn.com/photo/3fgO29megsk4BvVR1EgGNg/60s.jpg",
+      image: William,
       city: "Southern California, CA",
       rating: 5,
       date: "July 22,2021",
@@ -174,7 +174,7 @@ const Reviews = () => {
                   inView ? "zoomInLeft" : "zoomOutLeft"
                 }`}
               >
-                <img src={Ken} alt={`${review.name}'s profile`} />
+                <img src={`${review.image}`} alt={`${review.name}'s profile`} />
               </div>
               <div
                 className={`review-header ${
