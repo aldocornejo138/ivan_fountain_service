@@ -50,7 +50,7 @@ const faqData = [
 
 const Faq = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   const [activeIndex, setActiveIndex] = useState(null);
@@ -78,6 +78,9 @@ const Faq = () => {
           >
             <div className={`question ${inView ? "zoomIn" : "zoomOut"}`}>
               {item.question}
+              <div
+                className={`triangle ${activeIndex === index ? "open" : ""}`}
+              />
             </div>
             <div className="answer">{item.answer}</div>
           </div>

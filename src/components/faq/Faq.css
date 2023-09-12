@@ -14,7 +14,7 @@
 }
 
 .faq-item:hover {
-  background-color: #252a2d;
+  background-color: #354c4c;
 }
 
 .faq-item.active {
@@ -23,7 +23,7 @@
 
 .question {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #0095ff;
 }
 
@@ -31,8 +31,26 @@
   display: none;
   margin-top: 10px;
   color: white;
+  font-size: 1.3rem;
 }
 
 .faq-item.active .answer {
   display: block;
+}
+
+.triangle {
+  color: #ffffff;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #ffffff; /* Adjust the color as needed */
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.triangle.open {
+  transform: rotate(90deg); /* Rotate the triangle when the question is open */
 }
