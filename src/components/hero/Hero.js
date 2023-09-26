@@ -11,7 +11,7 @@ function Hero(props) {
       } else {
         setCurrentState(currentState + 1);
       }
-    }, 3000);
+    }, 8000);
     return () => clearTimeout(timer);
   }, [currentState]);
 
