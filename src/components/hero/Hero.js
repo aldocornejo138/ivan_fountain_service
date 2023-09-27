@@ -21,7 +21,7 @@ function Hero(props) {
     backgroundSize: "cover",
     height: "100%",
     weight: "100%",
-    transition: "background-image 1s ease",
+    transition: "background-image 3s ease",
   };
 
   return (
