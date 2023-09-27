@@ -239,7 +239,9 @@
 
   .review-content {
     display: flex;
-    flex-direction: row; /* Align profile and header horizontally */
+    flex-direction: row;
+    margin-left: 25px;
+    /* Align profile and header horizontally */
   }
 
   .review-profile img {
