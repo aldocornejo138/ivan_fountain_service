@@ -7,7 +7,7 @@ const Head = () => {
 
   return (
     <div className="Head">
-      <h1 className="HeadLogo">IVAN'S FOUNTAIN SERVICE</h1>
+      <h1 className="HeadLogo">IVAN'S FOUNTAIN SERVICES</h1>
       <a
         className="HeadNumber"
         href={phoneLink}
