@@ -8,11 +8,7 @@ const Head = () => {
   return (
     <div className="Head">
       <h1 className="HeadLogo">IVAN'S FOUNTAIN SERVICES</h1>
-      <a
-        className="HeadNumber"
-        href={phoneLink}
-        style={{ textDecoration: "none", color: "white", fontSize: "1.2rem" }}
-      >
+      <a className="HeadNumber" href={phoneLink}>
         {phoneNumber}
       </a>
     </div>

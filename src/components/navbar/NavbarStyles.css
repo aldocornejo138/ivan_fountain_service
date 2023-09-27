@@ -19,8 +19,9 @@
 }
 .HeadNumber {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .NavbarItems {
   display: flex;
