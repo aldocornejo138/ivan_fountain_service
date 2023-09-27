@@ -26,6 +26,7 @@
   opacity: 1;
   transform: translateX(0%);
   transition: all 2s;
+  overflow-x: hidden;
 }
 
 .hideLeft {
@@ -38,6 +39,7 @@
   opacity: 1;
   transform: translateX(0%);
   transition: all 2s;
+  overflow-x: hidden;
 }
 
 .hideRight {
@@ -113,6 +115,7 @@
   transform: translateX(0) scale(1);
   animation: zoomInLeft 2.5s ease-in-out;
   opacity: 1;
+  overflow-x: hidden;
 }
 
 @keyframes zoomInLeft {
@@ -130,6 +133,7 @@
   transform: translateX(-20%) scale(0.95);
   animation: zoomOutLeft 3s ease-in-out;
   opacity: 0;
+  overflow-x: hidden;
 }
 
 @keyframes zoomOutLeft {
@@ -148,23 +152,27 @@
   transform: translateX(0) scale(1);
   animation: zoomInRight 2.5s ease-in-out;
   opacity: 1;
+  overflow-x: hidden;
 }
 
 @keyframes zoomInRight {
   0% {
     transform: translateX(20%) scale(0.95);
     opacity: 0;
+    overflow-x: hidden;
   }
 
   100% {
     transform: translateX(0) scale(1);
     opacity: 1;
+    overflow-x: hidden;
   }
 }
 .zoomOutRight {
   transform: translateX(20%) scale(0.95);
   animation: zoomOutRight 3s ease-in-out;
   opacity: 0;
+  overflow-x: hidden;
 }
 
 @keyframes zoomOutRight {
