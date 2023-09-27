@@ -35,10 +35,16 @@
 
 .navbar-logo {
   color: #39baff;
-  font-size: 1rem;
+  font-size: 0.5rem;
   cursor: pointer;
   padding-top: 100px;
-  padding-right: 30px;
+  padding-right: 0px;
+}
+
+.navbar-logo img {
+  height: 40%;
+  width: 40%;
+  margin-left: -100px;
 }
 
 .nav-menu {
