@@ -1,9 +1,9 @@
 ::-webkit-scrollbar {
-  width: 1.3rem;
+  width: 0rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background: #797979;
   transition: all 0.5s ease-in-out;
 }
@@ -156,7 +156,7 @@
 
 .swiper-pagination {
   position: relative;
-  width: 15rem !important;
+  width: 5rem !important;
   bottom: 1rem;
 }
 
