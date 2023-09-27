@@ -215,8 +215,13 @@ button {
   }
 
   .navbar-logo {
-    padding-right: 30px;
+    padding-right: 20px;
     padding-top: 100px;
+  }
+
+  .navbar-logo img {
+    height: 50%;
+    width: 60%;
   }
   .nav-menu {
     display: flex;
