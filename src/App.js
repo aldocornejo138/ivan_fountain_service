@@ -8,21 +8,26 @@ import Reviews from "./components/reviews/Reviews.js";
 import Contact from "./components/contact/Contact.js";
 import Footer from "./components/footer/Footer.js";
 import Faq from "./components/faq/Faq.js";
+import Locations from "./components/locations/Locations.js";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Head />
-      <Navbar />
-      <Hero />
-      <Service />
-      <Gallery />
-      <About />
-      <Reviews />
-      <Faq />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Head />
+        <Navbar />
+        <Hero />
+        <Service />
+        <Gallery />
+        <About />
+        <Reviews />
+        <Faq />
+        <Locations />
+        <Contact />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

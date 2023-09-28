@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="left-side">
-        <h1>CopyRight @ 2014 Ivan Fountain Service </h1>
+        <h1>CopyRight @ 2024 Ivan Fountain Service. All Rights Reserved.</h1>
         <h2> | </h2>
         <a href="https://www.facebook.com/Ivanfountainservice/">
           <FontAwesomeIcon icon={faFacebookSquare} className="white-icon" />

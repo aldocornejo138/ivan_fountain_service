@@ -172,6 +172,7 @@
 .link-style:hover {
   color: rgb(203, 237, 247);
   font-size: 26px;
+  transition: font-size 0.2s, color 0.2s;
 }
 
 .revealLeft {
