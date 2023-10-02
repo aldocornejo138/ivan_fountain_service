@@ -1,5 +1,5 @@
 /* Locations.css */
-
+@import "~@fortawesome/fontawesome-free/css/all.css";
 /* Style for the main container */
 .locations-container {
   margin: 20px;
@@ -60,4 +60,99 @@
 .locations-list li:hover {
   font-size: 20px;
   color: #4b92c5;
+}
+
+/* Media query for smaller screens (e.g., mobile) */
+@media (max-width: 850px) {
+  /* Adjust styles for smaller screens here */
+  .locations-container {
+    flex-direction: column; /* Stack columns on top of each other */
+  }
+  .locations-column {
+    flex-basis: 100%; /* Make columns 100% wide on smaller screens */
+  }
+}
+
+.navbarItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-top: 70px;
+  width: 95%;
+  height: 5px;
+  position: absolute;
+  z-index: 999;
+}
+
+.navbarLogo {
+  color: #39baff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 30px;
+  padding-right: 0px;
+}
+
+.navbarLogo img {
+  height: 40%;
+  width: 15%;
+  margin-left: -400px;
+}
+
+.navMenu {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 10px;
+  list-style: none;
+  align-items: center;
+  color: #0095ff;
+}
+.navLinks {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.navLinks i {
+  text-decoration: none;
+  color: #39baff;
+}
+
+.icon-with-text {
+  display: flex;
+  align-items: center;
+  color: rgb(45, 121, 220); /* Center vertically */
+}
+
+.icon-with-text i {
+  margin-right: 10px; /* Add spacing between icon and text */
+}
+
+.navLinks:hover {
+  background-color: #ffffff;
+  color: #0095ff;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  color: white;
+}
+
+.button:hover {
+  background-color: #151516;
+  color: #fff;
 }

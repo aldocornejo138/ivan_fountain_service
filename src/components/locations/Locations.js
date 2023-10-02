@@ -47,10 +47,12 @@ const Locations = () => {
       <div className="locations-container">
         <div className="locations-row">
           <div className="locations-column">
-            <h2 className="locations-category">
-              Locations in Riverside County:
-            </h2>
-            <ul className="locations-list">
+            <ul
+              ref={ref}
+              className={`locations-list ${
+                inView ? "zoomInLeft" : "zoomOutLeft"
+              }`}
+            >
               {riversideCountyCities.map((city, index) => (
                 // Wrap the city name with a Link component
                 <Link to={`/fountain-service-${city}`} key={index}>
@@ -63,10 +65,12 @@ const Locations = () => {
           </div>
 
           <div className="locations-column">
-            <h2 className="locations-category">
-              Locations in San Diego County:
-            </h2>
-            <ul className="locations-list">
+            <ul
+              ref={ref}
+              className={`locations-list ${
+                inView ? "zoomInRight" : "zoomOutRight"
+              }`}
+            >
               {sanDiegoCountyCities.map((city, index) => (
                 // Wrap the city name with a Link component
                 <Link to={`/fountain-service-${city}`} key={index}>
