@@ -73,6 +73,7 @@ const Locations = () => {
             >
               {sanDiegoCountyCities.map((city, index) => (
                 // Wrap the city name with a Link component
+
                 <Link to={`/fountain-service-${city}`} key={index}>
                   <li>
                     <h1>{city}</h1>
