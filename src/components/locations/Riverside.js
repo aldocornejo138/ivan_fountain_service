@@ -72,7 +72,7 @@ const Riverside = () => {
   });
 
   return (
-    <section className="background-Main">
+    <section className="app">
       <div className="head">
         <Link
           to="/"
