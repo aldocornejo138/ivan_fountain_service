@@ -27,15 +27,16 @@ const ServiceSection = ({ title, description, image1, image2 }) => {
   });
 
   return (
-    <div ref={ref} className={`services ${inView ? "zoomIn" : "zoomOut"}`}>
+    <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
       <div className="first-serv">
-        <div className="serv-text">
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
         <div className="image">
           <img alt="img" src={image1} />
           <img alt="img" src={image2} />
+        </div>
+        <div className="servText">
+          <h2>{title}</h2>
+          <p>{description}</p>
+          <br />
         </div>
       </div>
     </div>
@@ -48,13 +49,13 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
   });
 
   return (
-    <div ref={ref} className={`services ${inView ? "zoomIn" : "zoomOut"}`}>
+    <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
       <div className="first-serv">
         <div className="image">
           <img alt="img" src={image1} />
           <img alt="img" src={image2} />
         </div>
-        <div className="serv-text">
+        <div className="servText">
           <h2>{title}</h2>
           <p>{description}</p>
           <br />
@@ -73,15 +74,22 @@ const Riverside = () => {
   return (
     <section className="background-Main">
       <div className="head">
-        <h1 className="headLogo">IVAN'S FOUNTAIN SERVICES</h1>
+        <Link
+          to="/"
+          className="headLogo"
+          style={{ textDecoration: "none", fontSize: "10px" }}
+        >
+          <h1>IVAN'S FOUNTAIN SERVICES</h1>
+        </Link>
         <a className="headNumber" href={phoneLink}>
           {phoneNumber}
         </a>
         <div className="navbarItems">
           <div className="navbarLogo">
-            <img src={IvanLogo} alt="IvanLogo" />
+            <Link to="/">
+              <img src={IvanLogo} alt="IvanLogo" />
+            </Link>
           </div>
-
           <div className="navLinks">
             <div className="icon-with-text">
               <Link to="/" className="navMenu">
@@ -100,7 +108,7 @@ const Riverside = () => {
 
       <div
         ref={ref}
-        className={`image-container ${inView ? "zoomIn" : "zoomOut"}`}
+        className={`imageContainer ${inView ? "zoomIn" : "zoomOut"}`}
       >
         <br />
         <p1>

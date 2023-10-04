@@ -104,6 +104,7 @@
 .background-Main {
   height: auto;
   background-color: #000000;
+  overflow-x: hidden;
 }
 
 .navbarItems {
@@ -201,7 +202,7 @@ button {
   border-radius: 25px;
 }
 
-.image-container {
+.imageContainer {
   color: white;
   flex: 1;
   padding: 20px;
@@ -209,9 +210,13 @@ button {
   border-radius: 25px;
 }
 
-.image-container img {
-  width: 150%;
-  height: 150%;
+.imageContainer p1 {
+  font-size: 20px;
+}
+
+.imageContainer img {
+  width: 40%;
+  height: 20%;
   border-radius: 25px;
 }
 
@@ -233,6 +238,36 @@ button {
   color: #fff;
   background-color: #0095ff35;
   border-radius: 25px;
+}
+
+.Services {
+  margin: 1.5rem 2rem;
+  background-color: #000000;
+  padding: 10px 20px 5px 20px;
+  border-radius: 13px;
+  z-index: 9999999;
+  border: 0.1px rgb(0, 0, 0) solid;
+}
+
+.servText {
+  width: 50%;
+  text-align: start;
+  font-size: 1.5rem;
+  color: #4b92c5;
+  padding-left: 20px;
+}
+
+.servText h2 {
+  padding-bottom: 1rem;
+  color: #0095ff;
+  text-align: center;
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+.servText p {
+  color: rgb(255, 255, 255);
+  padding-right: 10px;
 }
 
 /* Media query for smaller screens (e.g., mobile) */
@@ -288,11 +323,33 @@ button {
     flex-direction: column;
   }
 
-  .image-container {
+  .imageContainer {
     margin-left: 0;
     font-size: 15px;
   }
+
+  .imageContainer img {
+    width: 70%;
+    height: 70%;
+    border-radius: 25px;
+  }
+
   .text-container {
     margin-left: 0px;
+  }
+
+  .Services {
+    margin: 4rem 2rem;
+  }
+
+  .servText {
+    width: 100%;
+  }
+
+  .servText h2 {
+    width: 170%;
+    font-size: 2.1rem;
+    padding-right: 22.5rem;
+    padding-left: -2.5rem;
   }
 }
