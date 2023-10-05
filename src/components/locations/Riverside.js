@@ -180,6 +180,9 @@ const Riverside = () => {
         image1={emergency}
         image2={business}
       />
+      <Reviews />
+      <Contact />
+      <Footer />
     </section>
   );
 };
