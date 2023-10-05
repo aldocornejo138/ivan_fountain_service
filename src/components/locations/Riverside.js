@@ -124,6 +124,62 @@ const Riverside = () => {
         <img src={img1} alt="Riverside" />
       </div>
 
+      <ServiceSection
+        title="Fountain Installation Riverside"
+        description="One of the best ways to improve the esthetic of your property is
+              by installing a decorative water fountain. Fountains add beautiful
+              character to your courtyard, foyer and many other areas of your
+              home. A fountain is more than just a decoration; it is a
+              functioning piece of art. Fountains have a reputation for the
+              soothing, calming sounds that the running water makes. Water
+              fountains enjoy a long history of construction and use in many
+              cultures all over the world. When you are ready to add a bit of
+              classic beauty to your home with a fountain, Ivan Fountain Service
+              is the first and only call you need to make in Riverside, CA."
+        image1={delivary}
+        image2={Installation}
+      />
+
+      <ServiceSection2
+        title="Fountain Repair Riverside"
+        description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
+              Restoration, Foundations, Concrete Slab, Cracks in Ponds/ Tiers,
+              Removal of old Fountains, Move Fountains to New Location and more."
+        image1={beforeRepair}
+        image2={afterRepair}
+      />
+
+      <ServiceSection
+        title="Fountain Maintenance Riverside"
+        description=" While Fountains are beautiful and a pleasure to own, maintenance
+              can be somewhat labor intensive depending on the particular design
+              of the fountain. This is why Ivan Fountain Service is there for
+              you so that you do not have to waste your valuable time taking
+              care of your Fountain. Because each fountain is unique, one of our
+              Fountain experts must ascertain the specific details of your
+              fountain. Call Ivan Fountain services today to talk to a
+              representative regarding any of your Fountain needs."
+        image1={maintenance}
+        image2={maintenance2}
+      />
+
+      <ServiceSection2
+        title="Fountain Restoration Riverside"
+        description=" Already have a fountain on your property that does not work
+              anymore or is weather worn and looking shabby? Call Ivan Fountain
+              today for a quick estimate on getting that old fountain restored
+              to its original beauty and functionality. Our highly experienced
+              personnel can refinish your old fountain with a wide variety of
+              exquisite finish styles including Rustico, Bronze, Travertine, and
+              Petina. Ivan Fountain Service will resurface your fountain and
+              reseal any old or leaking seams. Some of the materials used to
+              fabricate Water Fountains need to be properly waterproofed. Ivan
+              Fountain Service employees are experts in this procedure. We are
+              thoroughly versed in the installation, operation, and repair of
+              all associated pumps and hoses currently offered by the industry."
+        image1={emergency}
+        image2={business}
+      />
       <Reviews />
       <Contact />
       <Footer />
