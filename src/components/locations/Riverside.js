@@ -101,11 +101,6 @@ const Riverside = () => {
         </div>
       </div>
 
-      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1> Riverside</h1>
-        <p>Southern California’s Premier Fountain Service</p>
-      </div>
-
       <div
         ref={ref}
         className={`imageContainer ${inView ? "zoomIn" : "zoomOut"}`}
