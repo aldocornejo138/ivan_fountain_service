@@ -84,19 +84,21 @@ const Riverside = () => {
         <a className="headNumber" href={phoneLink}>
           {phoneNumber}
         </a>
-        <div className="navbarItems">
-          <div className="navbarLogo">
-            <Link to="/">
-              <img src={IvanLogo} alt="IvanLogo" />
+      </div>
+
+      <div className="navbarItems">
+        <div className="transparent-background"></div>
+        <div className="navbarLogo">
+          <Link to="/">
+            <img src={IvanLogo} alt="IvanLogo" />
+          </Link>
+        </div>
+        <div className="navLinks">
+          <div className="icon-with-text">
+            <Link to="/" className="navMenu">
+              <i className="fas fa-house"></i>
+              <h1>Home</h1>
             </Link>
-          </div>
-          <div className="navLinks">
-            <div className="icon-with-text">
-              <Link to="/" className="navMenu">
-                <i className="fas fa-house"></i>
-                <h1>Home</h1>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
