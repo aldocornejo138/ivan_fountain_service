@@ -101,22 +101,9 @@ const Riverside = () => {
         </div>
       </div>
 
-      <div
-        ref={ref}
-        className={`imageContainer ${inView ? "zoomIn" : "zoomOut"}`}
-      >
-        <br />
-        <p>
-          Ivan Fountain Service has been in business for over 12 years and
-          proudly serves the Riverside, CA area. We offer many services beyond
-          fountain installation. As a result, we are the number one in customer
-          satisfaction for Fountain Maintenance, Repair and Installation
-          Services. Fountain Cleaning and Fountain Repair are our specialty.
-        </p>
-        <br />
-        <br />
-        <br />
-        <img src={img1} alt="Riverside" />
+      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
+        <h1> Riverside</h1>
+        <p>Southern California’s Premier Fountain Service</p>
       </div>
 
       <ServiceSection
