@@ -83,6 +83,7 @@
   height: 175px;
   left: 50%;
   zoom: 120%;
+  overflow-x: hidden;
 }
 
 .headLogo {
