@@ -14,6 +14,8 @@ import { emergency } from "../../assets/index.js";
 import { delivary } from "../../assets/index.js";
 import Reviews from "../reviews/Reviews.js";
 import Contact from "../contact/Contact.js";
+import imageSlide2 from "./locationData.js";
+import { useState, useEffect } from "react";
 
 let img1 =
   "https://ivanfountainservice.com/wp-content/uploads/2016/10/fountain-service-riverside.jpg";
@@ -66,7 +68,29 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
   );
 };
 
-const Riverside = () => {
+const Riverside = (props) => {
+  const [currentState, setCurrentState] = useState(0);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentState === 2) {
+        setCurrentState(0);
+      } else {
+        setCurrentState(currentState + 1);
+      }
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, [currentState]);
+
+  const bgImageStyle = {
+    backgroundImage: `url(${imageSlide2[currentState].url})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    height: "100%",
+    weight: "100%",
+    transition: "background-image 3s ease",
+    borderRadius: "25px",
+  };
+
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
@@ -85,9 +109,12 @@ const Riverside = () => {
           {phoneNumber}
         </a>
       </div>
-
-      <div className="navbarItems">
+      <div className="countinerStyle">
+        <div style={bgImageStyle}></div>
         <div className="transparent-background"></div>
+      </div>
+      <div style={bgImageStyle}></div>
+      <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
             <img src={IvanLogo} alt="IvanLogo" />
