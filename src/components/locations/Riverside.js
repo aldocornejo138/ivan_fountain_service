@@ -72,7 +72,7 @@ const Riverside = (props) => {
   const [currentState, setCurrentState] = useState(0);
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (currentState === 2) {
+      if (currentState === 3) {
         setCurrentState(0);
       } else {
         setCurrentState(currentState + 1);
