@@ -376,4 +376,30 @@ button {
     padding-right: 0rem;
     text-align: center;
   }
+
+  @media screen and (max-width: 420px) {
+    .navbarItems {
+      margin-bottom: 0px;
+      height: 313px;
+      margin-top: -450px;
+    }
+
+    .navbarLogo {
+      padding-top: 10px;
+    }
+
+    .navbarLogo img {
+      height: 30%;
+      width: 40%;
+      margin-left: -150px;
+    }
+
+    .navLinks {
+      font-size: 1.5rem;
+      margin-right: -15px;
+      border-radius: 25px;
+      text-align: center;
+      margin-top: 55px;
+    }
+  }
 }
