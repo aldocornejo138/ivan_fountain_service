@@ -17,6 +17,7 @@ import Elsa from "./Elsa.jpg";
 import Tina from "./Tina.jpg";
 import Tushy from "./Tushy.jpg";
 import William from "./William.jpg";
+import riverside from "./Riverside.jpg";
 
 export { IvanLogo };
 export { afterRepair };
@@ -37,3 +38,4 @@ export { Tina };
 export { Tushy };
 export { William };
 export { Elsa };
+export { riverside };

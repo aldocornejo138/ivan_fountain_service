@@ -16,9 +16,7 @@ import Reviews from "../reviews/Reviews.js";
 import Contact from "../contact/Contact.js";
 import imageSlide2 from "./locationData.js";
 import { useState, useEffect } from "react";
-
-let img1 =
-  "https://ivanfountainservice.com/wp-content/uploads/2016/10/fountain-service-riverside.jpg";
+import { riverside } from "../../assets/index.js";
 
 const phoneNumber = "(951) 837-8384";
 const phoneLink = `tel:${phoneNumber}`;
@@ -150,7 +148,7 @@ const Riverside = (props) => {
         <br />
         <br />
         <br />
-        <img src={img1} alt="Riverside" />
+        <img src={riverside} alt="Riverside" />
       </div>
 
       <ServiceSection
