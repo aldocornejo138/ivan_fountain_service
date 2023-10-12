@@ -17,6 +17,17 @@ import Contact from "../contact/Contact.js";
 import imageSlide2 from "./locationData.js";
 import { useState, useEffect } from "react";
 
+import { sliderImg1 } from "../../assets/index.js";
+import { sliderImg2 } from "../../assets/index.js";
+import { sliderImg3 } from "../../assets/index.js";
+import { sliderImg4 } from "../../assets/index.js";
+import { sliderImg5 } from "../../assets/index.js";
+import { sliderImg6 } from "../../assets/index.js";
+import { sliderImg7 } from "../../assets/index.js";
+import { sliderImg8 } from "../../assets/index.js";
+import { sliderImg9 } from "../../assets/index.js";
+import { sliderImg10 } from "../../assets/index.js";
+
 import "../gallery/Gallery.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -27,23 +38,6 @@ import "swiper/css/effect-coverflow";
 
 const phoneNumber = "(951) 837-8384";
 const phoneLink = `tel:${phoneNumber}`;
-
-let sliderImg1 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/r5qohIuvuipAPasSoL1Yjg/348s.jpg";
-let sliderImg2 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/UKUX1C0wY_aR04MSzAZ5Qg/348s.jpg";
-let sliderImg3 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/x68_neEUwZB9-kLxmpXO3w/348s.jpg";
-let sliderImg4 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/nvk0cSO5fLv7l4wPxH_l-g/348s.jpg";
-let sliderImg5 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/TDEaxHnCyMPs0DKSD3HamQ/348s.jpg";
-let sliderImg6 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/PAbnMPT6E_hQ3VbNsUUPjA/348s.jpg";
-let sliderImg7 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/lYZq2H9YMGy91mtpbyRcIA/348s.jpg";
-let sliderImg8 =
-  "https://s3-media0.fl.yelpcdn.com/bphoto/sLXJ5RpQiCOvWeIUF7rGUQ/348s.jpg";
 
 const ServiceSection = ({ title, description, image1, image2 }) => {
   const { ref, inView } = useInView({
@@ -219,6 +213,12 @@ const Corona = (props) => {
             </SwiperSlide>
             <SwiperSlide>
               <img src={sliderImg8} alt="slide_image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={sliderImg9} alt="slide_image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={sliderImg10} alt="slide_image" />
             </SwiperSlide>
             <div className="slider-controler">
               <div className="swiper-button-prev slider-arrow">

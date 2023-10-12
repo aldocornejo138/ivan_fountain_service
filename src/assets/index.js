@@ -19,6 +19,28 @@ import Tushy from "./Tushy.jpg";
 import William from "./William.jpg";
 import riverside from "./Riverside.jpg";
 
+import sliderImg1 from "./sliderImg1.jpg";
+import sliderImg2 from "./sliderImg2.jpg";
+import sliderImg3 from "./sliderImg3.jpg";
+import sliderImg4 from "./sliderImg4.jpg";
+import sliderImg5 from "./sliderImg5.jpg";
+import sliderImg6 from "./sliderImg6.jpg";
+import sliderImg7 from "./sliderImg7.jpg";
+import sliderImg8 from "./sliderImg8.jpg";
+import sliderImg9 from "./sliderImg9.jpg";
+import sliderImg10 from "./sliderImg10.jpg";
+
+export { sliderImg1 };
+export { sliderImg2 };
+export { sliderImg3 };
+export { sliderImg4 };
+export { sliderImg5 };
+export { sliderImg6 };
+export { sliderImg7 };
+export { sliderImg8 };
+export { sliderImg9 };
+export { sliderImg10 };
+
 export { IvanLogo };
 export { afterRepair };
 export { beforeRepair };
