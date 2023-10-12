@@ -117,7 +117,7 @@
   position: absolute;
   z-index: 999;
   border-radius: 25px;
-  margin-top: -580px;
+  margin-top: -480px;
 }
 
 .countinerStyle {
@@ -135,7 +135,7 @@
 
 .navbarLogo img {
   height: 40%;
-  width: 15%;
+  width: 25%;
   margin-left: -500px;
   z-index: 999;
   margin-top: 50px;
@@ -281,7 +281,7 @@ button {
 }
 
 /* Media query for smaller screens (e.g., mobile) */
-@media (max-width: 950px) {
+@media (max-width: 850px) {
   .background-Main {
     height: auto;
   }
