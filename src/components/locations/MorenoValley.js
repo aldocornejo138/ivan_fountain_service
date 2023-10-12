@@ -84,7 +84,7 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
   );
 };
 
-const Corona = (props) => {
+const MorenoValley = (props) => {
   const [currentState, setCurrentState] = useState(0);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -147,7 +147,7 @@ const Corona = (props) => {
       </div>
 
       <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1> Riverside </h1>
+        <h1>Moreno Valley </h1>
         <p>Southern California’s Premier Fountain Service</p>
       </div>
       <div
@@ -157,7 +157,7 @@ const Corona = (props) => {
         <br />
         <p>
           Ivan Fountain Service has been in business for over 12 years and
-          proudly serves Riverside, CA area. We offer many services beyond
+          proudly serves Moreno Valley, CA area. We offer many services beyond
           fountain installation. As a result, we are the number one in customer
           satisfaction for Fountain Maintenance, Repair and Installation
           Services. Fountain Cleaning and Fountain Repair are our specialty.
@@ -241,7 +241,7 @@ const Corona = (props) => {
       </div>
 
       <ServiceSection
-        title="Fountain Installation Riverside"
+        title="Fountain Installation Moreno Valley"
         description="One of the best ways to improve the esthetic of your property is
               by installing a decorative water fountain. Fountains add beautiful
               character to your courtyard, foyer and many other areas of your
@@ -251,13 +251,13 @@ const Corona = (props) => {
               fountains enjoy a long history of construction and use in many
               cultures all over the world. When you are ready to add a bit of
               classic beauty to your home with a fountain, Ivan Fountain Service
-              is the first and only call you need to make in Riverside, CA."
+              is the first and only call you need to make in Moreno Valley, CA."
         image1={delivary}
         image2={Installation}
       />
 
       <ServiceSection2
-        title="Fountain Repair Riverside"
+        title="Fountain Repair Moreno Valley"
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
               Restoration, Foundations, Concrete Slab, Cracks in Ponds/ Tiers,
               Removal of old Fountains, Move Fountains to New Location and more."
@@ -266,7 +266,7 @@ const Corona = (props) => {
       />
 
       <ServiceSection
-        title="Fountain Maintenance Riverside"
+        title="Fountain Maintenance Moreno Valley"
         description=" While Fountains are beautiful and a pleasure to own, maintenance
               can be somewhat labor intensive depending on the particular design
               of the fountain. This is why Ivan Fountain Service is there for
@@ -280,7 +280,7 @@ const Corona = (props) => {
       />
 
       <ServiceSection2
-        title="Fountain Restoration Riverside"
+        title="Fountain Restoration Moreno Valley"
         description=" Already have a fountain on your property that does not work
               anymore or is weather worn and looking shabby? Call Ivan Fountain
               today for a quick estimate on getting that old fountain restored
@@ -303,4 +303,4 @@ const Corona = (props) => {
   );
 };
 
-export default Corona;
+export default MorenoValley;

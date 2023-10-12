@@ -61,7 +61,12 @@ const Locations = () => {
             >
               {riversideCountyCities.map((city, index) => (
                 // Wrap the city name with a Link component
-                <Link to={`/fountain-service-${city}`} key={index}>
+                <Link
+                  to={`/fountain-service-${city
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  key={index}
+                >
                   <li>
                     <h1>{city}</h1>
                   </li>
@@ -80,7 +85,12 @@ const Locations = () => {
               {sanDiegoCountyCities.map((city, index) => (
                 // Wrap the city name with a Link component
 
-                <Link to={`/fountain-service-${city}`} key={index}>
+                <Link
+                  to={`/fountain-service-${city
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  key={index}
+                >
                   <li>
                     <h1>{city}</h1>
                   </li>
