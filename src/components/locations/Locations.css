@@ -250,7 +250,7 @@ button {
 }
 
 .Services {
-  margin: 1.5rem 2rem;
+  margin: 0rem 2rem;
   background-color: #000000;
   padding: 10px 20px 5px 20px;
   border-radius: 13px;
@@ -268,7 +268,7 @@ button {
 }
 
 .servText h2 {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   color: #0095ff;
   text-align: center;
   width: 98%;
@@ -362,7 +362,7 @@ button {
   }
 
   .Services {
-    margin: 4rem 2rem;
+    margin: 0rem 2rem;
     width: 92%;
   }
 

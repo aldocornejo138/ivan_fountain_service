@@ -173,10 +173,7 @@ const Corona = (props) => {
           ref={ref}
           className={`galleryContainer ${inView ? "zoomIn" : "zoomOut"}`}
         >
-          <div>
-            <br />
-            <br />
-          </div>
+          <div></div>
 
           <Swiper
             effect={"coverflow"}
