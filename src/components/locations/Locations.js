@@ -20,6 +20,9 @@ const Locations = () => {
     "Poway",
     "San Diego",
     "San Marcos",
+    "Rancho Mirage",
+    "Palm Springs",
+    "Indio",
 
     // Add more cities as needed
   ];
@@ -35,6 +38,9 @@ const Locations = () => {
     "Vista",
     "Rancho Santa Fe",
     "FallBrook",
+    "Cathedral City",
+    "Palm Desert",
+    "La Quinta",
     // Add more cities as needed
   ];
 
