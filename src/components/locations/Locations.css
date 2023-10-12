@@ -258,6 +258,12 @@ button {
   border: 0.1px rgb(0, 0, 0) solid;
 }
 
+.firstServ {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .servText {
   width: 50%;
   text-align: start;
@@ -366,6 +372,10 @@ button {
     width: 92%;
   }
 
+  .firstServ {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .servText {
     width: 100%;
   }
