@@ -168,9 +168,7 @@ const Corona = (props) => {
           satisfaction for Fountain Maintenance, Repair and Installation
           Services. Fountain Cleaning and Fountain Repair are our specialty.
         </p>
-        <br />
-        <br />
-        <br />
+
         <div
           ref={ref}
           className={`galleryContainer ${inView ? "zoomIn" : "zoomOut"}`}
