@@ -76,7 +76,14 @@ const Contact = () => {
           ref={ref}
           className={`image-container ${inView ? "zoomInLeft" : "zoomOutLeft"}`}
         >
-          <img src={contact} alt="Contact" />
+          <img
+            src={contact}
+            alt="Contact"
+            title="Ivan Fountain Service Contact"
+            width="2963"
+            height="2661"
+            loading="lazy"
+          />
         </div>
         <div
           ref={ref}

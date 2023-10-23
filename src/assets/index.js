@@ -30,6 +30,28 @@ import sliderImg8 from "./sliderImg8.jpg";
 import sliderImg9 from "./sliderImg9.jpg";
 import sliderImg10 from "./sliderImg10.jpg";
 
+import gallery1 from "./gallery1.jpg";
+import gallery2 from "./gallery2.jpg";
+import gallery3 from "./gallery3.jpg";
+import gallery4 from "./gallery4.jpg";
+import gallery5 from "./gallery5.jpg";
+import gallery6 from "./gallery6.jpg";
+import gallery7 from "./gallery7.jpg";
+import gallery8 from "./gallery8.jpg";
+import gallery9 from "./gallery9.jpg";
+import gallery10 from "./gallery10.jpg";
+
+export { gallery1 };
+export { gallery2 };
+export { gallery3 };
+export { gallery4 };
+export { gallery5 };
+export { gallery6 };
+export { gallery7 };
+export { gallery8 };
+export { gallery9 };
+export { gallery10 };
+
 export { sliderImg1 };
 export { sliderImg2 };
 export { sliderImg3 };

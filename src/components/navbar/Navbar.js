@@ -21,7 +21,14 @@ class Navbar extends Component {
     return (
       <div className="NavbarItems">
         <div className="navbar-logo">
-          <img src={IvanLogo} alt="IvanLogo" />
+          <img
+            src={IvanLogo}
+            alt="IvanLogo"
+            title="Ivan Fountain Service Logo"
+            width="1208"
+            height="1118"
+            loading="eager"
+          />
         </div>
 
         <div className="menu-icons" onClick={this.handleClick}>

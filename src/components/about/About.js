@@ -61,7 +61,14 @@ const About = () => {
               </div>
             </div>
             <div className="about-photo zoomInLeft">
-              <img src={aboutIvan} alt="Ivan" />
+              <img
+                src={aboutIvan}
+                alt="Ivan Cornejo"
+                title=" Ivan Cornejo About"
+                width="1980"
+                length="1920"
+                loading="lazy"
+              />
             </div>
           </div>
         ) : (
@@ -110,7 +117,14 @@ const About = () => {
               </div>
             </div>
             <div className="about-photo zoomOutLeft">
-              <img src={aboutIvan} alt="Ivan" />
+              <img
+                src={aboutIvan}
+                alt="Ivan Cornejo"
+                title=" Ivan Cornejo About"
+                width="1980"
+                height="1920"
+                loading="lazy"
+              />
             </div>
           </div>
         )}

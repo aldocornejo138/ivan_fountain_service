@@ -36,10 +36,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
+import { Helmet } from "react-helmet-async";
+
 const phoneNumber = "(951) 837-8384";
 const phoneLink = `tel:${phoneNumber}`;
 
-const ServiceSection = ({ title, description, image1, image2 }) => {
+const ServiceSection = ({
+  title,
+  description,
+  image1,
+  image2,
+  alt1,
+  alt2,
+  height1,
+  width1,
+  height2,
+  width2,
+  Title1,
+  Title2,
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
@@ -48,8 +63,22 @@ const ServiceSection = ({ title, description, image1, image2 }) => {
     <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
       <div className="firstServ">
         <div className="image">
-          <img alt="img" src={image1} />
-          <img alt="img" src={image2} />
+          <img
+            alt={alt1}
+            src={image1}
+            width={width1}
+            height={height1}
+            title={Title1}
+            loading="lazy"
+          />
+          <img
+            alt={alt2}
+            src={image2}
+            width={width2}
+            height={height2}
+            title={Title2}
+            loading="lazy"
+          />
         </div>
         <div className="servText">
           <h2>{title}</h2>
@@ -61,7 +90,20 @@ const ServiceSection = ({ title, description, image1, image2 }) => {
   );
 };
 
-const ServiceSection2 = ({ title, description, image1, image2 }) => {
+const ServiceSection2 = ({
+  title,
+  description,
+  image1,
+  image2,
+  alt1,
+  alt2,
+  height1,
+  width1,
+  height2,
+  width2,
+  Title1,
+  Title2,
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
@@ -70,8 +112,22 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
     <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
       <div className="firstServ">
         <div className="image">
-          <img alt="img" src={image1} />
-          <img alt="img" src={image2} />
+          <img
+            alt={alt1}
+            src={image1}
+            width={width1}
+            height={height1}
+            title={Title1}
+            loading="lazy"
+          />
+          <img
+            alt={alt2}
+            src={image2}
+            width={width2}
+            height={height2}
+            title={Title2}
+            loading="lazy"
+          />
         </div>
         <div className="servText">
           <h2>{title}</h2>
@@ -113,6 +169,15 @@ const Temecula = (props) => {
 
   return (
     <section className="app">
+      <Helmet>
+        <title>Temecula Fountain Service</title>
+        <meta
+          name="description"
+          content="Ivan Fountain Service has been in business for over 12 years and proudly serves Temecula, CA area."
+        />
+        <link rel="canonical" href="/fountain-service-Temecula" />
+      </Helmet>
+
       <div className="head">
         <Link
           to="/"
@@ -133,7 +198,14 @@ const Temecula = (props) => {
       <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
-            <img src={IvanLogo} alt="IvanLogo" />
+            <img
+              src={IvanLogo}
+              alt="IvanLogo"
+              title="Ivan Fountain Service Logo"
+              width="1208"
+              height="1118"
+              loading="eager"
+            />
           </Link>
         </div>
         <div className="navLinks">
@@ -191,34 +263,104 @@ const Temecula = (props) => {
             className="swiper_container"
           >
             <SwiperSlide>
-              <img src={sliderImg1} alt="slide_image" />
+              <img
+                src={sliderImg1}
+                alt="Temecula Fountain Service"
+                title="Temecula Fountain Service"
+                width="624"
+                height="831"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg2} alt="slide_image" />
+              <img
+                src={sliderImg2}
+                alt="Temecula Fountain Maintenance"
+                title="Temecula Fountain Maintenance"
+                width="715"
+                height="939"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg3} alt="slide_image" />
+              <img
+                src={sliderImg3}
+                alt="Temecula Fountain Installation"
+                title="Temecula Fountain Installation"
+                width="594"
+                height="787"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg4} alt="slide_image" />
+              <img
+                src={sliderImg4}
+                alt="Temecula Fountain Repair"
+                title="Temecula Fountain Repair"
+                width="786"
+                height="987"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg5} alt="slide_image" />
+              <img
+                src={sliderImg5}
+                alt="Temecula Fountain Restoration"
+                title="Temecula Fountain Restoration"
+                width="611"
+                height="798"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg6} alt="slide_image" />
+              <img
+                src={sliderImg6}
+                alt="Temecula Fountain Delivary"
+                title="Temecula Fountain Delivary"
+                width="781"
+                height="1033"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg7} alt="slide_image" />
+              <img
+                src={sliderImg7}
+                alt="Temecula Fountain Replacement"
+                title="Temecula Fountain Replacement"
+                width="1366"
+                height="1764"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg8} alt="slide_image" />
+              <img
+                src={sliderImg8}
+                alt="Temecula Fountain Contractor"
+                title="Temecula Fountain Contractor"
+                width="757"
+                height="995"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg9} alt="slide_image" />
+              <img
+                src={sliderImg9}
+                alt="Temecula CA Fountain Maintenance"
+                title="Temecula CA Fountain Maintenance"
+                width="600"
+                height="775"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg10} alt="slide_image" />
+              <img
+                src={sliderImg10}
+                alt="Temecula CA Fountain Installation"
+                title="Temecula CA Fountain Installation"
+                width="755"
+                height="995"
+                loading="lazy"
+              />
             </SwiperSlide>
             <div className="slider-controler">
               <div className="swiper-button-prev slider-arrow">
@@ -254,6 +396,14 @@ const Temecula = (props) => {
               is the first and only call you need to make in Temecula, CA."
         image1={delivary}
         image2={Installation}
+        alt1="Temecula Fountain Delivery"
+        alt2="Temecula Fountain Installation"
+        width1="1500"
+        height1="2000"
+        width2="1500"
+        height2="2000"
+        Title1="Temecula Fountain Installation"
+        Title2="Temecula CA Fountain Delivery"
       />
 
       <ServiceSection2
@@ -263,6 +413,14 @@ const Temecula = (props) => {
               Removal of old Fountains, Move Fountains to New Location and more."
         image1={beforeRepair}
         image2={afterRepair}
+        alt1="Temecula Fountain Repair"
+        alt2="Temecula Ca Fountain Repair"
+        width1="1029"
+        height1="1831"
+        width2="2048"
+        height2="2506"
+        Title1="Temecula Fountain Repair"
+        Title2="Temecula CA Fountain Repair"
       />
 
       <ServiceSection
@@ -277,6 +435,14 @@ const Temecula = (props) => {
               representative regarding any of your Fountain needs."
         image1={maintenance}
         image2={maintenance2}
+        alt1="Temecula Fountain Maintenance"
+        alt2="Temecula CA Fountain Maintenance"
+        width1="1440"
+        height1="1920"
+        width2="1500"
+        height2="2000"
+        Title1="Temecula Fountain Maintenance"
+        Title2="Temecula CA Fountain Maintenance"
       />
 
       <ServiceSection2
@@ -295,6 +461,14 @@ const Temecula = (props) => {
               all associated pumps and hoses currently offered by the industry."
         image1={emergency}
         image2={business}
+        alt1="Temecula Fountain Restoration"
+        alt2="Temecula Fountain Restoration"
+        width1="1150"
+        height1="2048"
+        width2="1474"
+        height2="2394"
+        Title1="Temecula Fountain Restoration"
+        Title2="Temecula CA Fountain Restoration"
       />
       <Reviews />
       <Contact />

@@ -44,6 +44,8 @@ const Reviews = () => {
       name: "Ken W.",
       image: Ken,
       city: "San Diego",
+      width: 2000,
+      height: 1498,
       rating: 5,
       date: "August 13, 2023",
       comment:
@@ -54,6 +56,8 @@ const Reviews = () => {
       name: "Cinder P.",
       image: Cinder,
       city: "FallBrook, CA",
+      width: 120,
+      height: 120,
       rating: 5,
       date: "July 26, 2023",
       comment:
@@ -65,6 +69,8 @@ const Reviews = () => {
       image:
         "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png",
       city: "Murrieta, CA",
+      width: "60",
+      height: "60",
       rating: 5,
       date: "July 13, 2023",
       comment:
@@ -174,7 +180,14 @@ const Reviews = () => {
                   inView ? "zoomInLeft" : "zoomOutLeft"
                 }`}
               >
-                <img src={`${review.image}`} alt={`${review.name}'s profile`} />
+                <img
+                  src={`${review.image}`}
+                  alt={`${review.name}'s Review of Ivan Fountain Service`}
+                  title={`${review.name}'s Review of Ivan Fountain Service`}
+                  width={review.width}
+                  height={review.height}
+                  loading="lazy"
+                />
               </div>
               <div
                 className={`review-header ${

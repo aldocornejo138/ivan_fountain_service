@@ -36,10 +36,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
+import { Helmet } from "react-helmet-async";
+
 const phoneNumber = "(951) 837-8384";
 const phoneLink = `tel:${phoneNumber}`;
 
-const ServiceSection = ({ title, description, image1, image2 }) => {
+const ServiceSection = ({
+  title,
+  description,
+  image1,
+  image2,
+  alt1,
+  alt2,
+  height1,
+  width1,
+  height2,
+  width2,
+  Title1,
+  Title2,
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
@@ -48,8 +63,22 @@ const ServiceSection = ({ title, description, image1, image2 }) => {
     <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
       <div className="firstServ">
         <div className="image">
-          <img alt="img" src={image1} />
-          <img alt="img" src={image2} />
+          <img
+            alt={alt1}
+            src={image1}
+            width={width1}
+            height={height1}
+            title={Title1}
+            loading="lazy"
+          />
+          <img
+            alt={alt2}
+            src={image2}
+            width={width2}
+            height={height2}
+            title={Title2}
+            loading="lazy"
+          />
         </div>
         <div className="servText">
           <h2>{title}</h2>
@@ -61,7 +90,20 @@ const ServiceSection = ({ title, description, image1, image2 }) => {
   );
 };
 
-const ServiceSection2 = ({ title, description, image1, image2 }) => {
+const ServiceSection2 = ({
+  title,
+  description,
+  image1,
+  image2,
+  alt1,
+  alt2,
+  height1,
+  width1,
+  height2,
+  width2,
+  Title1,
+  Title2,
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
@@ -70,8 +112,22 @@ const ServiceSection2 = ({ title, description, image1, image2 }) => {
     <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
       <div className="firstServ">
         <div className="image">
-          <img alt="img" src={image1} />
-          <img alt="img" src={image2} />
+          <img
+            alt={alt1}
+            src={image1}
+            width={width1}
+            height={height1}
+            title={Title1}
+            loading="lazy"
+          />
+          <img
+            alt={alt2}
+            src={image2}
+            width={width2}
+            height={height2}
+            title={Title2}
+            loading="lazy"
+          />
         </div>
         <div className="servText">
           <h2>{title}</h2>
@@ -113,6 +169,15 @@ const Corona = (props) => {
 
   return (
     <section className="app">
+      <Helmet>
+        <title>Corona Fountain Service</title>
+        <meta
+          name="description"
+          content="Ivan Fountain Service has been in business for over 12 years and proudly serves Corona, CA area."
+        />
+        <link rel="canonical" href="/fountain-service-Corona" />
+      </Helmet>
+
       <div className="head">
         <Link
           to="/"
@@ -133,7 +198,14 @@ const Corona = (props) => {
       <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
-            <img src={IvanLogo} alt="IvanLogo" />
+            <img
+              src={IvanLogo}
+              alt="IvanLogo"
+              title="Ivan Fountain Service Logo"
+              width="1208"
+              height="1118"
+              loading="eager"
+            />
           </Link>
         </div>
         <div className="navLinks">
@@ -147,7 +219,7 @@ const Corona = (props) => {
       </div>
 
       <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1> Corona </h1>
+        <h1> Corona</h1>
         <p>Southern California’s Premier Fountain Service</p>
       </div>
       <div
@@ -191,34 +263,104 @@ const Corona = (props) => {
             className="swiper_container"
           >
             <SwiperSlide>
-              <img src={sliderImg1} alt="slide_image" />
+              <img
+                src={sliderImg1}
+                alt="Corona Fountain Service"
+                title="Corona Fountain Service"
+                width="624"
+                height="831"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg2} alt="slide_image" />
+              <img
+                src={sliderImg2}
+                alt="Corona Fountain Maintenance"
+                title="Corona Fountain Maintenance"
+                width="715"
+                height="939"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg3} alt="slide_image" />
+              <img
+                src={sliderImg3}
+                alt="Corona Fountain Installation"
+                title="Corona Fountain Installation"
+                width="594"
+                height="787"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg4} alt="slide_image" />
+              <img
+                src={sliderImg4}
+                alt="Corona Fountain Repair"
+                title="Corona Fountain Repair"
+                width="786"
+                height="987"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg5} alt="slide_image" />
+              <img
+                src={sliderImg5}
+                alt="Corona Fountain Restoration"
+                title="Corona Fountain Restoration"
+                width="611"
+                height="798"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg6} alt="slide_image" />
+              <img
+                src={sliderImg6}
+                alt="Corona Fountain Delivary"
+                title="Corona Fountain Delivary"
+                width="781"
+                height="1033"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg7} alt="slide_image" />
+              <img
+                src={sliderImg7}
+                alt="Corona Fountain Replacement"
+                title="Corona Fountain Replacement"
+                width="1366"
+                height="1764"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg8} alt="slide_image" />
+              <img
+                src={sliderImg8}
+                alt="Corona Fountain Contractor"
+                title="Corona Fountain Contractor"
+                width="757"
+                height="995"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg9} alt="slide_image" />
+              <img
+                src={sliderImg9}
+                alt="Corona CA Fountain Maintenance"
+                title="Corona CA Fountain Maintenance"
+                width="600"
+                height="775"
+                loading="lazy"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={sliderImg10} alt="slide_image" />
+              <img
+                src={sliderImg10}
+                alt="Corona CA Fountain Installation"
+                title="Corona CA Fountain Installation"
+                width="755"
+                height="995"
+                loading="lazy"
+              />
             </SwiperSlide>
             <div className="slider-controler">
               <div className="swiper-button-prev slider-arrow">
@@ -254,6 +396,14 @@ const Corona = (props) => {
               is the first and only call you need to make in Corona, CA."
         image1={delivary}
         image2={Installation}
+        alt1="Corona Fountain Delivery"
+        alt2="Corona Fountain Installation"
+        width1="1500"
+        height1="2000"
+        width2="1500"
+        height2="2000"
+        Title1="Corona Fountain Installation"
+        Title2="Corona CA Fountain Delivery"
       />
 
       <ServiceSection2
@@ -263,6 +413,14 @@ const Corona = (props) => {
               Removal of old Fountains, Move Fountains to New Location and more."
         image1={beforeRepair}
         image2={afterRepair}
+        alt1="Corona Fountain Repair"
+        alt2="Corona Ca Fountain Repair"
+        width1="1029"
+        height1="1831"
+        width2="2048"
+        height2="2506"
+        Title1="Corona Fountain Repair"
+        Title2="Corona CA Fountain Repair"
       />
 
       <ServiceSection
@@ -277,6 +435,14 @@ const Corona = (props) => {
               representative regarding any of your Fountain needs."
         image1={maintenance}
         image2={maintenance2}
+        alt1="Corona Fountain Maintenance"
+        alt2="Corona CA Fountain Maintenance"
+        width1="1440"
+        height1="1920"
+        width2="1500"
+        height2="2000"
+        Title1="Corona Fountain Maintenance"
+        Title2="Corona CA Fountain Maintenance"
       />
 
       <ServiceSection2
@@ -295,6 +461,14 @@ const Corona = (props) => {
               all associated pumps and hoses currently offered by the industry."
         image1={emergency}
         image2={business}
+        alt1="Corona Fountain Restoration"
+        alt2="Corona Fountain Restoration"
+        width1="1150"
+        height1="2048"
+        width2="1474"
+        height2="2394"
+        Title1="Corona Fountain Restoration"
+        Title2="Corona CA Fountain Restoration"
       />
       <Reviews />
       <Contact />
