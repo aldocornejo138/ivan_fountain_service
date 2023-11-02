@@ -305,13 +305,15 @@ button {
   .navbarItems {
     margin-bottom: 0px;
     height: 0px;
-    margin-top: -305px;
+    margin-top: -375px;
+    padding: 15px 15px 15px 15px;
   }
 
   .navbarLogo {
-    padding-top: 0px;
+    font-size: 0rem;
+    cursor: pointer;
+    margin-top: 100px;
   }
-
   .navbarLogo img {
     height: 10%;
     width: 40%;
