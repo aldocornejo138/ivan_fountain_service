@@ -75,7 +75,7 @@ function App() {
         <Route path="/fountain-service-carlsbad" element={<Carlsbad />} />
         <Route path="/fountain-service-chula-vista" element={<ChulaVista />} />
         <Route path="/fountain-service-el-cajon" element={<ElCajon />} />
-        <Route path="/fountain-service-encinitas" element={<Encinitas />} />
+        <Route path="/fountains-encinitas" element={<Encinitas />} />
         <Route path="/fountain-service-murrieta" element={<Murrieta />} />
         <Route
           path="/fountain-service-french-valley"
