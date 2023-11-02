@@ -58,12 +58,9 @@ function App() {
           element={<PalmSprings />}
         />
         <Route path="/fountain-service-oceanside" element={<Oceanside />} />
-        <Route path="/fountain-service-vista" element={<Vista />} />
+        <Route path="/fountain-service-vista-ca" element={<Vista />} />
         <Route path="/fountain-service-indio" element={<Indio />} />
-        <Route
-          path="/fountain-service-rancho-santa-fe"
-          element={<RanchoSantaFe />}
-        />
+        <Route path="/rancho-santa-fe" element={<RanchoSantaFe />} />
         <Route path="/fountain-service-fallbrook" element={<FallBrook />} />
         <Route
           path="/fountain-service-cathedral-city"
@@ -73,7 +70,7 @@ function App() {
         <Route path="/fountain-service-la-quinta" element={<LaQuinta />} />
         <Route path="/fountain-service-escondido" element={<Escondido />} />
         <Route path="/fountain-service-carlsbad" element={<Carlsbad />} />
-        <Route path="/fountain-service-chula-vista" element={<ChulaVista />} />
+        <Route path="/outdoor-fountains-chula-vista" element={<ChulaVista />} />
         <Route path="/fountain-service-el-cajon" element={<ElCajon />} />
         <Route path="/fountains-encinitas" element={<Encinitas />} />
         <Route path="/fountain-service-murrieta" element={<Murrieta />} />
