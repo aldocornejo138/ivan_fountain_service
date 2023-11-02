@@ -140,7 +140,7 @@ const ServiceSection2 = ({
   );
 };
 
-const Encinitas = (props) => {
+const Murrieta = (props) => {
   const [currentState, setCurrentState] = useState(0);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -170,12 +170,16 @@ const Encinitas = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Fountain Service Encinitas - Ivan Fountain Service</title>
+        <title>Fountain Service Murrieta - Ivan Fountain Service </title>
         <meta
           name="description"
-          content="Ivan Fountain Service has been in business for over 12 years and proudly serves Encinitas, CA area."
+          content="Ivan Fountain Service has been in business for over 12 years and proudly serves Murrieta, CA area."
         />
-        <link rel="canonical" href="/fountain-service-Encinitas" />
+        <meta
+          name="keywords"
+          content="Fountain Contractor Murrieta, Fountain Contractor Murrieta CA, Fountain Contractors Murrieta, Fountain Contractors Murrieta CA, Fountain Delivery Murrieta, Fountain Delivery Murrieta CA, Fountain Install Murrieta, Fountain Install Murrieta CA, Fountain Installation Murrieta, Fountain Installation Murrieta CA, Fountain Maintenance Murrieta, Fountain Maintenance Murrieta CA, Fountain Service Murrieta, Fountain Service Murrieta CA, Fountain Services Murrieta, Fountain Services Murrieta CA, Home and Garden Maintenance Murrieta, Home and Garden Maintenance Murrieta CA, Waterfalls Murrieta, Waterfalls Murrieta CA"
+        />
+        <link rel="canonical" href="/fountain-service-Murrieta" />
       </Helmet>
 
       <div className="head">
@@ -219,7 +223,7 @@ const Encinitas = (props) => {
       </div>
 
       <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1> Encinitas</h1>
+        <h1> Murrieta</h1>
         <p>Southern California’s Premier Fountain Service</p>
       </div>
       <div
@@ -229,7 +233,7 @@ const Encinitas = (props) => {
         <br />
         <p>
           Ivan Fountain Service has been in business for over 12 years and
-          proudly serves Encinitas, CA area. We offer many services beyond
+          proudly serves Murrieta, CA area. We offer many services beyond
           fountain installation. As a result, we are the number one in customer
           satisfaction for Fountain Maintenance, Repair and Installation
           Services. Fountain Cleaning and Fountain Repair are our specialty.
@@ -265,8 +269,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg1}
-                alt="Encinitas Fountain Service"
-                title="Encinitas Fountain Service"
+                alt="Murrieta Fountain Service"
+                title="Murrieta Fountain Service"
                 width="624"
                 height="831"
                 loading="lazy"
@@ -275,8 +279,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg2}
-                alt="Encinitas Fountain Maintenance"
-                title="Encinitas Fountain Maintenance"
+                alt="Murrieta Fountain Maintenance"
+                title="Murrieta Fountain Maintenance"
                 width="715"
                 height="939"
                 loading="lazy"
@@ -285,8 +289,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg3}
-                alt="Encinitas Fountain Installation"
-                title="Encinitas Fountain Installation"
+                alt="Murrieta Fountain Installation"
+                title="Murrieta Fountain Installation"
                 width="594"
                 height="787"
                 loading="lazy"
@@ -295,8 +299,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg4}
-                alt="Encinitas Fountain Repair"
-                title="Encinitas Fountain Repair"
+                alt="Murrieta Fountain Repair"
+                title="Murrieta Fountain Repair"
                 width="786"
                 height="987"
                 loading="lazy"
@@ -305,8 +309,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg5}
-                alt="Encinitas Fountain Restoration"
-                title="Encinitas Fountain Restoration"
+                alt="Murrieta Fountain Restoration"
+                title="Murrieta Fountain Restoration"
                 width="611"
                 height="798"
                 loading="lazy"
@@ -315,8 +319,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg6}
-                alt="Encinitas Fountain Delivary"
-                title="Encinitas Fountain Delivary"
+                alt="Murrieta Fountain Delivary"
+                title="Murrieta Fountain Delivary"
                 width="781"
                 height="1033"
                 loading="lazy"
@@ -325,8 +329,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg7}
-                alt="Encinitas Fountain Replacement"
-                title="Encinitas Fountain Replacement"
+                alt="Murrieta Fountain Replacement"
+                title="Murrieta Fountain Replacement"
                 width="1366"
                 height="1764"
                 loading="lazy"
@@ -335,8 +339,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg8}
-                alt="Encinitas Fountain Contractor"
-                title="Encinitas Fountain Contractor"
+                alt="Murrieta Fountain Contractor"
+                title="Murrieta Fountain Contractor"
                 width="757"
                 height="995"
                 loading="lazy"
@@ -345,8 +349,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg9}
-                alt="Encinitas CA Fountain Maintenance"
-                title="Encinitas CA Fountain Maintenance"
+                alt="Murrieta CA Fountain Maintenance"
+                title="Murrieta CA Fountain Maintenance"
                 width="600"
                 height="775"
                 loading="lazy"
@@ -355,8 +359,8 @@ const Encinitas = (props) => {
             <SwiperSlide>
               <img
                 src={sliderImg10}
-                alt="Encinitas CA Fountain Installation"
-                title="Encinitas CA Fountain Installation"
+                alt="Murrieta CA Fountain Installation"
+                title="Murrieta CA Fountain Installation"
                 width="755"
                 height="995"
                 loading="lazy"
@@ -383,7 +387,7 @@ const Encinitas = (props) => {
       </div>
 
       <ServiceSection
-        title="Fountain Installation Encinitas"
+        title="Fountain Installation Murrieta"
         description="One of the best ways to improve the esthetic of your property is
               by installing a decorative water fountain. Fountains add beautiful
               character to your courtyard, foyer and many other areas of your
@@ -393,38 +397,38 @@ const Encinitas = (props) => {
               fountains enjoy a long history of construction and use in many
               cultures all over the world. When you are ready to add a bit of
               classic beauty to your home with a fountain, Ivan Fountain Service
-              is the first and only call you need to make in Encinitas, CA."
+              is the first and only call you need to make in Murrieta, CA."
         image1={delivary}
         image2={Installation}
-        alt1="Encinitas Fountain Delivery"
-        alt2="Encinitas Fountain Installation"
+        alt1="Murrieta Fountain Delivery"
+        alt2="Murrieta Fountain Installation"
         width1="1500"
         height1="2000"
         width2="1500"
         height2="2000"
-        Title1="Encinitas Fountain Installation"
-        Title2="Encinitas CA Fountain Delivery"
+        Title1="Murrieta Fountain Installation"
+        Title2="Murrieta CA Fountain Delivery"
       />
 
       <ServiceSection2
-        title="Fountain Repair Encinitas"
+        title="Fountain Repair Murrieta"
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
               Restoration, Foundations, Concrete Slab, Cracks in Ponds/ Tiers,
               Removal of old Fountains, Move Fountains to New Location and more."
         image1={beforeRepair}
         image2={afterRepair}
-        alt1="Encinitas Fountain Repair"
-        alt2="Encinitas Ca Fountain Repair"
+        alt1="Murrieta Fountain Repair"
+        alt2="Murrieta Ca Fountain Repair"
         width1="1029"
         height1="1831"
         width2="2048"
         height2="2506"
-        Title1="Encinitas Fountain Repair"
-        Title2="Encinitas CA Fountain Repair"
+        Title1="Murrieta Fountain Repair"
+        Title2="Murrieta CA Fountain Repair"
       />
 
       <ServiceSection
-        title="Fountain Maintenance Encinitas"
+        title="Fountain Maintenance Murrieta"
         description=" While Fountains are beautiful and a pleasure to own, maintenance
               can be somewhat labor intensive depending on the particular design
               of the fountain. This is why Ivan Fountain Service is there for
@@ -435,18 +439,18 @@ const Encinitas = (props) => {
               representative regarding any of your Fountain needs."
         image1={maintenance}
         image2={maintenance2}
-        alt1="Encinitas Fountain Maintenance"
-        alt2="Encinitas CA Fountain Maintenance"
+        alt1="Murrieta Fountain Maintenance"
+        alt2="Murrieta CA Fountain Maintenance"
         width1="1440"
         height1="1920"
         width2="1500"
         height2="2000"
-        Title1="Encinitas Fountain Maintenance"
-        Title2="Encinitas CA Fountain Maintenance"
+        Title1="Murrieta Fountain Maintenance"
+        Title2="Murrieta CA Fountain Maintenance"
       />
 
       <ServiceSection2
-        title="Fountain Restoration Encinitas"
+        title="Fountain Restoration Murrieta"
         description=" Already have a fountain on your property that does not work
               anymore or is weather worn and looking shabby? Call Ivan Fountain
               today for a quick estimate on getting that old fountain restored
@@ -461,14 +465,14 @@ const Encinitas = (props) => {
               all associated pumps and hoses currently offered by the industry."
         image1={emergency}
         image2={business}
-        alt1="Encinitas Fountain Restoration"
-        alt2="Encinitas Fountain Restoration"
+        alt1="Murrieta Fountain Restoration"
+        alt2="Murrieta Fountain Restoration"
         width1="1150"
         height1="2048"
         width2="1474"
         height2="2394"
-        Title1="Encinitas Fountain Restoration"
-        Title2="Encinitas CA Fountain Restoration"
+        Title1="Murrieta Fountain Restoration"
+        Title2="Murrieta CA Fountain Restoration"
       />
       <Reviews />
       <Contact />
@@ -477,4 +481,4 @@ const Encinitas = (props) => {
   );
 };
 
-export default Encinitas;
+export default Murrieta;

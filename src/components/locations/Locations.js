@@ -23,6 +23,7 @@ const Locations = () => {
     "Rancho Mirage",
     "Palm Springs",
     "Indio",
+    "Murrieta",
 
     // Add more cities as needed
   ];
@@ -41,6 +42,7 @@ const Locations = () => {
     "Cathedral City",
     "Palm Desert",
     "La Quinta",
+    "French Valley",
     // Add more cities as needed
   ];
 

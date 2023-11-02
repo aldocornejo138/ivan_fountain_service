@@ -25,6 +25,8 @@ import FallBrook from "./components/locations/FallBrooke.js";
 import CathedralCity from "./components/locations/CathedralCity.js";
 import PalmDesert from "./components/locations/PalmDesert.js";
 import LaQuinta from "./components/locations/LaQuinta.js";
+import Murrieta from "./components/locations/Murrieta.js";
+import FrenchValley from "./components/locations/FrenchValley.js";
 
 function App() {
   return (
@@ -73,7 +75,12 @@ function App() {
         <Route path="/fountain-service-carlsbad" element={<Carlsbad />} />
         <Route path="/fountain-service-chula-vista" element={<ChulaVista />} />
         <Route path="/fountain-service-el-cajon" element={<ElCajon />} />
-        <Route path="/fountain-service-Encinitas" element={<Encinitas />} />
+        <Route path="/fountain-service-encinitas" element={<Encinitas />} />
+        <Route path="/fountain-service-murrieta" element={<Murrieta />} />
+        <Route
+          path="/fountain-service-french-valley"
+          element={<FrenchValley />}
+        />
       </Routes>
     </div>
   );

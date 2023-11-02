@@ -170,7 +170,7 @@ const ChulaVista = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Chula Vista Fountain Service</title>
+        <title>Fountain Service Chula Vista- Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Chula Vista, CA area."

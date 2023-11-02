@@ -170,7 +170,7 @@ const MorenoValley = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Moreno Valley Fountain Service</title>
+        <title>Fountain Service Moreno Valley - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Moreno Valley, CA area."

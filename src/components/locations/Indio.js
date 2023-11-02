@@ -170,7 +170,7 @@ const Indio = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Indio Fountain Service</title>
+        <title>Fountain Service Indio - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Indio, CA area."

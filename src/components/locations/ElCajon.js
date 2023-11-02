@@ -170,7 +170,7 @@ const ElCajon = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>El Cajon Fountain Service</title>
+        <title>Fountain Service El Cajon - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves El Cajon, CA area."

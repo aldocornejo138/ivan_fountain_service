@@ -170,7 +170,7 @@ const Corona = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Corona Fountain Service</title>
+        <title>Fountain Service Corona - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Corona, CA area."

@@ -170,7 +170,7 @@ const SanDiego = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>San Diego Fountain Service</title>
+        <title>Fountain Service San Diego - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves San Diego, CA area."

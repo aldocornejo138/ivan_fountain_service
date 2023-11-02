@@ -170,10 +170,14 @@ const Carlsbad = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>CarlsBad Fountain Service</title>
+        <title>Fountain Service Carlsbad - Ivan Fountain Service </title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Carlsbad, CA area."
+        />
+        <meta
+          name="keywords"
+          content="Fountain Contractor Carlsbad, Fountain Contractor Carlsbad CA, Fountain Contractors Carlsbad, Fountain Contractors Carlsbad CA, Fountain Delivery Carlsbad, Fountain Delivery Carlsbad CA, Fountain Install Carlsbad, Fountain Install Carlsbad CA, Fountain Installation Carlsbad, Fountain Installation Carlsbad CA, Fountain Maintenance Carlsbad, Fountain Maintenance Carlsbad CA, Fountain Service Carlsbad, Fountain Service Carlsbad CA, Fountain Services Carlsbad, Fountain Services Carlsbad CA, Home and Garden Maintenance Carlsbad, Home and Garden Maintenance Carlsbad CA, Waterfalls Carlsbad, Waterfalls Carlsbad CA"
         />
         <link rel="canonical" href="/fountain-service-carlsbad" />
       </Helmet>

@@ -170,7 +170,7 @@ const Hemet = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Hemet Fountain Service</title>
+        <title>Fountain Service Hemet - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Hemet, CA area."

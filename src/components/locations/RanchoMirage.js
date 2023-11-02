@@ -170,7 +170,7 @@ const RanchoMirage = (props) => {
   return (
     <section className="app">
       <Helmet>
-        <title>Rancho Mirage Fountain Service</title>
+        <title>Fountain Service Rancho Mirage - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Rancho Mirage, CA area."
