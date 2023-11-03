@@ -415,3 +415,49 @@ button {
     }
   }
 }
+
+@media screen and (min-width: 850px) and (max-width: 1580px) {
+  .navbarItems {
+    margin-bottom: 0px;
+    height: 0px;
+    margin-top: -275px;
+    padding: 15px 15px 15px 15px;
+  }
+
+  .navbarLogo {
+    font-size: 0rem;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+  .navbarLogo img {
+    height: 10%;
+    width: 20%;
+    margin-left: -430px;
+  }
+
+  .navLinks {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 55px;
+  }
+
+  .navLinks i {
+    text-decoration: none;
+    color: #39baff;
+    text-align: center;
+    padding-right: 5px;
+  }
+
+  .icon-with-text i {
+    margin-right: 0px;
+    text-align: center;
+    width: auto;
+  }
+
+  .icon-with-text h1 {
+    text-align: center;
+    width: 35px;
+  }
+}
