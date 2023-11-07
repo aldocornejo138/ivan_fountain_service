@@ -145,7 +145,7 @@ const Contact = () => {
               />
             </div>
             <div className="">
-              <h1 className="">Message</h1>
+              <h1 className="">Message (Please Include Your City)</h1>
               <textarea
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
