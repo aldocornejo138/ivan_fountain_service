@@ -27,6 +27,7 @@ import PalmDesert from "./components/locations/PalmDesert.js";
 import LaQuinta from "./components/locations/LaQuinta.js";
 import Murrieta from "./components/locations/Murrieta.js";
 import FrenchValley from "./components/locations/FrenchValley.js";
+import Menifee from "./components/locations/Menifee.js";
 
 function App() {
   return (
@@ -86,6 +87,7 @@ function App() {
           path="/fountain-service-french-valley"
           element={<FrenchValley />}
         />
+        <Route path="/fountain-service-Menifee" element={<Menifee />} />
       </Routes>
     </div>
   );

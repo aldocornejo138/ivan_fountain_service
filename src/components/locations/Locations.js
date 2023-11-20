@@ -43,6 +43,7 @@ const Locations = () => {
     "Palm Desert",
     "La Quinta",
     "French Valley",
+    "Menifee",
     // Add more cities as needed
   ];
 
