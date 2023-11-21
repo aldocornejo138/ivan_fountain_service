@@ -28,6 +28,11 @@ import LaQuinta from "./components/locations/LaQuinta.js";
 import Murrieta from "./components/locations/Murrieta.js";
 import FrenchValley from "./components/locations/FrenchValley.js";
 import Menifee from "./components/locations/Menifee.js";
+import Wildomar from "./components/locations/Wildomar.js";
+import LosAngeles from "./components/locations/LosAngeles.js";
+import SantaAna from "./components/locations/SantaAna.js";
+import Irvine from "./components/locations/Irvine.js";
+import Anaheim from "./components/locations/Anaheim.js";
 
 function App() {
   return (
@@ -87,7 +92,12 @@ function App() {
           path="/fountain-service-french-valley"
           element={<FrenchValley />}
         />
-        <Route path="/fountain-service-Menifee" element={<Menifee />} />
+        <Route path="/fountain-service-menifee" element={<Menifee />} />
+        <Route path="/fountain-service-wildomar" element={<Wildomar />} />
+        <Route path="/fountain-service-los-angeles" element={<LosAngeles />} />
+        <Route path="/fountain-service-santa-ana" element={<SantaAna />} />
+        <Route path="/fountain-service-irvine" element={<Irvine />} />
+        <Route path="/fountain-service-anaheim" element={<Anaheim />} />
       </Routes>
     </div>
   );

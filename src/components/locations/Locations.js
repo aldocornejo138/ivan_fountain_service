@@ -24,6 +24,9 @@ const Locations = () => {
     "Palm Springs",
     "Indio",
     "Murrieta",
+    "Wildomar",
+    "Los Angeles",
+    "Irvine",
 
     // Add more cities as needed
   ];
@@ -44,6 +47,8 @@ const Locations = () => {
     "La Quinta",
     "French Valley",
     "Menifee",
+    "Santa Ana",
+    "Anaheim",
     // Add more cities as needed
   ];
 
