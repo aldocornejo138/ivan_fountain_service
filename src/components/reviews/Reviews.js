@@ -9,6 +9,9 @@ import { Tina } from "../../assets/index.js";
 import { Tushy } from "../../assets/index.js";
 import { William } from "../../assets/index.js";
 import { Elsa } from "../../assets/index.js";
+import { kathryn } from "../../assets/index.js";
+import { carina } from "../../assets/index.js";
+import { antony } from "../../assets/index.js";
 
 const Reviews = () => {
   const { ref, inView } = useInView({
@@ -39,6 +42,43 @@ const Reviews = () => {
   }, []);
 
   const reviews = [
+    {
+      id: 1,
+      name: "Carina R.",
+      image: carina,
+      city: "Los Angeles, CA",
+      width: 2000,
+      height: 1498,
+      rating: 5,
+      date: "November 30, 2023",
+      comment:
+        "Ivan was a fantastic communicator. I hired Ivan to repair an outdoor, built-in fountain that kept on leaking. After months of struggling to get the fountain working for more than a day, Ivan fixed it. Ivan was easy to communicate with via text, which I appreciate it. I would definitely recommend this business to others.",
+    },
+    {
+      id: 1,
+      name: "Antony B.",
+      image: antony,
+      city: "Southern California",
+      width: 2000,
+      height: 1498,
+      rating: 5,
+      date: "November 16, 2023",
+      comment:
+        "When I called Ivan he was extremely helpful and immediate gave his option/resolutions on the problems I was having with my fountain. He completely understood the issues and offered improvements to make our life easier. He even gave us an approximate range of the costs.Ivan was knowledgeable, professional and hard working. Within several hours he replaced our pump, added a new auto water fill valve, installed a new light and even added a new base around the fountain to prevent leaves, dirt and rocks to fall in the fountain basin.",
+    },
+    {
+      id: 1,
+      name: "Kathryn S.",
+      image: kathryn,
+      city: "San Francisco, CA",
+      width: 2000,
+      height: 1498,
+      rating: 5,
+      date: "October 6, 2023",
+      comment:
+        "Fantastic service. Quick turnaround. I have a fountain in a home that was not working when I bought the house. It looks like the original fountain and may be decades old. Ivan came by, took the fountain apart, cleaned and assessed it and was able to replace the necessary parts to get it operational. It is beautiful and sounds lovely.",
+    },
+
     {
       id: 1,
       name: "Ken W.",

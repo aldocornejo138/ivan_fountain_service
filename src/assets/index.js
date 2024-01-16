@@ -18,6 +18,9 @@ import Tina from "./Tina.jpg";
 import Tushy from "./Tushy.jpg";
 import William from "./William.jpg";
 import riverside from "./Riverside.jpg";
+import carina from "./carina.jpg";
+import kathryn from "./kathryn.jpg";
+import antony from "./antony.jpg";
 
 import sliderImg1 from "./sliderImg1.jpg";
 import sliderImg2 from "./sliderImg2.jpg";
@@ -83,3 +86,6 @@ export { Tushy };
 export { William };
 export { Elsa };
 export { riverside };
+export { antony };
+export { carina };
+export { kathryn };
