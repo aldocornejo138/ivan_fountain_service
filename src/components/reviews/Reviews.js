@@ -55,7 +55,7 @@ const Reviews = () => {
         "Ivan was a fantastic communicator. I hired Ivan to repair an outdoor, built-in fountain that kept on leaking. After months of struggling to get the fountain working for more than a day, Ivan fixed it. Ivan was easy to communicate with via text, which I appreciate it. I would definitely recommend this business to others.",
     },
     {
-      id: 1,
+      id: 2,
       name: "Antony B.",
       image: antony,
       city: "Southern California",
@@ -67,7 +67,7 @@ const Reviews = () => {
         "When I called Ivan he was extremely helpful and immediate gave his option/resolutions on the problems I was having with my fountain. He completely understood the issues and offered improvements to make our life easier. He even gave us an approximate range of the costs.Ivan was knowledgeable, professional and hard working. Within several hours he replaced our pump, added a new auto water fill valve, installed a new light and even added a new base around the fountain to prevent leaves, dirt and rocks to fall in the fountain basin.",
     },
     {
-      id: 1,
+      id: 3,
       name: "Kathryn S.",
       image: kathryn,
       city: "San Francisco, CA",
@@ -80,7 +80,7 @@ const Reviews = () => {
     },
 
     {
-      id: 1,
+      id: 4,
       name: "Ken W.",
       image: Ken,
       city: "San Diego",
@@ -92,7 +92,7 @@ const Reviews = () => {
         "The large fountain in our courtyard stopped working  so we called Ivan. He quickly diagnosed the problem that the existing pump is made to be above ground, and any dampness near the pump would trip the GFI. He quickly replaced the pump with a sealed pump and it is now functioning as it should be. Ivan was responsive, professional, confidence-inspiring, and his prices were reasonable. Thank you Ivan!",
     },
     {
-      id: 2,
+      id: 5,
       name: "Cinder P.",
       image: Cinder,
       city: "FallBrook, CA",
@@ -104,7 +104,7 @@ const Reviews = () => {
         "Ivan is amazing! We have been working together for years at The Madd Potter. We him to all of our customers in need of fountain services. The feedback is always positive. Very friendly and professional. When in need call Ivan indeed!",
     },
     {
-      id: 3,
+      id: 6,
       name: "David H.",
       image:
         "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png",
@@ -117,7 +117,7 @@ const Reviews = () => {
         "I couldn't be happier.  Ivan was prompt, courteous and clearly knew what he was doing.  In less than an hour, he cleaned the pondless waterfall sump and  replaced the defective pump.  I was expecting an estimate of the damage and he had solved the problem in the same amount of time.",
     },
     {
-      id: 4,
+      id: 7,
       name: "Celine V.",
       image: Celine,
       city: "Irvine, CA",
@@ -127,7 +127,7 @@ const Reviews = () => {
         "Ivan is superb. Great communicator, super reliable & responsible, nice, and just the best vendor we've worked with for these kinds of services. Great quality of work for a great price! Our tenants will be very happy. We asked him to help us with the backyard water fountain cleaning, and he did an amazing job. We will be working with him for all future jobs!",
     },
     {
-      id: 5,
+      id: 8,
       name: "Tina M.",
       image: Tina,
       city: "San Diego",
@@ -137,7 +137,7 @@ const Reviews = () => {
         "I had been looking for someone to come out and do a deep cleaning on my 3 tier fountain. I've had it for 5 years and I have been cleaning it myself but I knew it needed a deep clean and also to be resealed. Ivan is the right guy for your fountain cleaning job. He and his assistant are on time. Do a great job and in a very organized and clean manner. I was very happy with how my fountain turned out and Ivan also installed a plug for the fountain instead of the sealant putty I had been using. Ivan is a busy guy, so you need to be patient in getting a call back, but it's totally worth it. Thanks Ivan!!!",
     },
     {
-      id: 6,
+      id: 9,
       name: "D.H.",
       image: DH,
       city: "Murrieta, CA",
@@ -147,7 +147,7 @@ const Reviews = () => {
         "Ivan responded to my text message fast. The scheduling was easy. He came on time, did an amazing work and cleaned up in 45 mins. Highly recommend him for anyone who needs fountain maintenance.",
     },
     {
-      id: 7,
+      id: 10,
       name: "Tushy J.",
       image: Tushy,
       city: "Murrieta, CA",
@@ -158,7 +158,7 @@ const Reviews = () => {
     },
 
     {
-      id: 8,
+      id: 11,
       name: "Elsa L.",
       image: Elsa,
       city: "San Diego",
@@ -168,7 +168,7 @@ const Reviews = () => {
         "Ivan kept in constant communication with the time and date he would come out. I understand how things are now a days, it's hard to find someone good and when you do they are extremely busy, but I will always wait for good service and you will not be disappointed by Ivan and his team.",
     },
     {
-      id: 9,
+      id: 12,
       name: "William F.",
       image: William,
       city: "Southern California, CA",
