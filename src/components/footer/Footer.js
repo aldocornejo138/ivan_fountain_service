@@ -19,7 +19,7 @@ const Footer = () => {
         <h1> (951) 837-8384 </h1>
       </div>
       <div className="right-side">
-        <a href="https://aldahir-cornejo-portfolio.vercel.app/">
+        <a href="https://yourpersonalwebdev.com/">
           <h2> Site Design</h2>
         </a>
       </div>
