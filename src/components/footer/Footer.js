@@ -19,7 +19,7 @@ const Footer = () => {
         <h1> (951) 837-8384 </h1>
       </div>
       <div className="right-side">
-        <a href="https://yourpersonalwebdev.com/">
+        <a href="https://www.seodevleads.com/">
           <h2> Site Design</h2>
         </a>
       </div>
