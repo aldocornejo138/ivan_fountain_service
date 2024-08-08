@@ -12,6 +12,9 @@ import { Elsa } from "../../assets/index.js";
 import { kathryn } from "../../assets/index.js";
 import { carina } from "../../assets/index.js";
 import { antony } from "../../assets/index.js";
+import { mark } from "../../assets/index.js";
+import { matt } from "../../assets/index.js";
+import { standard } from "../../assets/index.js";
 
 const Reviews = () => {
   const { ref, inView } = useInView({
@@ -42,6 +45,57 @@ const Reviews = () => {
   }, []);
 
   const reviews = [
+    {
+      id: 12,
+      name: "Gary H.",
+      image: standard,
+      city: "Ladera Ranch, CA",
+      rating: 5,
+      date: "August 7, 2024",
+      comment:
+        "Fixed my fountain in hour and a half it was leaking and i though it was time to trash it thanks ivan its back to 100% looking good Thanks again!",
+    },
+    {
+      id: 12,
+      name: "Amy K.",
+      image: standard,
+      city: "Southern California, CA",
+      rating: 5,
+      date: "June 6, 2024",
+      comment:
+        "We have used Ivan at our previous home to repair an existing fountain and again at our current home to repair 2 fountains. He has quickly responded to my questions and come out for estimates and work in a timely manner. Most recently, he came to repair a pipe that disconnected so he stands by his work and will make sure the customer is happy. I would highly recommend. We have been very satisfied every time.",
+    },
+    {
+      id: 12,
+      name: "ROB U.",
+      image: standard,
+      city: "Southern California, CA",
+      rating: 5,
+      date: "May 21, 2024",
+      comment:
+        "I have two fountains Ivan came to replace a pump on my second Fountain. He's already worked on my first. He did an absolutely fantastic job. I now have both fountains working on their timer more than enough water being fed from the sprinklers. I really appreciate it. Great job. Again.!!!!",
+    },
+    {
+      id: 12,
+      name: "Matt B.",
+      image: matt,
+      city: "Huntington Beach, CA",
+      rating: 5,
+      date: "April 15, 2024",
+      comment:
+        "Ivan's fountain service was top notch. Incredibly responsive and brought our fountain back to life. I had been told that our entire pump had to be replaced by a different company. Ivan and his team cleaned the lines and all connecting parts and I didn't need to undertake an unnecessary and incredibly expensive repair. Highly recommend!!!",
+    },
+
+    {
+      id: 12,
+      name: "Mark B.",
+      image: mark,
+      city: "Beverly Hills, CA",
+      rating: 5,
+      date: "February 27, 2024",
+      comment:
+        "Fast response, professional service, very reasonable cost. We have an old and very large 3 tiered fountain in our courtyard. It wasn't working and was leaning to one side. Ivan fixed everything in a short amount of time and at a price that was far less than what I thought it would cost.",
+    },
     {
       id: 1,
       name: "Carina R.",
@@ -177,8 +231,6 @@ const Reviews = () => {
       comment:
         "Ivan was professional and quickly demonstrated that he knew the problems and the effective solutions. And he implemented them well, leaving the our fountain operating and looking great.He made the original installer and subsequent people I have hired for the fountain all look like amateurs.",
     },
-
-    // Add more review objects as needed
   ];
 
   const startIndex = (currentPage - 1) * reviewsPerPage;

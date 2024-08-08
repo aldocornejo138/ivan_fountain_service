@@ -1,29 +1,40 @@
 import "./FooterStyles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faYelp } from "@fortawesome/free-brands-svg-icons";
+import { logo } from "../../assets/index.js";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="left-side">
-        <h1>CopyRight @ 2024 Ivan Fountain Service. All Rights Reserved.</h1>
-        <h2> | </h2>
-        <a href="https://www.facebook.com/Ivanfountainservice/">
-          <FontAwesomeIcon icon={faFacebookSquare} className="white-icon" />
-        </a>
-        <a href="https://www.yelp.com/biz/ivan-fountain-service-murrieta">
-          <FontAwesomeIcon icon={faYelp} className="white-icon" />
-        </a>
-        <h2> | </h2>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="brand">
+          <h2 className="brand-name">© 2025 Ivan Fountain Service</h2>
+        </div>
+        <div className="social-links">
+          <a
+            href="https://www.facebook.com/Ivanfountainservice/"
+            className="social-link"
+          >
+            <FontAwesomeIcon icon={faFacebookSquare} />
+          </a>
+          <a
+            href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
+            className="social-link"
+          >
+            <FontAwesomeIcon icon={faYelp} />
+          </a>
+        </div>
 
-        <h1> (951) 837-8384 </h1>
+        <div className="powered-by">
+          <p>Powered By:</p>
+          <a href="https://www.seodevleads.com/" className="powered-link">
+            <img src={logo} alt="SEODevLeads Logo" className="powered-logo" />
+            <span>SEODevLeads.com</span>
+          </a>
+        </div>
       </div>
-      <div className="right-side">
-        <a href="https://www.seodevleads.com/">
-          <h2> Site Design</h2>
-        </a>
-      </div>
-    </div>
+    </footer>
   );
 };
+
 export default Footer;

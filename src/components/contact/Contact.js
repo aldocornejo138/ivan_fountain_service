@@ -167,6 +167,12 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </section>
   );
 };

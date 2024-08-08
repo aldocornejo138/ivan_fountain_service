@@ -21,6 +21,10 @@ import riverside from "./Riverside.jpg";
 import carina from "./carina.jpg";
 import kathryn from "./kathryn.jpg";
 import antony from "./antony.jpg";
+import mark from "./mark.jpg";
+import matt from "./matt.jpg";
+import standard from "./default.jpg";
+import logo from "./logo.jpg";
 
 import sliderImg1 from "./sliderImg1.jpg";
 import sliderImg2 from "./sliderImg2.jpg";
@@ -89,3 +93,7 @@ export { riverside };
 export { antony };
 export { carina };
 export { kathryn };
+export { matt };
+export { mark };
+export { standard };
+export { logo };
