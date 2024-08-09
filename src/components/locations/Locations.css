@@ -288,7 +288,7 @@ button {
 }
 
 /* Media query for smaller screens (e.g., mobile) */
-@media screen and (min-width: 420px) and (max-width: 850px) {
+@media screen and (min-width: 501px) and (max-width: 850px) {
   .background-Main {
     height: auto;
   }
@@ -392,7 +392,7 @@ button {
   }
 }
 
-@media screen and (min-width: 300px) and (max-width: 419px) {
+@media screen and (min-width: 300px) and (max-width: 500px) {
   .navbarItems {
     margin-bottom: 0px;
     height: 313px;
