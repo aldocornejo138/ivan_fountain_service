@@ -66,7 +66,63 @@
   margin-right: 8px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 350px) and (max-width: 400px) {
+  .footer {
+    padding: 12px 18px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .brand {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    margin-bottom: 10px; /* Added space between brand name and social links */
+  }
+
+  .social-links {
+    display: flex;
+    margin-right: 30px;
+    gap: 10px;
+    flex-wrap: wrap; /* Allows links to wrap if there's not enough space */
+    margin-bottom: 10px; /* Added space between social links and powered-by section */
+  }
+
+  .social-link {
+    font-size: 25px;
+  }
+
+  .powered-by {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .powered-link {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .powered-logo {
+    width: 27px;
+    height: 27px;
+    margin-left: 5px; /* Ensures a small gap between the logo and text */
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 850px) {
   .footer {
     padding: 12px 18px;
   }
@@ -109,7 +165,7 @@
   }
 
   .powered-link {
-    font-size: 12px;
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-end;

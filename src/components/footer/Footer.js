@@ -8,9 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="brand">
-          <h2 className="brand-name">
-            © 2025 Ivan Fountain Service. All Rights Reserved.
-          </h2>
+          <h2 className="brand-name">© 2025 Ivan Fountain Service.</h2>
         </div>
         <div className="social-links">
           <a
