@@ -92,6 +92,7 @@
   cursor: pointer;
   border-color: #3a00f9;
   margin-top: 0px;
+  text-decoration: none;
 }
 .headNumber {
   color: #fff;
@@ -417,13 +418,15 @@ button {
   }
 
   .head {
-    padding: 0px;
+    padding: 0 8px;
+    align-items: center;
+    height: 50px;
   }
 
   .headLogo {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
     text-decoration: none;
-    margin-left: 10px;
   }
 
   .headNumber {
