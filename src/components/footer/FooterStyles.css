@@ -90,6 +90,7 @@
 
   .social-links {
     display: flex;
+    margin-right: 34px;
     gap: 10px;
     flex-wrap: wrap; /* Allows links to wrap if there's not enough space */
     margin-bottom: 10px; /* Added space between social links and powered-by section */
