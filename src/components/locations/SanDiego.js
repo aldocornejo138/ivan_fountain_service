@@ -179,11 +179,7 @@ const SanDiego = (props) => {
       </Helmet>
 
       <div className="head">
-        <Link
-          to="/"
-          className="headLogo"
-          style={{ textDecoration: "none", fontSize: "10px" }}
-        >
+        <Link to="/" className="headLogo">
           <h1>IVAN'S FOUNTAIN SERVICES</h1>
         </Link>
         <a className="headNumber" href={phoneLink}>
