@@ -68,8 +68,9 @@
 
 @media screen and (max-width: 850px) {
   .footer {
-    padding: 15px 25px;
+    padding: 12px 18px;
   }
+
   .footer-content {
     flex-direction: row;
     justify-content: space-between;
@@ -79,15 +80,19 @@
   .brand {
     flex: 1;
     text-align: left;
-    padding-right: 30px;
+    margin-right: 20px;
   }
 
   .brand-name {
     font-size: 1rem;
+    margin-bottom: 10px; /* Added space between brand name and social links */
   }
 
   .social-links {
+    display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* Allows links to wrap if there's not enough space */
+    margin-bottom: 10px; /* Added space between social links and powered-by section */
   }
 
   .social-link {
@@ -97,51 +102,21 @@
   .powered-by {
     flex: 1;
     text-align: right;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .powered-link {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .powered-logo {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media screen and (min-width: 851px) and (max-width: 1050px) {
-  .footer {
-    padding: 15px 25px;
-  }
-  .footer-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .brand {
-    flex: 1;
-    text-align: left;
-    padding-right: 30px;
-  }
-
-  .brand-name {
-    font-size: 1rem;
-  }
-
-  .social-links {
-    gap: 10px;
-  }
-
-  .social-link {
-    font-size: 25px;
-  }
-
-  .powered-by {
-    flex: 1;
-    text-align: right;
-    margin-left: 70px;
-  }
-
-  .powered-logo {
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
+    margin-left: 5px; /* Ensures a small gap between the logo and text */
   }
 }
