@@ -297,12 +297,12 @@
   }
 
   .headLogo {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     cursor: pointer;
     text-decoration: none;
   }
   .headNumber {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .navbarItems {
@@ -392,49 +392,6 @@
     font-size: 2.1rem;
 
     text-align: center;
-  }
-}
-
-@media screen and (min-width: 300px) and (max-width: 380px) {
-  .navbarItems {
-    margin-bottom: 0px;
-    height: 313px;
-    margin-top: -480px;
-  }
-
-  .navbarLogo {
-    padding-top: 20px;
-  }
-
-  .navbarLogo img {
-    height: 30%;
-    width: 40%;
-    margin-left: -100px;
-  }
-
-  .navLinks {
-    font-size: 1.5rem;
-    margin-right: -45px;
-    border-radius: 25px;
-    text-align: center;
-    margin-top: 55px;
-  }
-
-  .head {
-    padding: 0 8px;
-    align-items: center;
-    height: 50px;
-  }
-
-  .headLogo {
-    font-size: 0.8rem;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .headNumber {
-    width: auto;
-    margin-right: 10px;
   }
 }
 
