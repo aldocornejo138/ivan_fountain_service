@@ -287,7 +287,7 @@ button {
 }
 
 /* Media query for smaller screens (e.g., mobile) */
-@media (max-width: 850px) {
+@media screen and (min-width: 420px) and (max-width: 850px) {
   .background-Main {
     height: auto;
   }
@@ -389,35 +389,46 @@ button {
     padding-right: 0rem;
     text-align: center;
   }
+}
 
-  @media screen and (min-width: 300px) and (max-width: 420px) {
-    .navbarItems {
-      margin-bottom: 0px;
-      height: 313px;
-      margin-top: -450px;
-    }
+@media screen and (min-width: 300px) and (max-width: 419px) {
+  .navbarItems {
+    margin-bottom: 0px;
+    height: 313px;
+    margin-top: -430px;
+  }
 
-    .navbarLogo {
-      padding-top: 10px;
-    }
+  .navbarLogo {
+    padding-top: 20px;
+  }
 
-    .navbarLogo img {
-      height: 30%;
-      width: 40%;
-      margin-left: -150px;
-    }
+  .navbarLogo img {
+    height: 30%;
+    width: 40%;
+    margin-left: -100px;
+  }
 
-    .navLinks {
-      font-size: 1.5rem;
-      margin-right: -15px;
-      border-radius: 25px;
-      text-align: center;
-      margin-top: 55px;
-    }
+  .navLinks {
+    font-size: 1.5rem;
+    margin-right: -45px;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 55px;
+  }
 
-    .headLogo {
-      font-size: 0.6rem;
-    }
+  .head {
+    padding: 0px;
+  }
+
+  .headLogo {
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+
+  .headNumber {
+    width: auto;
+    margin-right: 10px;
   }
 }
 
