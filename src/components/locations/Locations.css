@@ -390,7 +390,7 @@ button {
     text-align: center;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (min-width: 300px) and (max-width: 420px) {
     .navbarItems {
       margin-bottom: 0px;
       height: 313px;
@@ -413,6 +413,10 @@ button {
       border-radius: 25px;
       text-align: center;
       margin-top: 55px;
+    }
+
+    .headLogo {
+      font-size: 0.8rem;
     }
   }
 }
