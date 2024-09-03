@@ -4,7 +4,7 @@
   padding: 20px 40px;
   font-family: "Arial", sans-serif;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-  position: fixed; /* Make the footer fixed */
+  position: relative; /* Make the footer fixed */
   bottom: 0; /* Stick to the bottom of the viewport */
   left: 0;
   width: 100%; /* Ensure it spans the full width of the viewport */
