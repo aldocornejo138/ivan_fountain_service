@@ -35,7 +35,7 @@
 }
 
 .social-link {
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: #ffffff;
   transition: color 0.3s ease;
 }
@@ -54,16 +54,27 @@
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 15px;
 }
 
 .powered-link:hover {
   color: #51ff00;
 }
 
+.powered-hide {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0;
+}
+
 .powered-logo {
   width: 25px;
   height: 25px;
   margin-right: 8px;
+  opacity: 0;
 }
 
 @media screen and (min-width: 350px) and (max-width: 400px) {

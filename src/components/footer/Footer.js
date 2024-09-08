@@ -26,8 +26,10 @@ const Footer = () => {
         </div>
 
         <div className="powered-by">
-          <p>Powered By:</p>
           <a href="https://www.seodevleads.com/" className="powered-link">
+            Site Design
+          </a>
+          <a href="https://www.seodevleads.com/" className="powered-hide">
             <img src={logo} alt="SEODevLeads Logo" className="powered-logo" />
             <span>SEODevLeads.com</span>
           </a>
