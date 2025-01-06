@@ -25,6 +25,8 @@ import mark from "./mark.jpg";
 import matt from "./matt.jpg";
 import standard from "./default.jpg";
 import logo from "./logo.jpg";
+import seth from "./seth.jpg";
+import sn from "./S N.jpg";
 
 import sliderImg1 from "./sliderImg1.jpg";
 import sliderImg2 from "./sliderImg2.jpg";
@@ -97,3 +99,5 @@ export { matt };
 export { mark };
 export { standard };
 export { logo };
+export { seth };
+export { sn };

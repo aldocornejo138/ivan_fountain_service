@@ -15,6 +15,8 @@ import { antony } from "../../assets/index.js";
 import { mark } from "../../assets/index.js";
 import { matt } from "../../assets/index.js";
 import { standard } from "../../assets/index.js";
+import { seth } from "../../assets/index.js";
+import { sn } from "../../assets/index.js";
 
 const Reviews = () => {
   const { ref, inView } = useInView({
@@ -46,7 +48,57 @@ const Reviews = () => {
 
   const reviews = [
     {
-      id: 12,
+      id: 22,
+      name: "Russell J.",
+      image: standard,
+      city: "Southern California",
+      rating: 5,
+      date: "December 16, 2024",
+      comment:
+        "I have an old fountain in the courtyard of my office building. The fountain has been a maintenance problem for about 2 years and inoperable for the past fe months. There was talk of making it into a planter, but Ivan and his crew was able to bring the fountain back to life. It's now a central feature of my office building, as it had been in the past.",
+    },
+    {
+      id: 21,
+      name: "S N.",
+      image: sn,
+      city: "Calabasas, CA",
+      rating: 5,
+      date: "November 3, 2024",
+      comment:
+        "Ivan and his guys are top notch. They came and installed two fountains at our new home. From start to finish, they handled everything with care and perfection. I'm very particular when it comes to craftsmanship and finish work and Ivan exceeded my expectations. They were quick and left everything clean, level, and flowing well. Don't bother looking elsewhere (I did the research for you), use Ivan for all your fountain needs!",
+    },
+    {
+      id: 20,
+      name: "Seth G.",
+      image: seth,
+      city: "Carlsbad, CA",
+      rating: 5,
+      date: "October 15, 2024",
+      comment:
+        "Ivan fixed our broken fountain and it is better than new. He is a perfectionist and went above and beyond what I expected. A pool man and an electrician didnt' know how to repair and replace the broken motor. Call Ivan :)",
+    },
+    {
+      id: 19,
+      name: "Don T.",
+      image: standard,
+      city: "Los Angeles, CA",
+      rating: 5,
+      date: "October 12, 2024",
+      comment:
+        "Ivan came out and replaced my fountain pump. He is a true professional and really knows his craft. I highly recommend Ivan for any fountain repair, replacement or maintenance service.",
+    },
+    {
+      id: 18,
+      name: "Brandon F.",
+      image: standard,
+      city: "Los Angeles, CA",
+      rating: 5,
+      date: "September 25, 2024",
+      comment:
+        "Ivan was prompt, fair and delivered a 5 star experience. I would not look anywhere else and give Ivan a call to take care of your needs.",
+    },
+    {
+      id: 17,
       name: "Gary H.",
       image: standard,
       city: "Ladera Ranch, CA",
@@ -56,7 +108,7 @@ const Reviews = () => {
         "Fixed my fountain in hour and a half it was leaking and i though it was time to trash it thanks ivan its back to 100% looking good Thanks again!",
     },
     {
-      id: 12,
+      id: 16,
       name: "Amy K.",
       image: standard,
       city: "Southern California, CA",
@@ -66,7 +118,7 @@ const Reviews = () => {
         "We have used Ivan at our previous home to repair an existing fountain and again at our current home to repair 2 fountains. He has quickly responded to my questions and come out for estimates and work in a timely manner. Most recently, he came to repair a pipe that disconnected so he stands by his work and will make sure the customer is happy. I would highly recommend. We have been very satisfied every time.",
     },
     {
-      id: 12,
+      id: 15,
       name: "ROB U.",
       image: standard,
       city: "Southern California, CA",
@@ -76,7 +128,7 @@ const Reviews = () => {
         "I have two fountains Ivan came to replace a pump on my second Fountain. He's already worked on my first. He did an absolutely fantastic job. I now have both fountains working on their timer more than enough water being fed from the sprinklers. I really appreciate it. Great job. Again.!!!!",
     },
     {
-      id: 12,
+      id: 14,
       name: "Matt B.",
       image: matt,
       city: "Huntington Beach, CA",
@@ -87,7 +139,7 @@ const Reviews = () => {
     },
 
     {
-      id: 12,
+      id: 13,
       name: "Mark B.",
       image: mark,
       city: "Beverly Hills, CA",
