@@ -27,6 +27,7 @@ import standard from "./default.jpg";
 import logo from "./logo.jpg";
 import seth from "./seth.jpg";
 import sn from "./S N.jpg";
+import Heather from "./Heather S.jpg";
 
 import sliderImg1 from "./sliderImg1.jpg";
 import sliderImg2 from "./sliderImg2.jpg";
@@ -101,3 +102,4 @@ export { standard };
 export { logo };
 export { seth };
 export { sn };
+export { Heather };

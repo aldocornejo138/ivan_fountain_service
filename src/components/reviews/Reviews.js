@@ -17,6 +17,7 @@ import { matt } from "../../assets/index.js";
 import { standard } from "../../assets/index.js";
 import { seth } from "../../assets/index.js";
 import { sn } from "../../assets/index.js";
+import { Heather } from "../../assets/index.js";
 
 const Reviews = () => {
   const { ref, inView } = useInView({
@@ -47,6 +48,16 @@ const Reviews = () => {
   }, []);
 
   const reviews = [
+    {
+      id: 23,
+      name: "Heather S.",
+      image: Heather,
+      city: "Los Angeles",
+      rating: 5,
+      date: "January 19, 2025",
+      comment:
+        "I would give Ivan 50 stars if I could. He is a great, knowledgable resource & he is generous with his time to make sure the job gets done 100% properly. I have a lot of respect for his crew & would recommend him to any fountain enthusiast that needs help! Thank you Ivan!!!",
+    },
     {
       id: 22,
       name: "Russell J.",
@@ -310,7 +321,7 @@ const Reviews = () => {
           href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
           className="link-style"
         >
-          All Reviews straight out of Yelp. Click here to see all of our 55+ 5
+          All Reviews straight out of Yelp. Click here to see all of our 100+ 5
           Star Reviews!
         </a>
       </div>
