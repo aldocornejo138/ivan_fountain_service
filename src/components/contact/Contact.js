@@ -5,8 +5,10 @@ import { contact } from "../../assets/index.js";
 import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
+  // Form reference for EmailJS
   const form = useRef();
 
+  // Email sending function
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -18,24 +20,27 @@ const Contact = () => {
     );
   };
 
+  //state for form fields and messages
   const [user_name, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [user_email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [successMsg, setSuccessMsg] = useState("");
+  const [errMsg, setErrMsg] = useState(""); // Error message state
+  const [successMsg, setSuccessMsg] = useState(""); // Success message state
 
-  // ========== Email Validation start here ==============
+  //Email Validation regex function
   const emailValidation = () => {
     return String(user_email)
       .toLocaleLowerCase()
       .match(/^\w+([.-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
   };
-  // ========== Email Validation end here ================
 
+  //form submission handler
   const handleSend = (e) => {
     e.preventDefault();
+
+    // Validation checks
     if (user_name === "") {
       setErrMsg("Username is required!!");
     } else if (phoneNumber === "") {
@@ -48,12 +53,16 @@ const Contact = () => {
       setErrMsg("Plese give your Subject!");
     } else if (message === "") {
       setErrMsg("Message is required!");
-    } else {
+    }
+    //If all validations pass
+    else {
       setSuccessMsg(
         `Thank you ${user_name}, Your Message has been sent Successfully!`
       );
-      sendEmail(e);
-      setErrMsg("");
+      sendEmail(e); // Trigger email sending
+      setErrMsg(""); // Clear error message
+
+      // Reset form fields
       setUsername("");
       setPhoneNumber("");
       setEmail("");
@@ -62,9 +71,11 @@ const Contact = () => {
     }
   };
 
+  //intersection Observer again for animations
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
+
   return (
     <section id="contact">
       <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>

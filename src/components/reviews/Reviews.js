@@ -20,16 +20,20 @@ import { sn } from "../../assets/index.js";
 import { Heather } from "../../assets/index.js";
 
 const Reviews = () => {
+  //intersection observer for scroll animations
   const { ref, inView } = useInView({
     triggerOnce: false,
   });
 
+  // State for responsive pagination
   const [reviewsPerPage, setReviewsPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
 
+  // Handle window resize for responsive design
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 769) {
+      //For Mobile view, show only one review if 850px or below
+      if (window.innerWidth <= 850) {
         setReviewsPerPage(1);
       } else {
         setReviewsPerPage(3);
@@ -41,7 +45,6 @@ const Reviews = () => {
     // Initialize the value based on initial width
     handleResize();
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -296,26 +299,31 @@ const Reviews = () => {
     },
   ];
 
+  //Starting position, Ending Position, and then total pages
   const startIndex = (currentPage - 1) * reviewsPerPage;
   const endIndex = startIndex + reviewsPerPage;
+  const totalPages = Math.ceil(reviews.length / reviewsPerPage);
 
+  //prevents from going below 1
   const handlePreviousClick = () => {
     setCurrentPage(Math.max(currentPage - 1, 1));
   };
 
+  //prevents exceeding the Max total Pages
   const handleNextClick = () => {
     const totalPages = Math.ceil(reviews.length / reviewsPerPage);
     setCurrentPage(Math.min(currentPage + 1, totalPages));
   };
 
-  const totalPages = Math.ceil(reviews.length / reviewsPerPage);
-
   return (
     <section ref={ref} id="reviews" className="reviews-container">
+      {/*Animated Title Section */}
       <div className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
         <h1>Reviews</h1>
         <p>Look at What Clients Say About Us</p>
       </div>
+
+      {/* Yelp link */}
       <div className={`reviews-container ${inView ? "zoomIn" : "zoomOut"}`}>
         <a
           href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
@@ -325,8 +333,9 @@ const Reviews = () => {
           Star Reviews!
         </a>
       </div>
-
+      {/* Reviews list */}
       <div className="reviews-list">
+        {/* Slice reviews array for current page */}
         {reviews.slice(startIndex, endIndex).map((review) => (
           <div key={review.id} className="review">
             <div className="review-content">
@@ -341,9 +350,11 @@ const Reviews = () => {
                   title={`${review.name}'s Review of Ivan Fountain Service`}
                   width={review.width}
                   height={review.height}
-                  loading="lazy"
+                  loading="lazy" //lazy loading for performance
                 />
               </div>
+
+              {/* Animated review header */}
               <div
                 className={`review-header ${
                   inView ? "zoomInRight" : "zoomOutRight"
@@ -351,6 +362,8 @@ const Reviews = () => {
               >
                 <h2>{review.name}</h2>
                 <p className="review-city">{review.city}</p>
+
+                {/* Star rating display */}
                 <div className="review-rating">
                   {Array.from({ length: review.rating }, (_, index) => (
                     <span key={index} className="star">
@@ -361,6 +374,8 @@ const Reviews = () => {
                 <p className="review-date">{review.date}</p>
               </div>
             </div>
+
+            {/* Review comment */}
             <div className="review-details">
               <h1
                 className={`review-comment ${inView ? "zoomIn" : "zoomOut"} `}
@@ -371,10 +386,14 @@ const Reviews = () => {
           </div>
         ))}
       </div>
+
       <div className={`pagination ${inView ? "zoomIn" : "zoomOut"}`}>
+        {/* Previous Button  */}
         <button onClick={handlePreviousClick} disabled={currentPage === 1}>
           Previous
         </button>
+
+        {/* Visual page indicator (circles) */}
         <div className="pagination-status">
           {Array.from({ length: totalPages }, (_, index) => (
             <span
@@ -383,10 +402,9 @@ const Reviews = () => {
             />
           ))}
         </div>
-        <button
-          onClick={handleNextClick}
-          disabled={currentPage * reviewsPerPage >= reviews.length}
-        >
+
+        {/* Next Button  */}
+        <button onClick={handleNextClick} disabled={currentPage === totalPages}>
           Next
         </button>
       </div>
