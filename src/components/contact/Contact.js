@@ -13,10 +13,10 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_p0jbhyl",
-      "template_gb44azs",
+      "service_p0jbhyl", //emailJs Service ID
+      "template_gb44azs", // EmailJs template ID
       form.current,
-      "Ah9VqXeck2rq2S5Me"
+      "Ah9VqXeck2rq2S5Me" // EmailJS user ID (public key) so its safe to have out
     );
   };
 
@@ -178,6 +178,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      {/* Looking back I could of replaced this with CSS Padding*/}
       <br />
       <br />
       <br />
