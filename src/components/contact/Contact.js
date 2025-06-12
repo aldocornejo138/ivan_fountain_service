@@ -5,7 +5,7 @@ import { contact } from "../../assets/index.js";
 import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
-  // Form reference for EmailJs
+  // Form reference for EmailJS
   const form = useRef();
 
   // Email sending function
