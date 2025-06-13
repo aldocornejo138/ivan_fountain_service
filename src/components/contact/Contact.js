@@ -9,15 +9,28 @@ const Contact = () => {
   const form = useRef();
 
   // Email sending function
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_p0jbhyl", //emailJs Service ID
-      "template_gb44azs", // EmailJs template ID
-      form.current,
-      "Ah9VqXeck2rq2S5Me" // EmailJS user ID (public key) so its safe to have out
-    );
+  const sendEmail = (sanitizedData) => {
+    emailjs
+      .send(
+        "service_p0jbhyl", //emailJs Service ID
+        "template_gb44azs", // EmailJs template ID
+        sanitizedData,
+        "Ah9VqXeck2rq2S5Me" // EmailJS user ID (public key) so its safe to have out
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          setSuccessMsg(
+            `Thank you ${sanitizedData.user_name}, your message has been sent successfully!`
+          );
+        },
+        (error) => {
+          console.error("Email send error:", error);
+          setErrMsg(
+            "Oops! Something went wrong. Please try again later. Or Text to (951) 837-8384"
+          );
+        }
+      );
   };
 
   //state for form fields and messages
@@ -28,6 +41,16 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState(""); // Error message state
   const [successMsg, setSuccessMsg] = useState(""); // Success message state
+
+  // Input sanitization to prevent XSS attacks
+  const sanitizeInput = (input) => {
+    return input
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#x27;")
+      .replace(/&/g, "&amp;");
+  };
 
   //Email Validation regex function
   const emailValidation = () => {
@@ -56,10 +79,19 @@ const Contact = () => {
     }
     //If all validations pass
     else {
+      //  Sanitize all inputs before sending
+      const sanitizedData = {
+        user_name: sanitizeInput(user_name),
+        phoneNumber: sanitizeInput(phoneNumber),
+        user_email: sanitizeInput(user_email),
+        subject: sanitizeInput(subject),
+        message: sanitizeInput(message),
+      };
+
       setSuccessMsg(
-        `Thank you ${user_name}, Your Message has been sent Successfully!`
+        `Thank you ${sanitizedData.user_name}, Your Message has been sent Successfully!`
       );
-      sendEmail(e); // Trigger email sending
+      sendEmail(sanitizedData); // Trigger email sending
       setErrMsg(""); // Clear error message
 
       // Reset form fields
