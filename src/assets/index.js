@@ -1,3 +1,4 @@
+// Import all images
 import IvanLogo from "./IvanLogo.png";
 import afterRepair from "./afterRepair.jpg";
 import beforeRepair from "./beforeRepair.jpg";
@@ -28,6 +29,7 @@ import logo from "./logo.jpg";
 import seth from "./seth.jpg";
 import sn from "./S N.jpg";
 import Heather from "./Heather S.jpg";
+import renee from "./renee.jpg";
 
 import sliderImg1 from "./sliderImg1.jpg";
 import sliderImg2 from "./sliderImg2.jpg";
@@ -51,55 +53,115 @@ import gallery8 from "./gallery8.jpg";
 import gallery9 from "./gallery9.jpg";
 import gallery10 from "./gallery10.jpg";
 
-export { gallery1 };
-export { gallery2 };
-export { gallery3 };
-export { gallery4 };
-export { gallery5 };
-export { gallery6 };
-export { gallery7 };
-export { gallery8 };
-export { gallery9 };
-export { gallery10 };
+// Create a centralized images object
+const images = {
+  IvanLogo,
+  afterRepair,
+  beforeRepair,
+  maintenance,
+  maintenance2,
+  business,
+  emergency,
+  aboutIvan,
+  Installation,
+  delivary,
+  contact,
+  Ken,
+  Cinder,
+  Celine,
+  DH,
+  Elsa,
+  Tina,
+  Tushy,
+  William,
+  riverside,
+  carina,
+  kathryn,
+  antony,
+  mark,
+  matt,
+  standard,
+  logo,
+  seth,
+  sn,
+  Heather,
+  renee,
+  sliderImg1,
+  sliderImg2,
+  sliderImg3,
+  sliderImg4,
+  sliderImg5,
+  sliderImg6,
+  sliderImg7,
+  sliderImg8,
+  sliderImg9,
+  sliderImg10,
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+};
 
-export { sliderImg1 };
-export { sliderImg2 };
-export { sliderImg3 };
-export { sliderImg4 };
-export { sliderImg5 };
-export { sliderImg6 };
-export { sliderImg7 };
-export { sliderImg8 };
-export { sliderImg9 };
-export { sliderImg10 };
+// Maintain all existing named exports
+export {
+  IvanLogo,
+  afterRepair,
+  beforeRepair,
+  maintenance,
+  maintenance2,
+  business,
+  emergency,
+  aboutIvan,
+  Installation,
+  delivary,
+  contact,
+  Ken,
+  Cinder,
+  Celine,
+  DH,
+  Elsa,
+  Tina,
+  Tushy,
+  William,
+  riverside,
+  carina,
+  kathryn,
+  antony,
+  mark,
+  matt,
+  standard,
+  logo,
+  seth,
+  sn,
+  Heather,
+  renee,
+  sliderImg1,
+  sliderImg2,
+  sliderImg3,
+  sliderImg4,
+  sliderImg5,
+  sliderImg6,
+  sliderImg7,
+  sliderImg8,
+  sliderImg9,
+  sliderImg10,
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+};
 
-export { IvanLogo };
-export { afterRepair };
-export { beforeRepair };
-export { maintenance };
-export { maintenance2 };
-export { business };
-export { emergency };
-export { aboutIvan };
-export { Installation };
-export { delivary };
-export { contact };
-export { Ken };
-export { Cinder };
-export { Celine };
-export { DH };
-export { Tina };
-export { Tushy };
-export { William };
-export { Elsa };
-export { riverside };
-export { antony };
-export { carina };
-export { kathryn };
-export { matt };
-export { mark };
-export { standard };
-export { logo };
-export { seth };
-export { sn };
-export { Heather };
+// Default export for all images as an object
+export default images;
