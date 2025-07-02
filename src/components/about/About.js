@@ -2,134 +2,141 @@ import React from "react";
 import "./About.css";
 import { aboutIvan } from "../../assets/index.js";
 import { useInView } from "react-intersection-observer";
+import { FaTools, FaStar, FaMapMarkerAlt } from "react-icons/fa";
+import { GiWaterDrop } from "react-icons/gi"; // Replaced FaFountain with water drop icon
 
 const About = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
+  const { ref: titleRef, inView: titleInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: contentRef, inView: contentInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: statsRef, inView: statsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   return (
-    <section id="about">
-      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1>Meet Ivan</h1>
-        <p>Founder and CEO</p>
+    <section
+      id="about"
+      className="about-section"
+      style={{ background: "#000" }}
+    >
+      <div
+        ref={titleRef}
+        className={`section-header ${titleInView ? "visible" : ""}`}
+      >
+        <h1>Meet Ivan Cornejo</h1>
+        <p>Founder and Master Fountain Technician</p>
       </div>
-      <div ref={ref}>
-        {inView ? (
-          <div className="about">
-            <div className="about-content zoomInLeft">
-              <div className="about-text">
-                <h1>Ivan Cornejo</h1>
-                <p>
-                  With a distinguished track record spanning over 12 years, Ivan
-                  Cornejo stands as a master in the art of beautifully restoring
-                  fountains. His expertise extends across the spectrum of
-                  fountain types, catering to both small and large outdoor
-                  fountains alike. <br /> <br />
-                </p>
-                <p>
-                  In every corner of Southern California, Ivan Cornejo's touch
-                  is one of transformation. His restoration skills evolve into a
-                  medium that transcends the functional aspects of fountains,
-                  elevating them to expressions of artistry. With every
-                  restoration project, he harmonizes the visual splendor of the
-                  water feature with the surrounding environment, forming a
-                  narrative that resonates with the very soul of the region.{" "}
-                  <br /> <br />
-                </p>
-                <p>
-                  Ivan Cornejo's journey is not merely about restoration; it's
-                  about enrichment. His work redefines the relationship between
-                  fountains and their settings, creating a symphony where water
-                  dances in tune with the landscapes, architecture, and stories
-                  that define Southern California. This profound dedication to
-                  his craft has established Ivan Cornejo as a true luminary in
-                  the field of fountain restoration, setting a standard that
-                  elevates every drop of water to a canvas of life and beauty.{" "}
-                  <br /> <br />
-                </p>
-                <p>
-                  As the CEO of our fountain company, Ivan Cornejo leads with a
-                  passion that transcends the ordinary. His vision extends
-                  beyond business; it embodies a commitment to preserving the
-                  artistic and cultural essence of each location. Through his
-                  hands, fountains become living testimonials to the rich
-                  tapestry of Southern California, and his legacy stands as an
-                  enduring testament to the power of artistry and dedication in
-                  revitalizing the heart of our surroundings.
-                </p>
-              </div>
+
+      <div className="about-container">
+        <div
+          ref={contentRef}
+          className={`about-content ${contentInView ? "visible" : ""}`}
+        >
+          <div className="about-text">
+            <div className="about-intro">
+              <h2>Transforming Water Features Across Southern California</h2>
+              <div className="divider"></div>
             </div>
-            <div className="about-photo zoomInRight">
-              <img
-                src={aboutIvan}
-                alt="Ivan Cornejo"
-                title=" Ivan Cornejo About"
-                width="1980"
-                length="1920"
-                loading="lazy"
-              />
+
+            <p className="highlight">
+              With over{" "}
+              <span className="white-text">
+                15 years of specialized experience
+              </span>
+              , Ivan Cornejo has mastered the art of fountain restoration,
+              transforming both{" "}
+              <span className="white-text">small garden features</span>
+              and{" "}
+              <span className="white-text">
+                large commercial installations
+              </span>{" "}
+              throughout Southern California.
+            </p>
+
+            <p>
+              Ivan approaches each project as a unique{" "}
+              <span className="blue-text">artistic challenge</span>, blending
+              technical expertise with aesthetic vision. His work goes beyond
+              mere functionality—it creates{" "}
+              <span className="white-text">harmonious water features</span> that
+              complement their surroundings and become focal points of beauty.
+            </p>
+
+            <p>
+              What sets Ivan apart is his{" "}
+              <span className="blue-text">commitment to preserving</span> the
+              artistic and cultural essence of each location. Through his
+              skilled hands, fountains become{" "}
+              <span className="white-text">living testimonials</span> to
+              Southern California's rich landscape, telling stories through the
+              medium of water and light.
+            </p>
+
+            <div className="signature-block">
+              <div className="signature">Ivan Cornejo</div>
+              <div className="title">Founder & CEO</div>
             </div>
           </div>
-        ) : (
-          <div className="about">
-            <div className="about-content zoomOutLeft">
-              <div className="about-text">
-                <h1>Ivan Cornejo</h1>
-                <p>
-                  With a distinguished track record spanning over 12 years, Ivan
-                  Cornejo stands as a master in the art of beautifully restoring
-                  fountains. His expertise extends across the spectrum of
-                  fountain types, catering to both small and large outdoor
-                  fountains alike. <br /> <br />
-                </p>
-                <p>
-                  In every corner of Southern California, Ivan Cornejo's touch
-                  is one of transformation. His restoration skills evolve into a
-                  medium that transcends the functional aspects of fountains,
-                  elevating them to expressions of artistry. With every
-                  restoration project, he harmonizes the visual splendor of the
-                  water feature with the surrounding environment, forming a
-                  narrative that resonates with the very soul of the region.{" "}
-                  <br /> <br />
-                </p>
-                <p>
-                  Ivan Cornejo's journey is not merely about restoration; it's
-                  about enrichment. His work redefines the relationship between
-                  fountains and their settings, creating a symphony where water
-                  dances in tune with the landscapes, architecture, and stories
-                  that define Southern California. This profound dedication to
-                  his craft has established Ivan Cornejo as a true luminary in
-                  the field of fountain restoration, setting a standard that
-                  elevates every drop of water to a canvas of life and beauty.{" "}
-                  <br /> <br />
-                </p>
-                <p>
-                  As the CEO of our fountain company, Ivan Cornejo leads with a
-                  passion that transcends the ordinary. His vision extends
-                  beyond business; it embodies a commitment to preserving the
-                  artistic and cultural essence of each location. Through his
-                  hands, fountains become living testimonials to the rich
-                  tapestry of Southern California, and his legacy stands as an
-                  enduring testament to the power of artistry and dedication in
-                  revitalizing the heart of our surroundings.
-                </p>
-              </div>
-            </div>
-            <div className="about-photo zoomOutRight">
+
+          <div className="about-photo">
+            <div className="photo-frame">
               <img
                 src={aboutIvan}
-                alt="Ivan Cornejo"
-                title=" Ivan Cornejo About"
-                width="1980"
-                height="1920"
+                alt="Ivan Cornejo, Fountain Restoration Expert"
                 loading="lazy"
               />
+              <div className="frame-decoration"></div>
             </div>
           </div>
-        )}
+        </div>
+
+        <div
+          ref={statsRef}
+          className={`stats-container ${statsInView ? "visible" : ""}`}
+        >
+          <div className="stat-card">
+            <div className="stat-icon">
+              <GiWaterDrop /> {/* Replaced FaFountain with water drop icon */}
+            </div>
+            <div className="stat-value">15+</div>
+            <div className="stat-label">Years Experience</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">
+              <FaTools />
+            </div>
+            <div className="stat-value">500+</div>
+            <div className="stat-label">Fountains Restored</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">
+              <FaStar />
+            </div>
+            <div className="stat-value">100%</div>
+            <div className="stat-label">Satisfaction Guarantee</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">
+              <FaMapMarkerAlt />
+            </div>
+            <div className="stat-value">All</div>
+            <div className="stat-label">Southern California</div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
 export default About;

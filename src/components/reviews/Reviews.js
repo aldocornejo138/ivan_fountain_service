@@ -146,7 +146,7 @@ const Reviews = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          View all {reviewsData.length}+ reviews on Yelp
+          View all 100+ 5 star reviews on Yelp
         </a>
       </div>
     </section>

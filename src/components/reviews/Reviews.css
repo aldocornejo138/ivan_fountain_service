@@ -87,8 +87,8 @@
 .review-card {
   background: rgba(30, 30, 40, 0.9);
   border-radius: 15px;
-  padding: 30px;
-  width: 350px;
+  padding: 10px;
+  width: 270px;
   min-height: 300px;
   display: flex;
   flex-direction: column;

@@ -20,13 +20,13 @@ import { gallery10 } from "../../assets/index.js";
 
 const Gallery = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   return (
     <section id="gallery">
       <div className="gallery-wrapper">
-        <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
+        <div ref={ref} className={`section-header ${inView ? "visible" : ""}`}>
           <h1>Gallery</h1>
           <p>Explore Our Wide Range of Projects throughout Socal</p>
         </div>

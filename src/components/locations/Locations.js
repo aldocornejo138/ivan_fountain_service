@@ -30,7 +30,7 @@ const CityCard = ({ city, county, index }) => {
 };
 
 const Locations = () => {
-  const [activeCounty, setActiveCounty] = useState("all");
+  const [activeCounty, setActiveCounty] = useState("Riverside");
 
   // Header animation
   const [headerRef, headerInView] = useInView({
