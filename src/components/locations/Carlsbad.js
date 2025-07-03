@@ -1,45 +1,146 @@
-import React from "react";
-import "./Locations.css";
-import { IvanLogo } from "../../assets/index.js";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import Footer from "../footer/Footer.js";
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
-import { Installation } from "../../assets/index.js";
-import { beforeRepair } from "../../assets/index.js";
-import { afterRepair } from "../../assets/index.js";
-import { maintenance } from "../../assets/index.js";
-import { maintenance2 } from "../../assets/index.js";
-import { business } from "../../assets/index.js";
-import { emergency } from "../../assets/index.js";
-import { delivary } from "../../assets/index.js";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+
+// Import components
+import Footer from "../footer/Footer.js";
 import Reviews from "../reviews/Reviews.js";
 import Contact from "../contact/Contact.js";
+
+// Import assets
+import {
+  IvanLogo,
+  Installation,
+  beforeRepair,
+  afterRepair,
+  maintenance,
+  maintenance2,
+  business,
+  emergency,
+  delivary,
+  sliderImg1,
+  sliderImg2,
+  sliderImg3,
+  sliderImg4,
+  sliderImg5,
+  sliderImg6,
+  sliderImg7,
+  sliderImg8,
+  sliderImg9,
+  sliderImg10,
+} from "../../assets/index.js";
 import imageSlide2 from "./locationData.js";
-import { useState, useEffect } from "react";
 
-import { sliderImg1 } from "../../assets/index.js";
-import { sliderImg2 } from "../../assets/index.js";
-import { sliderImg3 } from "../../assets/index.js";
-import { sliderImg4 } from "../../assets/index.js";
-import { sliderImg5 } from "../../assets/index.js";
-import { sliderImg6 } from "../../assets/index.js";
-import { sliderImg7 } from "../../assets/index.js";
-import { sliderImg8 } from "../../assets/index.js";
-import { sliderImg9 } from "../../assets/index.js";
-import { sliderImg10 } from "../../assets/index.js";
-
-import "../gallery/Gallery.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+// Import CSS
+import "./Locations.css";
 import "swiper/css";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-
-import { Helmet } from "react-helmet-async";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const phoneNumber = "(951) 837-8384";
 const phoneLink = `tel:${phoneNumber}`;
+
+// Animation variants
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Define all images with dimensions
+const sliderImages = [
+  {
+    src: sliderImg1,
+    width: 624,
+    height: 831,
+    alt: "Carlsbad Fountain Service",
+  },
+  {
+    src: sliderImg2,
+    width: 715,
+    height: 939,
+    alt: "Carlsbad Fountain Maintenance",
+  },
+  {
+    src: sliderImg3,
+    width: 594,
+    height: 787,
+    alt: "Carlsbad Fountain Installation",
+  },
+  { src: sliderImg4, width: 786, height: 987, alt: "Carlsbad Fountain Repair" },
+  {
+    src: sliderImg5,
+    width: 611,
+    height: 798,
+    alt: "Carlsbad Fountain Restoration",
+  },
+  {
+    src: sliderImg6,
+    width: 781,
+    height: 1033,
+    alt: "Carlsbad Fountain Delivery",
+  },
+  {
+    src: sliderImg7,
+    width: 1366,
+    height: 1764,
+    alt: "Carlsbad Fountain Replacement",
+  },
+  {
+    src: sliderImg8,
+    width: 757,
+    height: 995,
+    alt: "Carlsbad Fountain Contractor",
+  },
+  {
+    src: sliderImg9,
+    width: 600,
+    height: 775,
+    alt: "Carlsbad CA Fountain Maintenance",
+  },
+  {
+    src: sliderImg10,
+    width: 755,
+    height: 995,
+    alt: "Carlsbad CA Fountain Installation",
+  },
+];
+
+const serviceImages = {
+  delivary: { src: delivary, width: 1500, height: 2000 },
+  installation: { src: Installation, width: 1500, height: 2000 },
+  beforeRepair: { src: beforeRepair, width: 1029, height: 1831 },
+  afterRepair: { src: afterRepair, width: 2048, height: 2506 },
+  maintenance: { src: maintenance, width: 1440, height: 1920 },
+  maintenance2: { src: maintenance2, width: 1500, height: 2000 },
+  emergency: { src: emergency, width: 1150, height: 2048 },
+  business: { src: business, width: 1474, height: 2394 },
+};
 
 const ServiceSection = ({
   title,
@@ -48,108 +149,67 @@ const ServiceSection = ({
   image2,
   alt1,
   alt2,
-  height1,
   width1,
-  height2,
+  height1,
   width2,
-  Title1,
-  Title2,
+  height2,
+  isFlipped = false,
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
+    threshold: 0.1,
   });
 
   return (
-    <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
-      <div className="firstServ">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={fadeIn}
+      className="Services"
+    >
+      <div className={`firstServ ${isFlipped ? "flipped" : ""}`}>
         <div className="image">
-          <img
+          <motion.img
+            variants={scaleIn}
             alt={alt1}
             src={image1}
+            title={alt1}
             width={width1}
             height={height1}
-            title={Title1}
             loading="lazy"
           />
-          <img
+          <motion.img
+            variants={scaleIn}
             alt={alt2}
             src={image2}
+            title={alt2}
             width={width2}
             height={height2}
-            title={Title2}
             loading="lazy"
           />
         </div>
-        <div className="servText">
+        <motion.div variants={fadeIn} className="servText">
           <h2>{title}</h2>
           <p>{description}</p>
           <br />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const ServiceSection2 = ({
-  title,
-  description,
-  image1,
-  image2,
-  alt1,
-  alt2,
-  height1,
-  width1,
-  height2,
-  width2,
-  Title1,
-  Title2,
-}) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-  });
-
-  return (
-    <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
-      <div className="firstServ">
-        <div className="image">
-          <img
-            alt={alt1}
-            src={image1}
-            width={width1}
-            height={height1}
-            title={Title1}
-            loading="lazy"
-          />
-          <img
-            alt={alt2}
-            src={image2}
-            width={width2}
-            height={height2}
-            title={Title2}
-            loading="lazy"
-          />
-        </div>
-        <div className="servText">
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <br />
-          <br />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Carlsbad = (props) => {
+const Carlsbad = () => {
   const [currentState, setCurrentState] = useState(0);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (currentState === 3) {
-        setCurrentState(0);
-      } else {
-        setCurrentState(currentState + 1);
-      }
-    }, 8000);
+      setCurrentState((prev) => (prev === 3 ? 0 : prev + 1));
+    }, 5000);
     return () => clearTimeout(timer);
   }, [currentState]);
 
@@ -158,19 +218,14 @@ const Carlsbad = (props) => {
     backgroundPosition: "center",
     backgroundSize: "cover",
     height: "100%",
-    weight: "100%",
-    transition: "background-image 3s ease",
+    width: "100%",
     borderRadius: "25px",
   };
-
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-  });
 
   return (
     <section className="app">
       <Helmet>
-        <title>Fountain Service Carlsbad - Ivan Fountain Service </title>
+        <title>Fountain Service Carlsbad - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Carlsbad, CA area."
@@ -179,30 +234,43 @@ const Carlsbad = (props) => {
           name="keywords"
           content="Fountain Contractor Carlsbad, Fountain Contractor Carlsbad CA, Fountain Contractors Carlsbad, Fountain Contractors Carlsbad CA, Fountain Delivery Carlsbad, Fountain Delivery Carlsbad CA, Fountain Install Carlsbad, Fountain Install Carlsbad CA, Fountain Installation Carlsbad, Fountain Installation Carlsbad CA, Fountain Maintenance Carlsbad, Fountain Maintenance Carlsbad CA, Fountain Service Carlsbad, Fountain Service Carlsbad CA, Fountain Services Carlsbad, Fountain Services Carlsbad CA, Home and Garden Maintenance Carlsbad, Home and Garden Maintenance Carlsbad CA, Waterfalls Carlsbad, Waterfalls Carlsbad CA"
         />
-        <link rel="canonical" href="/fountain-service-carlsbad" />
+        <link rel="canonical" href="/fountain-service-Carlsbad" />
       </Helmet>
 
       <div className="head">
-        <Link
-          to="/"
-          className="headLogo"
-          style={{ textDecoration: "none", fontSize: "10px" }}
-        >
-          <h1>IVAN'S FOUNTAIN SERVICES</h1>
+        <Link to="/" className="headLogo">
+          <h2>IVAN'S FOUNTAIN SERVICES</h2>
         </Link>
         <a className="headNumber" href={phoneLink}>
           {phoneNumber}
         </a>
       </div>
+
       <div className="countinerStyle">
-        <div style={bgImageStyle}></div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentState}
+            style={bgImageStyle}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+          />
+        </AnimatePresence>
         <div className="transparent-background"></div>
       </div>
-      <div style={bgImageStyle}></div>
+
       <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
-            <img
+            <motion.img
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+              }}
               src={IvanLogo}
               alt="IvanLogo"
               title="Ivan Fountain Service Logo"
@@ -216,21 +284,29 @@ const Carlsbad = (props) => {
           <div className="icon-with-text">
             <Link to="/" className="navMenu">
               <i className="fas fa-house"></i>
-              <h1>Home</h1>
+              <h2>Home</h2>
             </Link>
           </div>
         </div>
       </div>
 
-      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1> Carlsbad</h1>
-        <p>Southern California’s Premier Fountain Service</p>
-      </div>
-      <div
+      <motion.div
         ref={ref}
-        className={`imageContainer ${inView ? "zoomIn" : "zoomOut"}`}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeIn}
+        className="title"
       >
-        <br />
+        <h1>Fountain Services in Carlsbad</h1>
+        <p>Southern California's Premier Fountain Service</p>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeIn}
+        className="imageContainer"
+      >
         <p>
           Ivan Fountain Service has been in business for over 12 years and
           proudly serves Carlsbad, CA area. We offer many services beyond
@@ -239,12 +315,7 @@ const Carlsbad = (props) => {
           Services. Fountain Cleaning and Fountain Repair are our specialty.
         </p>
 
-        <div
-          ref={ref}
-          className={`galleryContainer ${inView ? "zoomIn" : "zoomOut"}`}
-        >
-          <div></div>
-
+        <div className="galleryContainer">
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -266,106 +337,19 @@ const Carlsbad = (props) => {
             modules={[EffectCoverflow, Pagination, Navigation]}
             className="swiper_container"
           >
-            <SwiperSlide>
-              <img
-                src={sliderImg1}
-                alt="Carlsbad Fountain Service"
-                title="Carlsbad Fountain Service"
-                width="624"
-                height="831"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg2}
-                alt="Carlsbad Fountain Maintenance"
-                title="Carlsbad Fountain Maintenance"
-                width="715"
-                height="939"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg3}
-                alt="Carlsbad Fountain Installation"
-                title="Carlsbad Fountain Installation"
-                width="594"
-                height="787"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg4}
-                alt="Carlsbad Fountain Repair"
-                title="Carlsbad Fountain Repair"
-                width="786"
-                height="987"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg5}
-                alt="Carlsbad Fountain Restoration"
-                title="Carlsbad Fountain Restoration"
-                width="611"
-                height="798"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg6}
-                alt="Carlsbad Fountain Delivary"
-                title="Carlsbad Fountain Delivary"
-                width="781"
-                height="1033"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg7}
-                alt="Carlsbad Fountain Replacement"
-                title="Carlsbad Fountain Replacement"
-                width="1366"
-                height="1764"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg8}
-                alt="Carlsbad Fountain Contractor"
-                title="Carlsbad Fountain Contractor"
-                width="757"
-                height="995"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg9}
-                alt="Carlsbad CA Fountain Maintenance"
-                title="Carlsbad CA Fountain Maintenance"
-                width="600"
-                height="775"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg10}
-                alt="Carlsbad CA Fountain Installation"
-                title="Carlsbad CA Fountain Installation"
-                width="755"
-                height="995"
-                loading="lazy"
-              />
-            </SwiperSlide>
+            {sliderImages.map((img, index) => (
+              <SwiperSlide key={index}>
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  src={img.src}
+                  alt={img.alt}
+                  title={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
+                />
+              </SwiperSlide>
+            ))}
             <div className="slider-controler">
               <div className="swiper-button-prev slider-arrow">
                 <ion-icon name="arrow-back-outline"></ion-icon>
@@ -375,16 +359,21 @@ const Carlsbad = (props) => {
               </div>
             </div>
           </Swiper>
-          <button className="galleryButton">
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="galleryButton"
+          >
             <a
               href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
               className="link-style"
             >
               <h2>Full Gallery</h2>
             </a>
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       <ServiceSection
         title="Fountain Installation Carlsbad"
@@ -398,38 +387,36 @@ const Carlsbad = (props) => {
               cultures all over the world. When you are ready to add a bit of
               classic beauty to your home with a fountain, Ivan Fountain Service
               is the first and only call you need to make in Carlsbad, CA."
-        image1={delivary}
-        image2={Installation}
+        image1={serviceImages.delivary.src}
+        image2={serviceImages.installation.src}
         alt1="Carlsbad Fountain Delivery"
         alt2="Carlsbad Fountain Installation"
-        width1="1500"
-        height1="2000"
-        width2="1500"
-        height2="2000"
-        Title1="Carlsbad Fountain Installation"
-        Title2="Carlsbad CA Fountain Delivery"
+        width1={serviceImages.delivary.width}
+        height1={serviceImages.delivary.height}
+        width2={serviceImages.installation.width}
+        height2={serviceImages.installation.height}
+        isFlipped={false}
       />
 
-      <ServiceSection2
+      <ServiceSection
         title="Fountain Repair Carlsbad"
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
               Restoration, Foundations, Concrete Slab, Cracks in Ponds/ Tiers,
               Removal of old Fountains, Move Fountains to New Location and more."
-        image1={beforeRepair}
-        image2={afterRepair}
+        image1={serviceImages.beforeRepair.src}
+        image2={serviceImages.afterRepair.src}
         alt1="Carlsbad Fountain Repair"
-        alt2="Carlsbad Ca Fountain Repair"
-        width1="1029"
-        height1="1831"
-        width2="2048"
-        height2="2506"
-        Title1="Carlsbad Fountain Repair"
-        Title2="Carlsbad CA Fountain Repair"
+        alt2="Carlsbad CA Fountain Repair"
+        width1={serviceImages.beforeRepair.width}
+        height1={serviceImages.beforeRepair.height}
+        width2={serviceImages.afterRepair.width}
+        height2={serviceImages.afterRepair.height}
+        isFlipped={true}
       />
 
       <ServiceSection
         title="Fountain Maintenance Carlsbad"
-        description=" While Fountains are beautiful and a pleasure to own, maintenance
+        description="While Fountains are beautiful and a pleasure to own, maintenance
               can be somewhat labor intensive depending on the particular design
               of the fountain. This is why Ivan Fountain Service is there for
               you so that you do not have to waste your valuable time taking
@@ -437,21 +424,20 @@ const Carlsbad = (props) => {
               Fountain experts must ascertain the specific details of your
               fountain. Call Ivan Fountain services today to talk to a
               representative regarding any of your Fountain needs."
-        image1={maintenance}
-        image2={maintenance2}
+        image1={serviceImages.maintenance.src}
+        image2={serviceImages.maintenance2.src}
         alt1="Carlsbad Fountain Maintenance"
         alt2="Carlsbad CA Fountain Maintenance"
-        width1="1440"
-        height1="1920"
-        width2="1500"
-        height2="2000"
-        Title1="Carlsbad Fountain Maintenance"
-        Title2="Carlsbad CA Fountain Maintenance"
+        width1={serviceImages.maintenance.width}
+        height1={serviceImages.maintenance.height}
+        width2={serviceImages.maintenance2.width}
+        height2={serviceImages.maintenance2.height}
+        isFlipped={false}
       />
 
-      <ServiceSection2
+      <ServiceSection
         title="Fountain Restoration Carlsbad"
-        description=" Already have a fountain on your property that does not work
+        description="Already have a fountain on your property that does not work
               anymore or is weather worn and looking shabby? Call Ivan Fountain
               today for a quick estimate on getting that old fountain restored
               to its original beauty and functionality. Our highly experienced
@@ -463,17 +449,17 @@ const Carlsbad = (props) => {
               Fountain Service employees are experts in this procedure. We are
               thoroughly versed in the installation, operation, and repair of
               all associated pumps and hoses currently offered by the industry."
-        image1={emergency}
-        image2={business}
+        image1={serviceImages.emergency.src}
+        image2={serviceImages.business.src}
         alt1="Carlsbad Fountain Restoration"
         alt2="Carlsbad Fountain Restoration"
-        width1="1150"
-        height1="2048"
-        width2="1474"
-        height2="2394"
-        Title1="Carlsbad Fountain Restoration"
-        Title2="Carlsbad CA Fountain Restoration"
+        width1={serviceImages.emergency.width}
+        height1={serviceImages.emergency.height}
+        width2={serviceImages.business.width}
+        height2={serviceImages.business.height}
+        isFlipped={true}
       />
+
       <Reviews />
       <Contact />
       <Footer />

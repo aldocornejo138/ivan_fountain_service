@@ -95,7 +95,7 @@ const Reviews = () => {
       style={{ background: "#000" }}
     >
       <div className={`section-header ${sectionInView ? "visible" : ""}`}>
-        <h1>Client Testimonials</h1>
+        <h2>Client Testimonials</h2>
         <p>See what our customers say about Ivan Fountain Service</p>
       </div>
 

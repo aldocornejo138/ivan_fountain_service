@@ -72,6 +72,71 @@ const scaleIn = {
   },
 };
 
+// Define all images with dimensions
+const sliderImages = [
+  { src: sliderImg1, width: 624, height: 831, alt: "Anaheim Fountain Service" },
+  {
+    src: sliderImg2,
+    width: 715,
+    height: 939,
+    alt: "Anaheim Fountain Maintenance",
+  },
+  {
+    src: sliderImg3,
+    width: 594,
+    height: 787,
+    alt: "Anaheim Fountain Installation",
+  },
+  { src: sliderImg4, width: 786, height: 987, alt: "Anaheim Fountain Repair" },
+  {
+    src: sliderImg5,
+    width: 611,
+    height: 798,
+    alt: "Anaheim Fountain Restoration",
+  },
+  {
+    src: sliderImg6,
+    width: 781,
+    height: 1033,
+    alt: "Anaheim Fountain Delivery",
+  },
+  {
+    src: sliderImg7,
+    width: 1366,
+    height: 1764,
+    alt: "Anaheim Fountain Replacement",
+  },
+  {
+    src: sliderImg8,
+    width: 757,
+    height: 995,
+    alt: "Anaheim Fountain Contractor",
+  },
+  {
+    src: sliderImg9,
+    width: 600,
+    height: 775,
+    alt: "Anaheim CA Fountain Maintenance",
+  },
+  {
+    src: sliderImg10,
+    width: 755,
+    height: 995,
+    alt: "Anaheim CA Fountain Installation",
+  },
+];
+
+const serviceImages = {
+  delivary: { src: delivary, width: 1500, height: 2000 },
+  installation: { src: Installation, width: 1500, height: 2000 },
+  beforeRepair: { src: beforeRepair, width: 1029, height: 1831 },
+  afterRepair: { src: afterRepair, width: 2048, height: 2506 },
+  maintenance: { src: maintenance, width: 1440, height: 1920 },
+  maintenance2: { src: maintenance2, width: 1500, height: 2000 },
+  emergency: { src: emergency, width: 1150, height: 2048 },
+  business: { src: business, width: 1474, height: 2394 },
+};
+
 const ServiceSection = ({
   title,
   description,
@@ -79,6 +144,10 @@ const ServiceSection = ({
   image2,
   alt1,
   alt2,
+  width1,
+  height1,
+  width2,
+  height2,
   isFlipped = false,
 }) => {
   const { ref, inView } = useInView({
@@ -101,6 +170,8 @@ const ServiceSection = ({
             alt={alt1}
             src={image1}
             title={alt1}
+            width={width1}
+            height={height1}
             loading="lazy"
           />
           <motion.img
@@ -108,6 +179,8 @@ const ServiceSection = ({
             alt={alt2}
             src={image2}
             title={alt2}
+            width={width2}
+            height={height2}
             loading="lazy"
           />
         </div>
@@ -131,7 +204,7 @@ const Anaheim = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentState((prev) => (prev === 3 ? 0 : prev + 1));
-    }, 20000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [currentState]);
 
@@ -161,7 +234,7 @@ const Anaheim = () => {
 
       <div className="head">
         <Link to="/" className="headLogo">
-          <h1>IVAN'S FOUNTAIN SERVICES</h1>
+          <h2>IVAN'S FOUNTAIN SERVICES</h2>
         </Link>
         <a className="headNumber" href={phoneLink}>
           {phoneNumber}
@@ -196,6 +269,8 @@ const Anaheim = () => {
               src={IvanLogo}
               alt="IvanLogo"
               title="Ivan Fountain Service Logo"
+              width="1208"
+              height="1118"
               loading="eager"
             />
           </Link>
@@ -204,7 +279,7 @@ const Anaheim = () => {
           <div className="icon-with-text">
             <Link to="/" className="navMenu">
               <i className="fas fa-house"></i>
-              <h1>Home</h1>
+              <h2>Home</h2>
             </Link>
           </div>
         </div>
@@ -217,7 +292,7 @@ const Anaheim = () => {
         variants={fadeIn}
         className="title"
       >
-        <h1>Anaheim</h1>
+        <h1>Fountain Services in Anaheim</h1>
         <p>Southern California's Premier Fountain Service</p>
       </motion.div>
 
@@ -257,24 +332,15 @@ const Anaheim = () => {
             modules={[EffectCoverflow, Pagination, Navigation]}
             className="swiper_container"
           >
-            {[
-              sliderImg1,
-              sliderImg2,
-              sliderImg3,
-              sliderImg4,
-              sliderImg5,
-              sliderImg6,
-              sliderImg7,
-              sliderImg8,
-              sliderImg9,
-              sliderImg10,
-            ].map((img, index) => (
+            {sliderImages.map((img, index) => (
               <SwiperSlide key={index}>
                 <motion.img
                   whileHover={{ scale: 1.05 }}
-                  src={img}
-                  alt={`Anaheim Fountain Service ${index + 1}`}
-                  title={`Anaheim Fountain Service ${index + 1}`}
+                  src={img.src}
+                  alt={img.alt}
+                  title={img.alt}
+                  width={img.width}
+                  height={img.height}
                   loading="lazy"
                 />
               </SwiperSlide>
@@ -316,10 +382,14 @@ const Anaheim = () => {
               cultures all over the world. When you are ready to add a bit of
               classic beauty to your home with a fountain, Ivan Fountain Service
               is the first and only call you need to make in Anaheim, CA."
-        image1={delivary}
-        image2={Installation}
+        image1={serviceImages.delivary.src}
+        image2={serviceImages.installation.src}
         alt1="Anaheim Fountain Delivery"
         alt2="Anaheim Fountain Installation"
+        width1={serviceImages.delivary.width}
+        height1={serviceImages.delivary.height}
+        width2={serviceImages.installation.width}
+        height2={serviceImages.installation.height}
         isFlipped={false}
       />
 
@@ -328,10 +398,14 @@ const Anaheim = () => {
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
               Restoration, Foundations, Concrete Slab, Cracks in Ponds/ Tiers,
               Removal of old Fountains, Move Fountains to New Location and more."
-        image1={beforeRepair}
-        image2={afterRepair}
+        image1={serviceImages.beforeRepair.src}
+        image2={serviceImages.afterRepair.src}
         alt1="Anaheim Fountain Repair"
         alt2="Anaheim CA Fountain Repair"
+        width1={serviceImages.beforeRepair.width}
+        height1={serviceImages.beforeRepair.height}
+        width2={serviceImages.afterRepair.width}
+        height2={serviceImages.afterRepair.height}
         isFlipped={true}
       />
 
@@ -345,10 +419,14 @@ const Anaheim = () => {
               Fountain experts must ascertain the specific details of your
               fountain. Call Ivan Fountain services today to talk to a
               representative regarding any of your Fountain needs."
-        image1={maintenance}
-        image2={maintenance2}
+        image1={serviceImages.maintenance.src}
+        image2={serviceImages.maintenance2.src}
         alt1="Anaheim Fountain Maintenance"
         alt2="Anaheim CA Fountain Maintenance"
+        width1={serviceImages.maintenance.width}
+        height1={serviceImages.maintenance.height}
+        width2={serviceImages.maintenance2.width}
+        height2={serviceImages.maintenance2.height}
         isFlipped={false}
       />
 
@@ -366,10 +444,14 @@ const Anaheim = () => {
               Fountain Service employees are experts in this procedure. We are
               thoroughly versed in the installation, operation, and repair of
               all associated pumps and hoses currently offered by the industry."
-        image1={emergency}
-        image2={business}
+        image1={serviceImages.emergency.src}
+        image2={serviceImages.business.src}
         alt1="Anaheim Fountain Restoration"
         alt2="Anaheim Fountain Restoration"
+        width1={serviceImages.emergency.width}
+        height1={serviceImages.emergency.height}
+        width2={serviceImages.business.width}
+        height2={serviceImages.business.height}
         isFlipped={true}
       />
 
