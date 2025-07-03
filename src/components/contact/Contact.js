@@ -1,7 +1,46 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import "./ContactStyles.css";
 import { contact } from "../../assets/index.js";
+
+// Animation variants
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const slideInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 // File size constants (15MB limit)
 const MAX_FILE_SIZE = 15 * 1024 * 1024; // 15MB
@@ -31,14 +70,30 @@ const Contact = () => {
   });
 
   // Intersection Observer for animations
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref: titleRef, inView: titleInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "-50px 0px",
+  });
+
+  const { ref: imageRef, inView: imageInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "-50px 0px",
+  });
+
+  const { ref: formRef, inView: formInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "-50px 0px",
+  });
 
   // Log environment variables for debugging
   useEffect(() => {
-    console.log("Webhook URL:", process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL);
+    console.log("Webhook URL:", process.env.REACT_APP_N8N_WEBHOOK_URL);
     console.log(
       "Secret present:",
-      process.env.NEXT_PUBLIC_N8N_SECRET ? "Yes" : "No"
+      process.env.REACT_APP_N8N_SECRET ? "Yes" : "No"
     );
   }, []);
 
@@ -179,7 +234,7 @@ const Contact = () => {
       setFormStatus({
         message: failedValidation.message,
         type: "error",
-        details: [], // Add empty array
+        details: [],
       });
       setIsSubmitting(false);
       return;
@@ -203,10 +258,7 @@ const Contact = () => {
         formData.append("attachments", file);
       });
 
-      // Log for debugging
-      console.log("Sending to:", process.env.REACT_APP_N8N_WEBHOOK_URL);
-
-      // Send to webhook - using your environment variables
+      // Send to webhook
       const response = await fetch(process.env.REACT_APP_N8N_WEBHOOK_URL, {
         method: "POST",
         headers: {
@@ -220,19 +272,10 @@ const Contact = () => {
         throw new Error(`HTTP ${response.status}: ${errorText}`);
       }
 
-      // Try to parse JSON if possible
-      let responseData;
-      try {
-        responseData = await response.json();
-        console.log("Response data:", responseData);
-      } catch (e) {
-        console.log("Response is not JSON");
-      }
-
       setFormStatus({
         message: `Thank you ${user_name}, your message has been sent successfully!`,
         type: "success",
-        details: [], // Add empty array
+        details: [],
       });
 
       // Reset form
@@ -244,7 +287,7 @@ const Contact = () => {
       setMessage("");
       setFiles([]);
     } catch (error) {
-      console.error("Full submission error:", error);
+      console.error("Submission error:", error);
       setFormStatus({
         message: `Submission failed: ${error.message}`,
         type: "error",
@@ -262,22 +305,25 @@ const Contact = () => {
 
   return (
     <section id="contact" className="dark-contact-section">
-      <div
-        ref={ref}
-        className={`contact-title ${inView ? "zoomIn" : "zoomOut"}`}
+      <motion.div
+        ref={titleRef}
+        initial="hidden"
+        animate={titleInView ? "visible" : "hidden"}
+        variants={fadeIn}
+        className="contact-title"
       >
         <h2>Have a Project in Mind?</h2>
         <p>Send a Message, We're here for you!</p>
-      </div>
+      </motion.div>
 
       <div className="contact-container">
-        <div
-          ref={ref}
-          className={`contact-image-container ${
-            inView ? "zoomInLeft" : "zoomOutLeft"
-          }`}
+        <motion.div
+          ref={imageRef}
+          initial="hidden"
+          animate={imageInView ? "visible" : "hidden"}
+          variants={slideInLeft}
+          className="contact-image-container"
         >
-          {/* Restored your original image */}
           <img
             src={contact}
             alt="Contact Illustration"
@@ -286,11 +332,14 @@ const Contact = () => {
             height="2661"
             loading="lazy"
           />
-        </div>
+        </motion.div>
 
-        <div
-          ref={ref}
-          className={`contact-form ${inView ? "zoomInRight" : "zoomOutRight"}`}
+        <motion.div
+          ref={formRef}
+          initial="hidden"
+          animate={formInView ? "visible" : "hidden"}
+          variants={slideInRight}
+          className="contact-form"
         >
           <form ref={form} onSubmit={handleSend}>
             {/* Status Messages */}
@@ -529,7 +578,7 @@ const Contact = () => {
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

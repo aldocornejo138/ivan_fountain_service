@@ -1,45 +1,76 @@
-import React from "react";
-import "./Locations.css";
-import { IvanLogo } from "../../assets/index.js";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import Footer from "../footer/Footer.js";
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
-import { Installation } from "../../assets/index.js";
-import { beforeRepair } from "../../assets/index.js";
-import { afterRepair } from "../../assets/index.js";
-import { maintenance } from "../../assets/index.js";
-import { maintenance2 } from "../../assets/index.js";
-import { business } from "../../assets/index.js";
-import { emergency } from "../../assets/index.js";
-import { delivary } from "../../assets/index.js";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+
+// Import components
+import Footer from "../footer/Footer.js";
 import Reviews from "../reviews/Reviews.js";
 import Contact from "../contact/Contact.js";
+
+// Import assets
+import {
+  IvanLogo,
+  Installation,
+  beforeRepair,
+  afterRepair,
+  maintenance,
+  maintenance2,
+  business,
+  emergency,
+  delivary,
+  sliderImg1,
+  sliderImg2,
+  sliderImg3,
+  sliderImg4,
+  sliderImg5,
+  sliderImg6,
+  sliderImg7,
+  sliderImg8,
+  sliderImg9,
+  sliderImg10,
+} from "../../assets/index.js";
 import imageSlide2 from "./locationData.js";
-import { useState, useEffect } from "react";
 
-import { sliderImg1 } from "../../assets/index.js";
-import { sliderImg2 } from "../../assets/index.js";
-import { sliderImg3 } from "../../assets/index.js";
-import { sliderImg4 } from "../../assets/index.js";
-import { sliderImg5 } from "../../assets/index.js";
-import { sliderImg6 } from "../../assets/index.js";
-import { sliderImg7 } from "../../assets/index.js";
-import { sliderImg8 } from "../../assets/index.js";
-import { sliderImg9 } from "../../assets/index.js";
-import { sliderImg10 } from "../../assets/index.js";
-
-import "../gallery/Gallery.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+// Import CSS
+import "./Locations.css";
 import "swiper/css";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-
-import { Helmet } from "react-helmet-async";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const phoneNumber = "(951) 837-8384";
 const phoneLink = `tel:${phoneNumber}`;
+
+// Animation variants
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 const ServiceSection = ({
   title,
@@ -48,108 +79,59 @@ const ServiceSection = ({
   image2,
   alt1,
   alt2,
-  height1,
-  width1,
-  height2,
-  width2,
-  Title1,
-  Title2,
+  isFlipped = false,
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
+    threshold: 0.1,
   });
 
   return (
-    <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
-      <div className="firstServ">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={fadeIn}
+      className="Services"
+    >
+      <div className={`firstServ ${isFlipped ? "flipped" : ""}`}>
         <div className="image">
-          <img
+          <motion.img
+            variants={scaleIn}
             alt={alt1}
             src={image1}
-            width={width1}
-            height={height1}
-            title={Title1}
+            title={alt1}
             loading="lazy"
           />
-          <img
+          <motion.img
+            variants={scaleIn}
             alt={alt2}
             src={image2}
-            width={width2}
-            height={height2}
-            title={Title2}
+            title={alt2}
             loading="lazy"
           />
         </div>
-        <div className="servText">
+        <motion.div variants={fadeIn} className="servText">
           <h2>{title}</h2>
           <p>{description}</p>
           <br />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const ServiceSection2 = ({
-  title,
-  description,
-  image1,
-  image2,
-  alt1,
-  alt2,
-  height1,
-  width1,
-  height2,
-  width2,
-  Title1,
-  Title2,
-}) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-  });
-
-  return (
-    <div ref={ref} className={`Services ${inView ? "zoomIn" : "zoomOut"}`}>
-      <div className="firstServ">
-        <div className="image">
-          <img
-            alt={alt1}
-            src={image1}
-            width={width1}
-            height={height1}
-            title={Title1}
-            loading="lazy"
-          />
-          <img
-            alt={alt2}
-            src={image2}
-            width={width2}
-            height={height2}
-            title={Title2}
-            loading="lazy"
-          />
-        </div>
-        <div className="servText">
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <br />
-          <br />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Anaheim = (props) => {
+const Anaheim = () => {
   const [currentState, setCurrentState] = useState(0);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (currentState === 3) {
-        setCurrentState(0);
-      } else {
-        setCurrentState(currentState + 1);
-      }
-    }, 8000);
+      setCurrentState((prev) => (prev === 3 ? 0 : prev + 1));
+    }, 20000);
     return () => clearTimeout(timer);
   }, [currentState]);
 
@@ -158,19 +140,14 @@ const Anaheim = (props) => {
     backgroundPosition: "center",
     backgroundSize: "cover",
     height: "100%",
-    weight: "100%",
-    transition: "background-image 3s ease",
+    width: "100%",
     borderRadius: "25px",
   };
-
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-  });
 
   return (
     <section className="app">
       <Helmet>
-        <title>Fountain Service Anaheim - Ivan Fountain Service </title>
+        <title>Fountain Service Anaheim - Ivan Fountain Service</title>
         <meta
           name="description"
           content="Ivan Fountain Service has been in business for over 12 years and proudly serves Anaheim, CA area."
@@ -183,31 +160,42 @@ const Anaheim = (props) => {
       </Helmet>
 
       <div className="head">
-        <Link
-          to="/"
-          className="headLogo"
-          style={{ textDecoration: "none", fontSize: "10px" }}
-        >
+        <Link to="/" className="headLogo">
           <h1>IVAN'S FOUNTAIN SERVICES</h1>
         </Link>
         <a className="headNumber" href={phoneLink}>
           {phoneNumber}
         </a>
       </div>
+
       <div className="countinerStyle">
-        <div style={bgImageStyle}></div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentState}
+            style={bgImageStyle}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+          />
+        </AnimatePresence>
         <div className="transparent-background"></div>
       </div>
-      <div style={bgImageStyle}></div>
+
       <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
-            <img
+            <motion.img
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+              }}
               src={IvanLogo}
               alt="IvanLogo"
               title="Ivan Fountain Service Logo"
-              width="1208"
-              height="1118"
               loading="eager"
             />
           </Link>
@@ -222,15 +210,23 @@ const Anaheim = (props) => {
         </div>
       </div>
 
-      <div ref={ref} className={`title ${inView ? "zoomIn" : "zoomOut"}`}>
-        <h1> Anaheim</h1>
-        <p>Southern California’s Premier Fountain Service</p>
-      </div>
-      <div
+      <motion.div
         ref={ref}
-        className={`imageContainer ${inView ? "zoomIn" : "zoomOut"}`}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeIn}
+        className="title"
       >
-        <br />
+        <h1>Anaheim</h1>
+        <p>Southern California's Premier Fountain Service</p>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeIn}
+        className="imageContainer"
+      >
         <p>
           Ivan Fountain Service has been in business for over 12 years and
           proudly serves Anaheim, CA area. We offer many services beyond
@@ -239,12 +235,7 @@ const Anaheim = (props) => {
           Services. Fountain Cleaning and Fountain Repair are our specialty.
         </p>
 
-        <div
-          ref={ref}
-          className={`galleryContainer ${inView ? "zoomIn" : "zoomOut"}`}
-        >
-          <div></div>
-
+        <div className="galleryContainer">
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -266,106 +257,28 @@ const Anaheim = (props) => {
             modules={[EffectCoverflow, Pagination, Navigation]}
             className="swiper_container"
           >
-            <SwiperSlide>
-              <img
-                src={sliderImg1}
-                alt="Anaheim Fountain Service"
-                title="Anaheim Fountain Service"
-                width="624"
-                height="831"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg2}
-                alt="Anaheim Fountain Maintenance"
-                title="Anaheim Fountain Maintenance"
-                width="715"
-                height="939"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg3}
-                alt="Anaheim Fountain Installation"
-                title="Anaheim Fountain Installation"
-                width="594"
-                height="787"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg4}
-                alt="Anaheim Fountain Repair"
-                title="Anaheim Fountain Repair"
-                width="786"
-                height="987"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg5}
-                alt="Anaheim Fountain Restoration"
-                title="Anaheim Fountain Restoration"
-                width="611"
-                height="798"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg6}
-                alt="Anaheim Fountain Delivary"
-                title="Anaheim Fountain Delivary"
-                width="781"
-                height="1033"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg7}
-                alt="Anaheim Fountain Replacement"
-                title="Anaheim Fountain Replacement"
-                width="1366"
-                height="1764"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg8}
-                alt="Anaheim Fountain Contractor"
-                title="Anaheim Fountain Contractor"
-                width="757"
-                height="995"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg9}
-                alt="Anaheim CA Fountain Maintenance"
-                title="Anaheim CA Fountain Maintenance"
-                width="600"
-                height="775"
-                loading="lazy"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={sliderImg10}
-                alt="Anaheim CA Fountain Installation"
-                title="Anaheim CA Fountain Installation"
-                width="755"
-                height="995"
-                loading="lazy"
-              />
-            </SwiperSlide>
+            {[
+              sliderImg1,
+              sliderImg2,
+              sliderImg3,
+              sliderImg4,
+              sliderImg5,
+              sliderImg6,
+              sliderImg7,
+              sliderImg8,
+              sliderImg9,
+              sliderImg10,
+            ].map((img, index) => (
+              <SwiperSlide key={index}>
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  src={img}
+                  alt={`Anaheim Fountain Service ${index + 1}`}
+                  title={`Anaheim Fountain Service ${index + 1}`}
+                  loading="lazy"
+                />
+              </SwiperSlide>
+            ))}
             <div className="slider-controler">
               <div className="swiper-button-prev slider-arrow">
                 <ion-icon name="arrow-back-outline"></ion-icon>
@@ -375,16 +288,21 @@ const Anaheim = (props) => {
               </div>
             </div>
           </Swiper>
-          <button className="galleryButton">
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="galleryButton"
+          >
             <a
               href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
               className="link-style"
             >
               <h2>Full Gallery</h2>
             </a>
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       <ServiceSection
         title="Fountain Installation Anaheim"
@@ -402,15 +320,10 @@ const Anaheim = (props) => {
         image2={Installation}
         alt1="Anaheim Fountain Delivery"
         alt2="Anaheim Fountain Installation"
-        width1="1500"
-        height1="2000"
-        width2="1500"
-        height2="2000"
-        Title1="Anaheim Fountain Installation"
-        Title2="Anaheim CA Fountain Delivery"
+        isFlipped={false}
       />
 
-      <ServiceSection2
+      <ServiceSection
         title="Fountain Repair Anaheim"
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
               Restoration, Foundations, Concrete Slab, Cracks in Ponds/ Tiers,
@@ -418,18 +331,13 @@ const Anaheim = (props) => {
         image1={beforeRepair}
         image2={afterRepair}
         alt1="Anaheim Fountain Repair"
-        alt2="Anaheim Ca Fountain Repair"
-        width1="1029"
-        height1="1831"
-        width2="2048"
-        height2="2506"
-        Title1="Anaheim Fountain Repair"
-        Title2="Anaheim CA Fountain Repair"
+        alt2="Anaheim CA Fountain Repair"
+        isFlipped={true}
       />
 
       <ServiceSection
         title="Fountain Maintenance Anaheim"
-        description=" While Fountains are beautiful and a pleasure to own, maintenance
+        description="While Fountains are beautiful and a pleasure to own, maintenance
               can be somewhat labor intensive depending on the particular design
               of the fountain. This is why Ivan Fountain Service is there for
               you so that you do not have to waste your valuable time taking
@@ -441,17 +349,12 @@ const Anaheim = (props) => {
         image2={maintenance2}
         alt1="Anaheim Fountain Maintenance"
         alt2="Anaheim CA Fountain Maintenance"
-        width1="1440"
-        height1="1920"
-        width2="1500"
-        height2="2000"
-        Title1="Anaheim Fountain Maintenance"
-        Title2="Anaheim CA Fountain Maintenance"
+        isFlipped={false}
       />
 
-      <ServiceSection2
+      <ServiceSection
         title="Fountain Restoration Anaheim"
-        description=" Already have a fountain on your property that does not work
+        description="Already have a fountain on your property that does not work
               anymore or is weather worn and looking shabby? Call Ivan Fountain
               today for a quick estimate on getting that old fountain restored
               to its original beauty and functionality. Our highly experienced
@@ -467,13 +370,9 @@ const Anaheim = (props) => {
         image2={business}
         alt1="Anaheim Fountain Restoration"
         alt2="Anaheim Fountain Restoration"
-        width1="1150"
-        height1="2048"
-        width2="1474"
-        height2="2394"
-        Title1="Anaheim Fountain Restoration"
-        Title2="Anaheim CA Fountain Restoration"
+        isFlipped={true}
       />
+
       <Reviews />
       <Contact />
       <Footer />

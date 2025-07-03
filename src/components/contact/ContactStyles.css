@@ -51,8 +51,6 @@
   margin: 0 auto 3rem;
   max-width: 800px;
   padding: 2rem 3rem;
-
-  /* dual‑layer background + gradient border */
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   background-image: radial-gradient(
@@ -63,17 +61,7 @@
     var(--gradient-accent);
   border: 4px solid transparent;
   border-radius: 30px;
-
-  /* glow and drop shadow */
   box-shadow: 0 0 20px var(--glow-color), 0 10px 30px rgba(14, 119, 199, 0.2);
-
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease-out;
-}
-.contact-title.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Heading text */
@@ -90,9 +78,10 @@
 /* Sub‑text */
 .contact-title p {
   font-size: 1.25rem;
-  color: var(--text-secondary); /* or #ffffff */
+  color: var(--text-secondary);
   opacity: 0.9;
 }
+
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -453,101 +442,10 @@
   margin-right: 10px;
 }
 
-/* Animations */
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes zoomOut {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-}
-
-@keyframes zoomInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes zoomOutLeft {
-  from {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-50px) scale(0.9);
-  }
-}
-
-@keyframes zoomInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes zoomOutRight {
-  from {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(50px) scale(0.9);
-  }
-}
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
-}
-
-.zoomIn {
-  animation: zoomIn 0.6s ease forwards;
-}
-
-.zoomOut {
-  animation: zoomOut 0.6s ease forwards;
-}
-
-.zoomInLeft {
-  animation: zoomInLeft 0.6s ease forwards;
-}
-
-.zoomOutLeft {
-  animation: zoomOutLeft 0.6s ease forwards;
-}
-
-.zoomInRight {
-  animation: zoomInRight 0.6s ease forwards;
-}
-
-.zoomOutRight {
-  animation: zoomOutRight 0.6s ease forwards;
 }
 
 /* Responsive styles */
@@ -567,13 +465,13 @@
     width: 100%;
   }
 
-  .contact-title h1 {
+  .contact-title h2 {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .contact-title h1 {
+  .contact-title h2 {
     font-size: 2.2rem;
   }
 
@@ -600,7 +498,11 @@
     padding: 3rem 1rem;
   }
 
-  .contact-title h1 {
+  .contact-title {
+    padding: 1.5rem;
+  }
+
+  .contact-title h2 {
     font-size: 1.8rem;
   }
 
