@@ -116,6 +116,31 @@
   opacity: 0.9;
 }
 
+.location-hero-button {
+  background: linear-gradient(135deg, #0095ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 16px 40px; /* Larger padding */
+  font-size: 1.2rem; /* Larger font */
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: -100px;
+  margin-left: -100px;
+  transition: all 0.3s ease;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(45, 121, 220, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.location-hero-button:hover {
+  background: linear-gradient(135deg, #607fae 100%, #8397b4 100%);
+  transform: translateY(-3px); /* More pronounced hover effect */
+  box-shadow: 0 8px 30px rgba(45, 121, 220, 0.6);
+}
+
 /* Main Content */
 .imageContainer {
   color: white;
@@ -308,12 +333,12 @@
 
 .headNumber {
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 2rem;
   text-decoration: none;
 }
 
 .countinerStyle {
-  height: 60vh;
+  height: 40vh;
   position: relative;
   border-radius: 25px;
   margin-top: 20px;
@@ -337,6 +362,13 @@
   .servText h2 {
     font-size: 2rem;
   }
+
+  .countinerStyle {
+    height: 50vh;
+    position: relative;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -346,6 +378,13 @@
 
   .firstServ.flipped {
     flex-direction: column;
+  }
+
+  .countinerStyle {
+    height: 60vh;
+    position: relative;
+    border-radius: 25px;
+    margin-top: 20px;
   }
 
   .servText,
@@ -367,6 +406,10 @@
   .galleryButton h2 {
     font-size: 2rem;
   }
+
+  .headNumber {
+    font-size: 1.7rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -379,6 +422,13 @@
     max-width: 120px;
   }
 
+  .countinerStyle {
+    height: 70vh;
+    position: relative;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+
   .navMenu {
     padding: 8px 15px;
   }
@@ -389,6 +439,10 @@
 
   .navMenu h1 {
     font-size: 1rem;
+  }
+
+  .headNumber {
+    font-size: 1.7rem;
   }
 
   .title {
@@ -414,18 +468,24 @@
   .head {
     padding: 0 15px;
   }
+  .countinerStyle {
+    height: 70vh;
+    position: relative;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
 
   .headLogo {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .headNumber {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   .navbarLogo img {
     height: 100px;
-    max-width: 100px;
+    max-width: 200px;
   }
 
   .navMenu h1 {
@@ -468,6 +528,13 @@
   .swiper-slide {
     width: 18rem;
     height: 25rem;
+  }
+
+  .countinerStyle {
+    height: 70vh;
+    position: relative;
+    border-radius: 25px;
+    margin-top: 20px;
   }
 
   .slider-controler .slider-arrow {

@@ -60,6 +60,13 @@ const fadeIn = {
   },
 };
 
+const scrollToContact = () => {
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: {
@@ -259,6 +266,10 @@ const Carlsbad = () => {
         </AnimatePresence>
         <div className="transparent-background"></div>
       </div>
+
+      <button className="location-hero-button" onClick={scrollToContact}>
+        Send a Message
+      </button>
 
       <div className="navbarItems">
         <div className="navbarLogo">

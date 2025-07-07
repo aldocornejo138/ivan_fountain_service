@@ -59,6 +59,12 @@ const fadeIn = {
     },
   },
 };
+const scrollToContact = () => {
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -241,7 +247,6 @@ const Oceanside = () => {
         />
         <link rel="canonical" href="/fountain-service-Oceanside" />
       </Helmet>
-
       <div className="head">
         <Link to="/" className="headLogo">
           <h2>IVAN'S FOUNTAIN SERVICES</h2>
@@ -250,7 +255,6 @@ const Oceanside = () => {
           {phoneNumber}
         </a>
       </div>
-
       <div className="countinerStyle">
         <AnimatePresence mode="wait">
           <motion.div
@@ -264,7 +268,6 @@ const Oceanside = () => {
         </AnimatePresence>
         <div className="transparent-background"></div>
       </div>
-
       <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
@@ -294,7 +297,10 @@ const Oceanside = () => {
           </div>
         </div>
       </div>
-
+      <button className="location-hero-button" onClick={scrollToContact}>
+        Send a Message
+      </button>
+      ;
       <motion.div
         ref={ref}
         initial="hidden"
@@ -305,7 +311,6 @@ const Oceanside = () => {
         <h1>Fountain Services in Oceanside</h1>
         <p>Southern California's Premier Fountain Service</p>
       </motion.div>
-
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -379,7 +384,6 @@ const Oceanside = () => {
           </motion.button>
         </div>
       </motion.div>
-
       <ServiceSection
         title="Fountain Installation Oceanside"
         description="One of the best ways to improve the esthetic of your property is
@@ -402,7 +406,6 @@ const Oceanside = () => {
         height2={serviceImages.installation.height}
         isFlipped={false}
       />
-
       <ServiceSection
         title="Fountain Repair Oceanside"
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
@@ -418,7 +421,6 @@ const Oceanside = () => {
         height2={serviceImages.afterRepair.height}
         isFlipped={true}
       />
-
       <ServiceSection
         title="Fountain Maintenance Oceanside"
         description="While Fountains are beautiful and a pleasure to own, maintenance
@@ -439,7 +441,6 @@ const Oceanside = () => {
         height2={serviceImages.maintenance2.height}
         isFlipped={false}
       />
-
       <ServiceSection
         title="Fountain Restoration Oceanside"
         description="Already have a fountain on your property that does not work
@@ -464,7 +465,6 @@ const Oceanside = () => {
         height2={serviceImages.business.height}
         isFlipped={true}
       />
-
       <Reviews />
       <Contact />
       <Footer />

@@ -59,6 +59,12 @@ const fadeIn = {
     },
   },
 };
+const scrollToContact = () => {
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -231,7 +237,6 @@ const Vista = () => {
         />
         <link rel="canonical" href="/fountain-service-Vista" />
       </Helmet>
-
       <div className="head">
         <Link to="/" className="headLogo">
           <h2>IVAN'S FOUNTAIN SERVICES</h2>
@@ -240,7 +245,6 @@ const Vista = () => {
           {phoneNumber}
         </a>
       </div>
-
       <div className="countinerStyle">
         <AnimatePresence mode="wait">
           <motion.div
@@ -254,7 +258,6 @@ const Vista = () => {
         </AnimatePresence>
         <div className="transparent-background"></div>
       </div>
-
       <div className="navbarItems">
         <div className="navbarLogo">
           <Link to="/">
@@ -284,7 +287,10 @@ const Vista = () => {
           </div>
         </div>
       </div>
-
+      <button className="location-hero-button" onClick={scrollToContact}>
+        Send a Message
+      </button>
+      ;
       <motion.div
         ref={ref}
         initial="hidden"
@@ -295,7 +301,6 @@ const Vista = () => {
         <h1>Fountain Services in Vista</h1>
         <p>Southern California's Premier Fountain Service</p>
       </motion.div>
-
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -369,7 +374,6 @@ const Vista = () => {
           </motion.button>
         </div>
       </motion.div>
-
       <ServiceSection
         title="Fountain Installation Vista"
         description="One of the best ways to improve the esthetic of your property is
@@ -392,7 +396,6 @@ const Vista = () => {
         height2={serviceImages.installation.height}
         isFlipped={false}
       />
-
       <ServiceSection
         title="Fountain Repair Vista"
         description="Our indoor and outdoor fountain repairs include: Leaks, Painting,
@@ -408,7 +411,6 @@ const Vista = () => {
         height2={serviceImages.afterRepair.height}
         isFlipped={true}
       />
-
       <ServiceSection
         title="Fountain Maintenance Vista"
         description="While Fountains are beautiful and a pleasure to own, maintenance
@@ -429,7 +431,6 @@ const Vista = () => {
         height2={serviceImages.maintenance2.height}
         isFlipped={false}
       />
-
       <ServiceSection
         title="Fountain Restoration Vista"
         description="Already have a fountain on your property that does not work
@@ -454,7 +455,6 @@ const Vista = () => {
         height2={serviceImages.business.height}
         isFlipped={true}
       />
-
       <Reviews />
       <Contact />
       <Footer />
