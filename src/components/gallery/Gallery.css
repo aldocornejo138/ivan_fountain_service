@@ -70,11 +70,10 @@
   color: var(--text-muted);
 }
 
-.swiper_container {
-  height: 50rem;
-  padding: 2rem 0rem;
+.swiperContainer {
+  width: 100%;
+  padding: 2rem 0;
   position: relative;
-  margin-left: 50px;
 }
 
 .swiper-slide {

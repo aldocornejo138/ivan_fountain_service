@@ -58,7 +58,7 @@ const Gallery = () => {
               clickable: true,
             }}
             modules={[EffectCoverflow, Pagination, Navigation]}
-            className="swiper_container"
+            className="swiperContainer"
           >
             <SwiperSlide>
               <img
