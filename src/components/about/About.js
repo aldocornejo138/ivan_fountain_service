@@ -79,11 +79,6 @@ const About = () => {
               Southern California's rich landscape, telling stories through the
               medium of water and light.
             </p>
-
-            <div className="signature-block">
-              <div className="signature">Ivan Cornejo</div>
-              <div className="title">Founder & CEO</div>
-            </div>
           </div>
 
           <div className="about-photo">
@@ -95,43 +90,6 @@ const About = () => {
               />
               <div className="frame-decoration"></div>
             </div>
-          </div>
-        </div>
-
-        <div
-          ref={statsRef}
-          className={`stats-container ${statsInView ? "visible" : ""}`}
-        >
-          <div className="stat-card">
-            <div className="stat-icon">
-              <GiWaterDrop /> {/* Replaced FaFountain with water drop icon */}
-            </div>
-            <div className="stat-value">15+</div>
-            <div className="stat-label">Years Experience</div>
-          </div>
-
-          <div className="stat-card">
-            <div className="stat-icon">
-              <FaTools />
-            </div>
-            <div className="stat-value">500+</div>
-            <div className="stat-label">Fountains Restored</div>
-          </div>
-
-          <div className="stat-card">
-            <div className="stat-icon">
-              <FaStar />
-            </div>
-            <div className="stat-value">100%</div>
-            <div className="stat-label">Satisfaction Guarantee</div>
-          </div>
-
-          <div className="stat-card">
-            <div className="stat-icon">
-              <FaMapMarkerAlt />
-            </div>
-            <div className="stat-value">All</div>
-            <div className="stat-label">Southern California</div>
           </div>
         </div>
       </div>

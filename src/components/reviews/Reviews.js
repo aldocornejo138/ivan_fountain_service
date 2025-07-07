@@ -6,27 +6,105 @@ import {
   FaQuoteLeft,
 } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Reviews.css";
 import reviewsData from "./reviewsData";
 
+// Animation variants
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -50,
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    backgroundColor: "rgba(14, 119, 199, 0.6)",
+    transition: { duration: 0.3 },
+  },
+  tap: { scale: 0.95 },
+};
+
 const ReviewCard = ({ review }) => {
   return (
-    <div className="review-card">
+    <motion.div
+      className="review-card"
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <div className="review-header">
         <FaQuoteLeft className="quote-icon" />
         <div className="review-rating">
           {[...Array(5)].map((_, i) => (
-            <FaStar
+            <motion.span
               key={i}
-              className={i < review.rating ? "star-filled" : "star-empty"}
-            />
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+            >
+              <FaStar
+                className={i < review.rating ? "star-filled" : "star-empty"}
+              />
+            </motion.span>
           ))}
         </div>
       </div>
 
-      <p className="review-comment">{review.comment}</p>
+      <motion.p
+        className="review-comment"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        {review.comment}
+      </motion.p>
 
-      <div className="reviewer-info">
+      <motion.div
+        className="reviewer-info"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+      >
         <div className="reviewer-details">
           <h3 className="reviewer-name">{review.name}</h3>
           <div className="review-meta">
@@ -34,14 +112,15 @@ const ReviewCard = ({ review }) => {
             <span className="review-date">{review.date}</span>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [direction, setDirection] = useState(0); // 0: right, 1: left
   const carouselRef = useRef(null);
   const { ref: sectionRef, inView: sectionInView } = useInView({
     triggerOnce: true,
@@ -68,14 +147,17 @@ const Reviews = () => {
   const totalGroups = Math.ceil(reviewsData.length / visibleCount);
 
   const handlePrev = () => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
   };
 
   const handleNext = () => {
+    setDirection(0);
     setCurrentIndex((prev) => (prev + 1) % totalGroups);
   };
 
   const goToGroup = (index) => {
+    setDirection(index > currentIndex ? 0 : 1);
     setCurrentIndex(index);
   };
 
@@ -100,20 +182,23 @@ const Reviews = () => {
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 50) {
-      // Swipe left
       handleNext();
     } else if (touchEnd - touchStart > 50) {
-      // Swipe right
       handlePrev();
     }
   };
 
   return (
     <section className="reviews-section" ref={sectionRef}>
-      <div className={`section-header ${sectionInView ? "visible" : ""}`}>
+      <motion.div
+        className={`section-header ${sectionInView ? "visible" : ""}`}
+        variants={headerVariants}
+        initial="hidden"
+        animate={sectionInView ? "visible" : "hidden"}
+      >
         <h2>Client Testimonials</h2>
         <p>See what our customers say about Ivan Fountain Service</p>
-      </div>
+      </motion.div>
 
       <div
         className="reviews-carousel"
@@ -122,50 +207,80 @@ const Reviews = () => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {visibleReviews.map((review) => (
-          <ReviewCard key={review.id} review={review} />
-        ))}
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={currentIndex}
+            className="carousel-inner"
+            custom={direction}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {visibleReviews.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <div className="carousel-controls">
-        <button
+        <motion.button
           className="nav-btn prev"
           onClick={handlePrev}
           aria-label="Previous reviews"
+          variants={buttonVariants}
+          whileHover="hover"
+          whileTap="tap"
         >
           <FaChevronLeft />
-        </button>
+        </motion.button>
 
         <div className="pagination-dots">
           {Array.from({ length: totalGroups }).map((_, index) => (
-            <button
+            <motion.button
               key={index}
               className={`dot ${index === currentIndex ? "active" : ""}`}
               onClick={() => goToGroup(index)}
               aria-label={`Go to review group ${index + 1}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
             />
           ))}
         </div>
 
-        <button
+        <motion.button
           className="nav-btn next"
           onClick={handleNext}
           aria-label="Next reviews"
+          variants={buttonVariants}
+          whileHover="hover"
+          whileTap="tap"
         >
           <FaChevronRight />
-        </button>
+        </motion.button>
       </div>
 
-      <div className="cta-container">
-        <a
+      <motion.div
+        className="cta-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <motion.a
           href="https://www.yelp.com/biz/ivan-fountain-service-murrieta"
           className="cta-link"
           target="_blank"
           rel="noopener noreferrer"
+          whileHover={{
+            y: -3,
+            boxShadow: "0 5px 15px rgba(14, 119, 199, 0.4)",
+          }}
+          whileTap={{ scale: 0.98 }}
         >
           View all 100+ 5 star reviews on Yelp
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </section>
   );
 };

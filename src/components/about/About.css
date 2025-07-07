@@ -12,7 +12,7 @@
 }
 
 .about-section {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   overflow: hidden;
   position: relative;
   background: linear-gradient(
@@ -279,16 +279,19 @@
     font-size: 1rem;
   }
   .stat-card {
-    padding: 20px 15px;
+    padding: 10px 5px;
   }
   .stat-value {
     font-size: 2rem;
+  }
+  .stats-container {
+    grid-template-columns: 3fr;
   }
 }
 
 @media (max-width: 480px) {
   .about-section {
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
   }
   .section-header {
     padding: 15px;
@@ -297,6 +300,6 @@
     font-size: 1.8rem;
   }
   .stats-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr;
   }
 }
