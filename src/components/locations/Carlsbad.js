@@ -346,7 +346,7 @@ const Carlsbad = () => {
               clickable: true,
             }}
             modules={[EffectCoverflow, Pagination, Navigation]}
-            className="swiper_container"
+            className="swiper-container"
           >
             {sliderImages.map((img, index) => (
               <SwiperSlide key={index}>
