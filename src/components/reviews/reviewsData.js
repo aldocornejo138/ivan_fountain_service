@@ -1,5 +1,25 @@
 const reviews = [
   {
+    id: 29,
+    name: "Souheil H.",
+    image: "standard",
+    city: "Rancho Palos Verdes,, CA",
+    rating: 5,
+    date: "July 2, 2025",
+    comment:
+      "Excellent service, reasonable prices, we have a big fountain with broken pump. They retrieved it from inside the fountain and replaced it with new one. No visible wiring or hoses",
+  },
+  {
+    id: 28,
+    name: "Rob R.",
+    image: "standard",
+    city: "CORONA DL MAR, CA",
+    rating: 5,
+    date: "July 1, 2025",
+    comment:
+      "The best fountain service. Showed up and had all parts to fix it the first time. Ivan is great!!",
+  },
+  {
     id: 27,
     name: "Lisa A.",
     image: "standard",
@@ -7,7 +27,7 @@ const reviews = [
     rating: 5,
     date: "June 16, 2025",
     comment:
-      "Ivan is the absolute best. I totally recommend him. He cleaned my filthy stainless steel fountain beautifully but when we couldn't get the stainless as shiny as I wanted he came back 3 times to make sure I was satisfied. Where do get that kind of customer service?? His fee was very, very reasonable for his service. You won't make a mistake by hiring Ivan!",
+      "They were on time and extremely respectful of our property. (Our fountain is in the center of our home with French limestone floors requiring great care.) They proceeded to move the very heavy fountain, installed a new pump, put it back together and leveled it perfectly. Ivan also wanted to give us the proper amount of water for the space to avoid over-splashing. They deserve every 5 star rating they have earned.",
   },
   {
     id: 26,
