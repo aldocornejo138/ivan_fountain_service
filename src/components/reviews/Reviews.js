@@ -1,29 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaStar,
+  FaChevronLeft,
+  FaChevronRight,
+  FaQuoteLeft,
+} from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import "./Reviews.css";
 import reviewsData from "./reviewsData";
 
-const ReviewCard = ({ review, inView, delay }) => {
+const ReviewCard = ({ review }) => {
   return (
-    <div
-      className={`review-card ${inView ? "animate-in" : ""}`}
-      style={{ animationDelay: `${delay}ms` }}
-    >
-      <div className="review-rating">
-        {[...Array(5)].map((_, i) => (
-          <FaStar
-            key={i}
-            className={i < review.rating ? "star-filled" : "star-empty"}
-          />
-        ))}
+    <div className="review-card">
+      <div className="review-header">
+        <FaQuoteLeft className="quote-icon" />
+        <div className="review-rating">
+          {[...Array(5)].map((_, i) => (
+            <FaStar
+              key={i}
+              className={i < review.rating ? "star-filled" : "star-empty"}
+            />
+          ))}
+        </div>
       </div>
 
-      <p className="review-comment">"{review.comment}"</p>
+      <p className="review-comment">{review.comment}</p>
 
       <div className="reviewer-info">
-        <div className="avatar-placeholder">{review.name.charAt(0)}</div>
-        <div>
+        <div className="reviewer-details">
           <h3 className="reviewer-name">{review.name}</h3>
           <div className="review-meta">
             <span className="review-city">{review.city}</span>
@@ -38,10 +42,9 @@ const ReviewCard = ({ review, inView, delay }) => {
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
-  const containerRef = useRef(null);
-
+  const carouselRef = useRef(null);
   const { ref: sectionRef, inView: sectionInView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 
@@ -62,44 +65,69 @@ const Reviews = () => {
     return () => window.removeEventListener("resize", updateVisibleCount);
   }, []);
 
+  const totalGroups = Math.ceil(reviewsData.length / visibleCount);
+
   const handlePrev = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + reviewsData.length) % reviewsData.length
-    );
+    setCurrentIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % reviewsData.length);
+    setCurrentIndex((prev) => (prev + 1) % totalGroups);
   };
 
-  const goToReview = (index) => {
+  const goToGroup = (index) => {
     setCurrentIndex(index);
   };
 
-  const getVisibleReviews = () => {
-    const visibleReviews = [];
-    const totalReviews = reviewsData.length;
+  // Get current group of reviews
+  const startIndex = currentIndex * visibleCount;
+  const visibleReviews = reviewsData.slice(
+    startIndex,
+    startIndex + visibleCount
+  );
 
-    for (let i = 0; i < visibleCount; i++) {
-      const index = (currentIndex + i) % totalReviews;
-      visibleReviews.push(reviewsData[index]);
+  // Touch scrolling setup
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swipe left
+      handleNext();
+    } else if (touchEnd - touchStart > 50) {
+      // Swipe right
+      handlePrev();
     }
-
-    return visibleReviews;
   };
 
   return (
-    <section
-      className="reviews-section"
-      ref={sectionRef}
-      style={{ background: "#000" }}
-    >
+    <section className="reviews-section" ref={sectionRef}>
       <div className={`section-header ${sectionInView ? "visible" : ""}`}>
         <h2>Client Testimonials</h2>
         <p>See what our customers say about Ivan Fountain Service</p>
       </div>
 
-      <div className="reviews-container">
+      <div
+        className="reviews-carousel"
+        ref={carouselRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {visibleReviews.map((review) => (
+          <ReviewCard key={review.id} review={review} />
+        ))}
+      </div>
+
+      <div className="carousel-controls">
         <button
           className="nav-btn prev"
           onClick={handlePrev}
@@ -108,13 +136,13 @@ const Reviews = () => {
           <FaChevronLeft />
         </button>
 
-        <div className="review-cards" ref={containerRef}>
-          {getVisibleReviews().map((review, index) => (
-            <ReviewCard
-              key={`${review.id}-${index}`}
-              review={review}
-              inView={sectionInView}
-              delay={index * 200}
+        <div className="pagination-dots">
+          {Array.from({ length: totalGroups }).map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentIndex ? "active" : ""}`}
+              onClick={() => goToGroup(index)}
+              aria-label={`Go to review group ${index + 1}`}
             />
           ))}
         </div>
@@ -126,17 +154,6 @@ const Reviews = () => {
         >
           <FaChevronRight />
         </button>
-      </div>
-
-      <div className="pagination-dots">
-        {reviewsData.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? "active" : ""}`}
-            onClick={() => goToReview(index)}
-            aria-label={`Go to review ${index + 1}`}
-          />
-        ))}
       </div>
 
       <div className="cta-container">
